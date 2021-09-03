@@ -1,14 +1,14 @@
-# node-red-user-management-examples #
+# node-red-user-management-example #
 
-This repository contains two examples for user management based on Node-RED flows. While they were designed to be immediately usable with the server implemented in [node-red-within-express](https://github.com/rozek/node-red-within-express) and play well together with the authentication and authorization mechanisms described in [node-red-authorization-examples](https://github.com/rozek/node-red-authorization-examples), all examples may also be used in other environments.
+This repository contains an example for user management based on Node-RED flows. While it was designed to be immediately usable with the server implemented in [node-red-within-express](https://github.com/rozek/node-red-within-express) and play well together with the authentication and authorization mechanisms described in [node-red-authorization-examples](https://github.com/rozek/node-red-authorization-examples), the example may also be used in other environments.
 
 ## Prerequisites ##
 
-Every example requires the following Node-RED extension
+The example requires the following Node-RED extension
 
 * [node-red-contrib-components](https://github.com/ollixx/node-red-contrib-components)<br>"Components" allow multiply needed flows to be defined once and then invoked from multiple places
 
-Additionally, all examples expect the global flow context to contain an object called `UserRegistry` which has the same format as described in "node-red-within-express":
+Additionally, the example expects the global flow context to contain an object called `UserRegistry` which has the same format as described in "node-red-within-express":
 
 * the object's property names are the ids of registered users<br>user ids have no specific format, they may be user names, email addresses or any other data you are free to choose - with **one important exception**: user ids must not contain any colons (":") or the authentication mechanisms described in "node-red-authorization-examples" will fail
 * the object's property values are JavaScript objects with the following properties, at least (additional properties may be added at will):
@@ -26,10 +26,7 @@ For testing and debugging purposes, the [following flow](show-user-registry.json
 
 ![](show-user-registry.png)
 
-## Adminstrator-initiated User Management ##
-
-
-## User-initiated User Management ##
+# User-initiated User Management ##
 
 
 ## License ##
