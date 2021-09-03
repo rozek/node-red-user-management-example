@@ -26,6 +26,11 @@ For testing and debugging purposes, the [following flow](show-user-registry.json
 
 ![](show-user-registry.png)
 
+## Adminstrator-initiated User Management ##
+
+
+## User-initiated User Management ##
+
 
 ## License ##
 
