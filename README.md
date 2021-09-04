@@ -29,6 +29,11 @@ For testing and debugging purposes, the [following flow](show-user-registry.json
 # User-initiated User Management ##
 
 
+![](permitted-users.png)
+
+![](permitted-roles.png)
+
+
 ## License ##
 
 [MIT License](LICENSE.md)
