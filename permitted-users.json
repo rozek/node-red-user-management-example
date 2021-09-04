@@ -1,0 +1,405 @@
+[
+    {
+        "id": "791114ef7e074502",
+        "type": "comment",
+        "z": "d098d3d921f5b026",
+        "name": "permitted users",
+        "info": "",
+        "x": 760,
+        "y": 40,
+        "wires": []
+    },
+    {
+        "id": "6942a29c0bca2173",
+        "type": "inject",
+        "z": "d098d3d921f5b026",
+        "name": "at Startup",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": true,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payloadType": "date",
+        "x": 770,
+        "y": 100,
+        "wires": [
+            [
+                "98e1af36e97de56d"
+            ]
+        ]
+    },
+    {
+        "id": "98e1af36e97de56d",
+        "type": "component",
+        "z": "d098d3d921f5b026",
+        "name": "load or create permittedUsers",
+        "targetComponent": {
+            "id": "39e8c2dd78de2d77",
+            "name": "load or create permittedUsers",
+            "api": []
+        },
+        "paramSources": {},
+        "statuz": "",
+        "statuzType": "str",
+        "outputs": 1,
+        "outLabels": [
+            "default"
+        ],
+        "x": 990,
+        "y": 100,
+        "wires": [
+            [
+                "568c52ef8422d49e"
+            ]
+        ]
+    },
+    {
+        "id": "568c52ef8422d49e",
+        "type": "debug",
+        "z": "d098d3d921f5b026",
+        "name": "Status",
+        "active": true,
+        "tosidebar": false,
+        "console": false,
+        "tostatus": true,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "'permitted users loaded'",
+        "statusType": "jsonata",
+        "x": 1190,
+        "y": 100,
+        "wires": []
+    },
+    {
+        "id": "20ca5643dd7f404f",
+        "type": "file in",
+        "z": "d098d3d921f5b026",
+        "name": "",
+        "filename": "./permittedUsers.txt",
+        "format": "utf8",
+        "chunk": false,
+        "sendError": false,
+        "encoding": "utf8",
+        "allProps": false,
+        "x": 820,
+        "y": 220,
+        "wires": [
+            [
+                "d4a8e87365ae3d1e"
+            ]
+        ]
+    },
+    {
+        "id": "ea81ee818e51eae0",
+        "type": "catch",
+        "z": "d098d3d921f5b026",
+        "name": "",
+        "scope": [
+            "20ca5643dd7f404f"
+        ],
+        "uncaught": false,
+        "x": 770,
+        "y": 280,
+        "wires": [
+            [
+                "a30eafb73ee1e2a8"
+            ]
+        ]
+    },
+    {
+        "id": "6eb6d325dedb3f22",
+        "type": "debug",
+        "z": "d098d3d921f5b026",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": true,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "'could not load permitted users'",
+        "statusType": "jsonata",
+        "x": 1170,
+        "y": 280,
+        "wires": []
+    },
+    {
+        "id": "39e8c2dd78de2d77",
+        "type": "component_in",
+        "z": "d098d3d921f5b026",
+        "name": "load or create permittedUsers",
+        "api": [],
+        "x": 800,
+        "y": 160,
+        "wires": [
+            [
+                "20ca5643dd7f404f",
+                "1a40763bb3e4a378"
+            ]
+        ]
+    },
+    {
+        "id": "4327f468d6477bc5",
+        "type": "component_out",
+        "z": "d098d3d921f5b026",
+        "name": "return",
+        "mode": "default",
+        "x": 1190,
+        "y": 160,
+        "wires": []
+    },
+    {
+        "id": "a30eafb73ee1e2a8",
+        "type": "function",
+        "z": "d098d3d921f5b026",
+        "name": "create in global context",
+        "func": "  let UserSet = Object.create(null)\n    UserSet['node-red'] = true\n  global.set('permittedUsers',UserSet)\n\n  return msg\n",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 970,
+        "y": 280,
+        "wires": [
+            [
+                "6eb6d325dedb3f22",
+                "4327f468d6477bc5"
+            ]
+        ]
+    },
+    {
+        "id": "8f2ef6b8b1ea51b9",
+        "type": "file",
+        "z": "d098d3d921f5b026",
+        "name": "",
+        "filename": "./permittedUsers.txt",
+        "appendNewline": false,
+        "createDir": false,
+        "overwriteFile": "true",
+        "encoding": "utf8",
+        "x": 1080,
+        "y": 400,
+        "wires": [
+            [
+                "d32305688ef0059e"
+            ]
+        ]
+    },
+    {
+        "id": "afaa18b397060bbd",
+        "type": "catch",
+        "z": "d098d3d921f5b026",
+        "name": "",
+        "scope": [
+            "8f2ef6b8b1ea51b9"
+        ],
+        "uncaught": false,
+        "x": 770,
+        "y": 520,
+        "wires": [
+            [
+                "6e4e2dd4fafc6c47",
+                "2f418090ec3c7ec0"
+            ]
+        ]
+    },
+    {
+        "id": "6e4e2dd4fafc6c47",
+        "type": "debug",
+        "z": "d098d3d921f5b026",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": true,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "'could not write permitted users'",
+        "statusType": "jsonata",
+        "x": 910,
+        "y": 560,
+        "wires": []
+    },
+    {
+        "id": "7298823cbadf3f0d",
+        "type": "component_in",
+        "z": "d098d3d921f5b026",
+        "name": "write permittedUsers",
+        "api": [],
+        "x": 780,
+        "y": 340,
+        "wires": [
+            [
+                "9e0971f4fedfd70e",
+                "a7d7f0e9dd86937a"
+            ]
+        ]
+    },
+    {
+        "id": "ce9bb6c52219900c",
+        "type": "component_out",
+        "z": "d098d3d921f5b026",
+        "name": "return",
+        "mode": "default",
+        "x": 1190,
+        "y": 460,
+        "wires": []
+    },
+    {
+        "id": "d32305688ef0059e",
+        "type": "change",
+        "z": "d098d3d921f5b026",
+        "name": "restore payload",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "_payload",
+                "tot": "msg"
+            },
+            {
+                "t": "delete",
+                "p": "_payload",
+                "pt": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 840,
+        "y": 460,
+        "wires": [
+            [
+                "ce9bb6c52219900c"
+            ]
+        ]
+    },
+    {
+        "id": "2f418090ec3c7ec0",
+        "type": "change",
+        "z": "d098d3d921f5b026",
+        "name": "report in payload",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "'Internal Server Error'",
+                "tot": "jsonata"
+            },
+            {
+                "t": "set",
+                "p": "statusCode",
+                "pt": "msg",
+                "to": "500",
+                "tot": "str"
+            },
+            {
+                "t": "delete",
+                "p": "_payload",
+                "pt": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 950,
+        "y": 520,
+        "wires": [
+            [
+                "ce9bb6c52219900c"
+            ]
+        ]
+    },
+    {
+        "id": "d4a8e87365ae3d1e",
+        "type": "function",
+        "z": "d098d3d921f5b026",
+        "name": "write to global context",
+        "func": "  let UserList = msg.payload.trim().replace(/\\s+/g,' ').split(' ')\n  if (UserList.length === 0) {\n    global.set('permittedUsers',null)\n  } else {\n    let UserSet = Object.create(null)\n    for (let i = 0, l = UserList.length; i < l; i++) {\n      let UserId = UserList[i].toLowerCase()\n      UserSet[UserId] = true\n    }\n    global.set('permittedUsers',UserSet)\n  }\n  msg.payload = ''\n  return msg\n",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1060,
+        "y": 220,
+        "wires": [
+            [
+                "4327f468d6477bc5"
+            ]
+        ]
+    },
+    {
+        "id": "9e0971f4fedfd70e",
+        "type": "function",
+        "z": "d098d3d921f5b026",
+        "name": "read from global context",
+        "func": "  let UserSet = global.get('permittedUsers')\n  \n  let UserList = []\n  for (UserId in UserSet) {\n    UserList.push(UserId)\n  }\n  msg.payload = UserList.join('\\n')\n  return msg\n",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 830,
+        "y": 400,
+        "wires": [
+            [
+                "8f2ef6b8b1ea51b9"
+            ]
+        ]
+    },
+    {
+        "id": "1a40763bb3e4a378",
+        "type": "function",
+        "z": "d098d3d921f5b026",
+        "name": "-> catch",
+        "func": "// do not pass any msg from here!",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1020,
+        "y": 160,
+        "wires": [
+            [
+                "a30eafb73ee1e2a8"
+            ]
+        ]
+    },
+    {
+        "id": "a7d7f0e9dd86937a",
+        "type": "function",
+        "z": "d098d3d921f5b026",
+        "name": "-> catch",
+        "func": "// do not pass any msg from here!",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 980,
+        "y": 340,
+        "wires": [
+            [
+                "2f418090ec3c7ec0"
+            ]
+        ]
+    }
+]
