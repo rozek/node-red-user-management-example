@@ -2,6 +2,8 @@
 
 This repository contains an example for user management based on Node-RED flows. While it was designed to be immediately usable with the server implemented in [node-red-within-express](https://github.com/rozek/node-red-within-express) and play well together with the authentication and authorization mechanisms described in [node-red-authorization-examples](https://github.com/rozek/node-red-authorization-examples), the example may also be used in other environments.
 
+> Nota bene: while user ids in "node-red-within-express" and "node-red-authorization-examples" are quite flexible in their format, this example restricts user ids to email addresses!
+
 ## Prerequisites ##
 
 The example requires the following Node-RED extension
