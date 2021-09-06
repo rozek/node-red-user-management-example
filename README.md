@@ -6,9 +6,10 @@ This repository contains an example for user management based on Node-RED flows.
 
 ## Prerequisites ##
 
-The example requires the following Node-RED extension
+The example requires the following Node-RED extensions
 
 * [node-red-contrib-components](https://github.com/ollixx/node-red-contrib-components)<br>"Components" allow multiply needed flows to be defined once and then invoked from multiple places
+* [node-red-node-email](https://github.com/node-red/node-red-nodes/tree/master/social/email)<br>allows to create and send EMails from Node-RED
 
 Additionally, the example expects the global flow context to contain an object called `UserRegistry` which has the same format as described in "node-red-within-express":
 
