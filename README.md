@@ -18,6 +18,7 @@ Additionally, the example expects the global flow context to contain an object c
   * **Roles**<br>is either missing or contains a list of strings with the user's roles. There is no specific format for role names
   * **Salt**<br>contains a random "salt" value which is used during PBKDF2 password hash calculation
   * **Hash**<br>contains the actual PBKDF2 hash of the user's password
+  * **UUID**<br>contains a [version 4 UUID](https://en.wikipedia.org/wiki/Universally_unique_identifier#Version_4_(random)) which uniquely identifies a given user even after email address changes
 
 When used outside "node-red-within-express", the following flows allow such a registry to be loaded from an external JSON file called `registeredUsers.json` (or to be created if no such file exists or an existing file can not be loaded) and written back after changes:
 
