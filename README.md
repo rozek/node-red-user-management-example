@@ -130,6 +130,14 @@ Should "Data Privacy Statement" and/or "Terms of Service" change, properties `ag
 * `agreedToTOS` must be `true`
 * if all conditions are met, `agreedToDPS` and `agreedToTOS` will be stored and the user may continue using the offered service
 
+### POST /user/&lt;user-id&gt;/login ###
+
+* POST with form variable `Password`
+* &lt;user-id&gt; must be the email address of an account which has already been confirmed
+* `Password` must be the current password for this account
+* if all conditions are met a "bearer" token with the currently configured lifetime will be generated and returned in an "authorization" header. This token can now be used for further requests to authenticate the logged-in user
+* the token expires after a configured time of inactivity but - within its lifetime - it gets refreshed by every request which requires an authentication
+
 ### POST /user/&lt;user-id&gt;/change-userid ###
 
 * POST with form variable `newUserId`
