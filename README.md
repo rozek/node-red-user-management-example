@@ -58,6 +58,7 @@ But even User Administrators neither have access to other user's passwords nor c
 
 > Nota bene: the legal documents mentioned above (i.e., "Data Privacy Statement" and "Terms of Service") are not part of this user management implementation but have to be provided separately
 
+Should "Data Privacy Statement" and/or "Terms of Service" change, properties `agreedToDPS` and/or `agreedToTOS` may be set to `false` again. in that case, any new login should immediately redirect the user to a separate web document where he/she may either (read the changed documents) and agree again or delete his/her account. Without such an agreement, the user should no longer be allowed to access the service and logged out immediately.
 
 
 ## License ##
