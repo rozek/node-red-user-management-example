@@ -67,7 +67,7 @@ Should "Data Privacy Statement" and/or "Terms of Service" change, properties `ag
 
 ## HTTP Entry Points ##
 
-### /user/¿lt;user-id&gt;/register ###
+### /user/&lt;user-id&gt;/register ###
  
 * POST without body
 * <user-id> must be a valid email address (max. 64 char.s long) which is neither currently registered nor the new address of an account which is currently being renamed
