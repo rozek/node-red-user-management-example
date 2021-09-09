@@ -138,7 +138,7 @@ Should "Data Privacy Statement" and/or "Terms of Service" change, properties `ag
 * if all conditions are met a registration email will be sent to `newUserId`
 * warning: currently, success of email submission can not be tested - it may be, that an email address is successfully registered which never receives any email
 
-### POST /user/&lt;user-id&gt;/change-passwword ###
+### POST /user/&lt;user-id&gt;/change-password ###
 
 * POST with form variables `oldPassword` and `newPassword`
 * the requesting user must have been authenticated him/herself as the user with the given &lt;user-id&gt;
@@ -146,7 +146,7 @@ Should "Data Privacy Statement" and/or "Terms of Service" change, properties `ag
 * `newPassword` must contain a valid password (in this example, with at least 12 char.s and no other constraints)
 * if all conditions are met, a hash for the given `newPassword` will be stored in the account and the new password will become active
 
-### POST /user/&lt;user-id&gt;/change-passwword ###
+### POST /user/&lt;user-id&gt;/change-roles ###
 
 * POST with form variable `Roles` (containing a space-separated list of permitted user roles)
 * the requesting user must have been authenticated him/herself as a user with the role `user-admin`
