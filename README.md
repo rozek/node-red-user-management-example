@@ -38,32 +38,35 @@ For testing and debugging purposes, the [following flow](show-user-registry.json
 
 A typical user lifecycle looks as follows:
 
-* **a new user gets registered**<br>either by him/herself or by an administrator. In this implementation, new users who register themselves only have to specify their email address in order to start a registration. To limit the users who can register, a list of permitted email addresses may be provided
-* **upon registration, an "account confirmation message" is sent** by email to the given address<br>this email contains a link which, when clicked, should navigate to a web page (or web application) where the new user *may* add additional information (such as his/her real name, f.e.), *must* define a password for his/her account, *must* (read and) agree to a "Data Privacy Statement" and to some "Terms of Service" (for legal reasons) and then send that information back to the server in order to **confirm the account**. If such a confirmation does not happen within a certain period, the registration is automatically cancelled - until then, the given email address is reserved and no other account with the same address may be registered
-* after successful account confirmation, **the user may "log-in"** and use the offered service<br>while this implementation uses the "Header-based Authorization" described in [node-red-authorization-examples](https://github.com/rozek/node-red-authorization-examples) any of the other methods will work as well - but you will have to modify the flows in this repository accordingly
+* **a new user gets registered**<br>either by him/herself or by an administrator. In this implementation, new users who register themselves only have to specify their email address in order to start a registration. To limit the users who can register, a list of permitted email addresses may be provided to the server
+* **upon registration, an "account confirmation message" is sent** by email to the given address<br>This email contains a link which, when clicked, should navigate the user to a web page (or web application) where the he/she *may* add additional information (such as his/her real name, f.e.), *must* define a password for his/her account, *must* (read and) agree to a "Data Privacy Statement" and to some "Terms of Service" (for legal reasons) and then send that information back to the server in order to **confirm the account**. If such a confirmation does not happen within a certain period, the registration is automatically cancelled - until then, the given email address is reserved and no other account with the same address may be registered
+* after successful account confirmation, **the user may "log-in"** and use the offered service<br>While this implementation uses the "Header-based Authorization" described in [node-red-authorization-examples](https://github.com/rozek/node-red-authorization-examples) any of the other methods will work as well - but you will have to modify the flows in this repository accordingly
 * while logged-in, a user may additionally
-  * **change his/her email address**<br>changing one's email address will actually start a confirmation process similar to that after an initial registration. As soon as the new email address is confirmed, the old one will be removed and the new one used from now on for the already existing account. Until then (or if the new address does not get confirmed in time) the old email address continues to work as usual
-  * **change his/her password**<br>changing one's password requires to specify the old password for authorization - if that password is fogotten, a "password reset" may be initiated (see below)
-  * **change other account details**<br>custom server implementations may need additional user information (such as a user's real name, his/her address, credit card details etc.) These details may be changed online as well - except the user's agreement to "Data Privacy Statement" and "Terms of Service" which may only be cleared)
-* should a user have forgotten his/her password, he/she may **start a "password reset" process**<br>as a consequence, a "password reset message" is sent by email to the user's address. This email contains a link which, when clicked, should navigate to a web page (or web application) where the user may define a new password without having to specify the current one
-* last, but not least, every user may **delete his/her account**<br>this action immediately removes the user's account and wipes out any data associated with this user
+  * **change his/her email address**<br>changing one's email address will actually start a confirmation process similar to that after initial registration. As soon as the new email address is confirmed, the old one will be removed and the new one used from now on for the already existing account. Until then (or if the new address does not get confirmed in time) the old email address continues to work as before
+  * **change his/her password**<br>changing one's password requires to specify the old password again for authorization - if that password is fogotten, a "password reset" may be initiated (see below)
+  * **change other account details**<br>custom server implementations may need additional user information (such as a user's real name, his/her postal address, credit card details etc.) These details may be changed online as well - except the user's agreement to "Data Privacy Statement" and "Terms of Service", which may only be cleared)
+* should a user have forgotten his/her password, he/she may **start a "password reset" process**<br>As a consequence, a "password reset message" is sent by email to the user's address. This email contains a link which, when clicked, should navigate the user to a web page (or web application) where he/she may define a new password without having to specify the current one
+* last, but not least, every user may **delete his/her account**<br>This action immediately removes the user's account and wipes out any data associated with this user
 
 ### User Administrators ###
 
-While "normal" users may only inspect and affect their own accounts, User Administrators (i.e., users with the role `user-admin`) may also manage the accounts of other people. In particular, they may
+While "normal" users may only inspect and affect their own accounts, "User Administrators" (i.e., users with the role `user-admin`) may also manage the accounts of other people. In particular, they may
 
-* **change other user's email addresses**<br>although the new addresses will also have to be confirmed in the same way as if the users would have initiated the change themselves
+* **change other user's email addresses**<br>although the new addresses will have to be confirmed in the same way as if the users would have initiated the change themselves
 * **change other user's roles**<br>this function is only available to user administrators
 * **inspect or change other user's account details**<br>any detail may be changed except email addresses, passwords, `Salt` and `Hash` values or the agreement to "Data Privacy Statement" or "Terms of Service" (which may only be cleared)
 * **delete other users**
 
-But even User Administrators neither have access to other user's passwords nor can they change other user's agreement to the service's "Data Privacy Statement" and "Terms of Service"
+But even "User Administrators" neither have access to other user's passwords nor can they set other user's agreements to the service's "Data Privacy Statement" and "Terms of Service"
 
 ### "Data Privacy Statement" and "Terms of Service" ###
 
 > Nota bene: the legal documents mentioned above (i.e., "Data Privacy Statement" and "Terms of Service") are not part of this user management implementation but have to be provided separately
 
-Should "Data Privacy Statement" and/or "Terms of Service" change, properties `agreedToDPS` and/or `agreedToTOS` may be set to `false` again. In that case, any new login should immediately redirect the user to a separate web document where he/she may either (read the changed documents) and agree again or delete his/her account. Without such an agreement, the user should no longer be allowed to access the service and logged out immediately.
+Should "Data Privacy Statement" and/or "Terms of Service" change, properties `agreedToDPS` and/or `agreedToTOS` may be set to `false` again. In that case, any new login should immediately redirect the user to a separate web document where he/she may either (read the changed documents and) agree again or delete his/her account. Without such an agreement, the user should no longer be allowed to access the service and logged out immediately.
+
+
+
 
 
 ## License ##
