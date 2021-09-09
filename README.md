@@ -34,7 +34,7 @@ For testing and debugging purposes, the [following flow](show-user-registry.json
 
 ![](show-user-registry.png)
 
-## Typical User Lifecycle ##
+## Typical User Lifecycles ##
 
 A typical user lifecycle looks as follows:
 
