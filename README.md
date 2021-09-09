@@ -36,10 +36,10 @@ For testing and debugging purposes, the [following flow](show-user-registry.json
 
 A typical user lifecycle looks as follows:
 
-* **a new user gets registered**<br>either by him/herself or by an administrator. In this implementation, new users who register themselves only have to specify their email address
-* **upon registration, an "account confirmation message" is sent** by email to the address given during registration<br>this email contains a link which, when clicked, should navigate to a web page (or web application) where the new user *may* add additional information (such as his/her real name, f.e.), *must* define a password for his/her account, *must* (read and) agree to a "Data Privacy Statement" and to some "Terms of Service" (for legal reasons) and then send that information back to the server in order to **confirm the account**. If such a confirmation does not get completed within a certain period, the registration is automatically cancelled - until then, the given email address is reserved for the given account and no other account may be registered with the same address
+* **a new user gets registered**<br>either by him/herself or by an administrator. In this implementation, new users who register themselves only have to specify their email address in order to start their registration
+* **upon registration, an "account confirmation message" is sent** by email to the given address<br>this email contains a link which, when clicked, should navigate to a web page (or web application) where the new user *may* add additional information (such as his/her real name, f.e.), *must* define a password for his/her account, *must* (read and) agree to a "Data Privacy Statement" and to some "Terms of Service" (for legal reasons) and then send that information back to the server in order to **confirm the account**. If such a confirmation does not get completed within a certain period, the registration is automatically cancelled - until then, the given email address is reserved and no other account with the same address may be registered
 * after successful confirmation, **the user may "log in"** using the password defined before and use the offered service
-* while logged in, a user may also
+* while logged in, a user may, of course, use the offered service but also
   * **change his/her email address**
   * **change his/her password**
   * **change other account details** (except their agreement to "Data Privacy Statement" and "Terms of Service")
