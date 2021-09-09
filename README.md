@@ -70,11 +70,88 @@ Should "Data Privacy Statement" and/or "Terms of Service" change, properties `ag
 ### /user/&lt;user-id&gt;/register ###
  
 * POST without body
-* <user-id> must be a valid email address (max. 64 char.s long) which is neither currently registered nor the new address of an account which is currently being renamed
-* upon success a registration email will be sent
+* &lt;user-id&gt; must be a valid email address (max. 64 char.s long) which is neither currently registered nor the new address of an account which is currently being renamed
+* the requesting user does not have to authenticate him/herself
+* if all conditions are met a registration email will be sent to the given &lt;user-id&gt;
 * warning: currently, success of email submission can not be tested - it may be, that an email address is successfully registered which never receives any email
 
+### /user/&lt;user-id&gt;/send-confirmation-link ###
  
+* POST without body
+* &lt;user-id&gt; must be the email address of an account which still has to be confirmed (either because it has just been registered or because it is the the new address of an account which is currently being renamed)
+* the requesting user does not have to authenticate him/herself
+* if all conditions are met, another registration email (with the original deadline) will be sent to the given &lt;user-id&gt;
+* warning: currently, success of email submission can not be tested - it may be, that an email address is successfully registered which never receives any email
+
+### /user/&lt;user-id&gt;/confirm ###
+
+* will be used either to confirm a newly registered account or to confirm the new email address of an existing account
+* confirming a newly registered account
+  * POST with form variables `newPassword`, `agreedToDPS`, `agreedToTOS` and the confirmation `Token` from the submitted confirmation link, at least
+  * &lt;user-id&gt; must be the email address of an account which still has to be confirmed because it has just been registered
+  * the requesting user does not have to authenticate him/herself
+  * `newPassword` must contain a valid password (in this example, with at least 12 char.s and no other constraints)
+  * `agreedToDPS` must be `true`
+  * `agreedToTOS` must be `true`
+  * `Token` must contain a valid confirmation token for the given account
+  * if all conditions are met, a hash for the given `newPassword`, `agreedToDPS` and `agreedToTOS` will be stored and the account marked as confirmed
+  * the user may now log-in
+* confirming the new email address of an existing account
+  * POST with the confirmation `Token` from the submitted confirmation link, at least
+  * &lt;user-id&gt; must be the email address of an account which still has to be confirmed because it is the the new address of another account which is currently being renamed
+  * `Token` must contain a valid confirmation token for the given account
+  * if all conditions are met, any settings from the old account are copied to the new one, the new account is marked as confirmed and the old account deleted
+  * the user may now log-in using the new email address - the old one may no longer be used
+
+### /user/&lt;user-id&gt;/start-password-reset ###
+ 
+* POST without body
+* &lt;user-id&gt; must be the email address of an account which has already been confirmed
+* the requesting user does not have to authenticate him/herself
+* if this condition is met, a "password reset message" is sent to the given &lt;user-id&gt;
+* warning: currently, success of email submission can not be tested - it may be, that a "password reset message" is sent to an address which no longer receives any email
+
+### /user/&lt;user-id&gt;/reset-password ###
+
+* POST with form variable `newPassword` and the `Token` from the submitted password reset link
+* &lt;user-id&gt; must be the email address of an account which has already been confirmed but is currently in the process of a password reset
+* the requesting user does not have to authenticate him/herself
+* `newPassword` must contain a valid password (in this example, with at least 12 char.s and no other constraints)
+* if all conditions are met, a hash for the given `newPassword` will be stored and the password reset process be marked as complete
+* warning: only the latest token will be accepted - and this only once
+
+### /user/&lt;user-id&gt;/agree-to-legal-statements ###
+
+* POST with form variables `agreedToDPS` and `agreedToTOS`
+* &lt;user-id&gt; must be the email address of an account which has already been confirmed
+* the requesting user must have been authenticated him/herself as the user with the given &lt;user-id&gt;
+* `agreedToDPS` must be `true`
+* `agreedToTOS` must be `true`
+* if all conditions are met, `agreedToDPS` and `agreedToTOS` will be stored and the user may continue using the offered service
+
+### /user/&lt;user-id&gt;/change-userid ###
+
+* POST with form variable `newUserId`
+* &lt;user-id&gt; must be the email address of an account which has already been confirmed
+* the requesting user must have been authenticated him/herself either as the user with the given &lt;user-id&gt; or as a user with the role `user-admin`
+* `newUserId` must be a valid email address (max. 64 char.s long) which is neither currently registered nor the new address of an account which is currently being renamed
+* if all conditions are met a registration email will be sent to `newUserId`
+* warning: currently, success of email submission can not be tested - it may be, that an email address is successfully registered which never receives any email
+
+### /user/&lt;user-id&gt;/change-passwword ###
+
+* POST with form variables `oldPassword` and `newPassword`
+* the requesting user must have been authenticated him/herself as the user with the given &lt;user-id&gt;
+* `oldPassword` must be the current password for the account with the given &lt;user-id&gt;
+* `newPassword` must contain a valid password (in this example, with at least 12 char.s and no other constraints)
+* if all conditions are met, a hash for the given `newPassword` will be stored in the account and the new password will become active
+
+### /user/&lt;user-id&gt;/change-passwword ###
+
+* POST with form variable `Roles` (containing a space-separated list of permitted user roles)
+* the requesting user must have been authenticated him/herself as a user with the role `user-admin`
+* if all conditions are met, the given `Roles` will be stored in the account for the given &lt;user-id&gt; and immediately become active
+
 
 
 ## License ##
