@@ -65,9 +65,9 @@ But even "User Administrators" neither have access to other user's passwords nor
 
 Should "Data Privacy Statement" and/or "Terms of Service" change, properties `agreedToDPS` and/or `agreedToTOS` may be set to `false` again. In that case, any new login should immediately redirect the user to a separate web document where he/she may either (read the changed documents and) agree again or delete his/her account. Without such an agreement, the user should no longer be allowed to access the service and logged out immediately.
 
-## HTTP Entry Points ##
+## REST Interface ##
 
-### /user/&lt;user-id&gt;/register ###
+### POST /user/&lt;user-id&gt;/register ###
  
 * POST without body
 * &lt;user-id&gt; must be a valid email address (max. 64 char.s long) which is neither currently registered nor the new address of an account which is currently being renamed
@@ -75,7 +75,7 @@ Should "Data Privacy Statement" and/or "Terms of Service" change, properties `ag
 * if all conditions are met a registration email will be sent to the given &lt;user-id&gt;
 * warning: currently, success of email submission can not be tested - it may be, that an email address is successfully registered which never receives any email
 
-### /user/&lt;user-id&gt;/send-confirmation-link ###
+### POST /user/&lt;user-id&gt;/send-confirmation-link ###
  
 * POST without body
 * &lt;user-id&gt; must be the email address of an account which still has to be confirmed (either because it has just been registered or because it is the the new address of an account which is currently being renamed)
@@ -83,7 +83,7 @@ Should "Data Privacy Statement" and/or "Terms of Service" change, properties `ag
 * if all conditions are met, another registration email (with the original deadline) will be sent to the given &lt;user-id&gt;
 * warning: currently, success of email submission can not be tested - it may be, that an email address is successfully registered which never receives any email
 
-### /user/&lt;user-id&gt;/confirm ###
+### POST /user/&lt;user-id&gt;/confirm ###
 
 * will be used either to confirm a newly registered account or to confirm the new email address of an existing account
 * confirming a newly registered account
@@ -103,7 +103,7 @@ Should "Data Privacy Statement" and/or "Terms of Service" change, properties `ag
   * if all conditions are met, any settings from the old account are copied to the new one, the new account is marked as confirmed and the old account deleted
   * the user may now log-in using the new email address - the old one may no longer be used
 
-### /user/&lt;user-id&gt;/start-password-reset ###
+### POST /user/&lt;user-id&gt;/start-password-reset ###
  
 * POST without body
 * &lt;user-id&gt; must be the email address of an account which has already been confirmed
@@ -111,7 +111,7 @@ Should "Data Privacy Statement" and/or "Terms of Service" change, properties `ag
 * if this condition is met, a "password reset message" is sent to the given &lt;user-id&gt;
 * warning: currently, success of email submission can not be tested - it may be, that a "password reset message" is sent to an address which no longer receives any email
 
-### /user/&lt;user-id&gt;/reset-password ###
+### POST /user/&lt;user-id&gt;/reset-password ###
 
 * POST with form variable `newPassword` and the `Token` from the submitted password reset link
 * &lt;user-id&gt; must be the email address of an account which has already been confirmed but is currently in the process of a password reset
@@ -120,7 +120,7 @@ Should "Data Privacy Statement" and/or "Terms of Service" change, properties `ag
 * if all conditions are met, a hash for the given `newPassword` will be stored and the password reset process be marked as complete
 * warning: only the latest token will be accepted - and this only once
 
-### /user/&lt;user-id&gt;/agree-to-legal-statements ###
+### POST /user/&lt;user-id&gt;/agree-to-legal-statements ###
 
 * POST with form variables `agreedToDPS` and `agreedToTOS`
 * &lt;user-id&gt; must be the email address of an account which has already been confirmed
@@ -129,7 +129,7 @@ Should "Data Privacy Statement" and/or "Terms of Service" change, properties `ag
 * `agreedToTOS` must be `true`
 * if all conditions are met, `agreedToDPS` and `agreedToTOS` will be stored and the user may continue using the offered service
 
-### /user/&lt;user-id&gt;/change-userid ###
+### POST /user/&lt;user-id&gt;/change-userid ###
 
 * POST with form variable `newUserId`
 * &lt;user-id&gt; must be the email address of an account which has already been confirmed
@@ -138,7 +138,7 @@ Should "Data Privacy Statement" and/or "Terms of Service" change, properties `ag
 * if all conditions are met a registration email will be sent to `newUserId`
 * warning: currently, success of email submission can not be tested - it may be, that an email address is successfully registered which never receives any email
 
-### /user/&lt;user-id&gt;/change-passwword ###
+### POST /user/&lt;user-id&gt;/change-passwword ###
 
 * POST with form variables `oldPassword` and `newPassword`
 * the requesting user must have been authenticated him/herself as the user with the given &lt;user-id&gt;
@@ -146,13 +146,28 @@ Should "Data Privacy Statement" and/or "Terms of Service" change, properties `ag
 * `newPassword` must contain a valid password (in this example, with at least 12 char.s and no other constraints)
 * if all conditions are met, a hash for the given `newPassword` will be stored in the account and the new password will become active
 
-### /user/&lt;user-id&gt;/change-passwword ###
+### POST /user/&lt;user-id&gt;/change-passwword ###
 
 * POST with form variable `Roles` (containing a space-separated list of permitted user roles)
 * the requesting user must have been authenticated him/herself as a user with the role `user-admin`
 * if all conditions are met, the given `Roles` will be stored in the account for the given &lt;user-id&gt; and immediately become active
 
+### GET /user/&lt;user-id&gt; ###
 
+* the requesting user must have been authenticated him/herself as the user with the given &lt;user-id&gt; or as a user with the role `user-admin`
+* if this condition is met, a JSON object with any public details of the account for the given &lt;user-id&gt; is sent back
+
+### POST /user/&lt;user-id&gt; ###
+
+* POST with arbitrary form variables expect `Password`, `Salt`, `Hash`, `Salt`, `ConfirmationDeadline`, `PasswordDeadline`, `agreedToDPS`, `agreedToTOS` and `Roles`
+* the requesting user must have been authenticated him/herself as the user with the given &lt;user-id&gt; or as a user with the role `user-admin`
+* if all conditions are met, the given variables are written to the account for the given &lt;user-id&gt;
+
+### DELETE /user/&lt;user-id&gt; ###
+
+* the requesting user must have been authenticated him/herself as the user with the given &lt;user-id&gt; or as a user with the role `user-admin`
+* if this condition is met, the account for the given &lt;user-id&gt; and any associated data is deleted
+* for a user with the role `user-admin` it is permitted to delete a non-existing user
 
 ## License ##
 
