@@ -36,28 +36,27 @@ For testing and debugging purposes, the [following flow](show-user-registry.json
 
 A typical user lifecycle looks as follows:
 
-* a new user gets registered<br>either by him/herself or by an administrator. In this implementation, new users who register themselves only have to specify their email address and (for legal reasons) that they have read and agreed to a "Data Privacy Statement" and to "Terms of Service". These legal documents are not part of this user management implementation but have to be provided separately
-* upon registration, an "account confirmation message" is sent by email to the address given during registration<br>this email contains a link which, when clicked, should navigate to a web page (or web application) where the new user *may* add additional information (such as his/her real name, f.e.), *must* define a password for his/her account, *must* agree to "Data Privacy Statement" and "Terms of Service" (if the account was created by an administrator rather than the user him/herself) and then send that information back to the server in order to confirm the account. If such a confirmation does not get completed within a certain period, the registration is automatically cancelled - until then, the given email address is reserved for the given account and no other account may be registered with the same address
-* upon confirmation, the user may "log in" using the password defined before and use the offered service
+* **a new user gets registered**<br>either by him/herself or by an administrator. In this implementation, new users who register themselves only have to specify their email address
+* **upon registration, an "account confirmation message" is sent** by email to the address given during registration<br>this email contains a link which, when clicked, should navigate to a web page (or web application) where the new user *may* add additional information (such as his/her real name, f.e.), *must* define a password for his/her account, *must* (read and) agree to a "Data Privacy Statement" and to some "Terms of Service" (for legal reasons) and then send that information back to the server in order to **confirm the account**. If such a confirmation does not get completed within a certain period, the registration is automatically cancelled - until then, the given email address is reserved for the given account and no other account may be registered with the same address
+* after successful confirmation, **the user may "log in"** using the password defined before and use the offered service
 * while logged in, a user may also
-  * change his/her email address
-  * change his/her password
-  * change other account details (except their agreement to "Data Privacy Statement" and "Terms of Service")
-* should a user have forgotten his/her password, he/she may start a "password reset"
-* last, but not least, every user may delete his/her account
+  * **change his/her email address**
+  * **change his/her password**
+  * **change other account details** (except their agreement to "Data Privacy Statement" and "Terms of Service")
+* should a user have forgotten his/her password, he/she may **start a "password reset" process**
+* last, but not least, every user may **delete his/her account**
 
 While "normal" users may only inspect and affect their own accounts, User Administrators (i.e., users with the role `user-admin`) may also manage the accounts of other people. In particular, they may
 
-* register new users
-* change other user's email addresses
-* change other user's roles (or their own)
-* inspect or change other user's account details and
-* delete users (including themselves)
+* **register other users**
+* **change other user's email addresses**
+* **change other user's roles**
+* **inspect or change other user's account details** and
+* **delete other users**
 
 But even User Administrators neither have access to other user's passwords nor can they change other user's agreement to the service's "Data Privacy Statement" and "Terms of Service"
 
-
-
+> Nota bene: the legal documents mentioned above (i.e., "Data Privacy Statement" and "Terms of Service") are not part of this user management implementation but have to be provided separately
 
 
 
