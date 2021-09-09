@@ -11,13 +11,14 @@ The example requires the following Node-RED extensions
 * [node-red-contrib-components](https://github.com/ollixx/node-red-contrib-components)<br>"Components" allow multiply needed flows to be defined once and then invoked from multiple places
 * [node-red-node-email](https://github.com/node-red/node-red-nodes/tree/master/social/email)<br>allows to create and send EMails from Node-RED
 
-Additionally, the example expects the global flow context to contain an object called `UserRegistry` which has the same format as described in "node-red-within-express":
+Additionally, the example expects the global flow context to contain an object called `UserRegistry` which has a format similar to the one described in "node-red-within-express":
 
-* the object's property names are the ids of registered users<br>user ids have no specific format, they may be user names, email addresses or any other data you are free to choose - with **one important exception**: user ids must not contain any colons (":") or the authentication mechanisms described in "node-red-authorization-examples" will fail
+* the object's property names are the **email addresses of registered users**<br>(this specification differs from the original one!)
 * the object's property values are JavaScript objects with the following properties, at least (additional properties may be added at will):
   * **Roles**<br>is either missing or contains a list of strings with the user's roles. There is no specific format for role names
   * **Salt**<br>contains a random "salt" value which is used during PBKDF2 password hash calculation
   * **Hash**<br>contains the actual PBKDF2 hash of the user's password
+  * **UUID**<br>contains a [version 4 UUID](https://en.wikipedia.org/wiki/Universally_unique_identifier#Version_4_(random)) which uniquely identifies a given user even after email address changes (this property also differs from the original specification)
 
 When used outside "node-red-within-express", the following flows allow such a registry to be loaded from an external JSON file called `registeredUsers.json` (or to be created if no such file exists or an existing file can not be loaded) and written back after changes:
 
