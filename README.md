@@ -65,8 +65,16 @@ But even "User Administrators" neither have access to other user's passwords nor
 
 Should "Data Privacy Statement" and/or "Terms of Service" change, properties `agreedToDPS` and/or `agreedToTOS` may be set to `false` again. In that case, any new login should immediately redirect the user to a separate web document where he/she may either (read the changed documents and) agree again or delete his/her account. Without such an agreement, the user should no longer be allowed to access the service and logged out immediately.
 
+## HTTP Entry Points ##
 
+### /user/<user-id>/register ###
+ 
+* POST without body
+* <user-id> must be a valid email address (max. 64 char.s long) which is neither currently registered nor the new address of an account which is currently being renamed
+* upon success a registration email will be sent
+* warning: currently, success of email submission can not be tested - it may be, that an email address is successfully registered which never receives any email
 
+ 
 
 
 ## License ##
