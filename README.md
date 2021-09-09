@@ -99,6 +99,7 @@ Should "Data Privacy Statement" and/or "Terms of Service" change, properties `ag
 * confirming the new email address of an existing account
   * POST with the confirmation `Token` from the submitted confirmation link, at least
   * &lt;user-id&gt; must be the email address of an account which still has to be confirmed because it is the the new address of another account which is currently being renamed
+  * the requesting user does not have to authenticate him/herself
   * `Token` must contain a valid confirmation token for the given account
   * if all conditions are met, any settings from the old account are copied to the new one, the new account is marked as confirmed and the old account deleted
   * the user may now log-in using the new email address - the old one may no longer be used
@@ -124,7 +125,7 @@ Should "Data Privacy Statement" and/or "Terms of Service" change, properties `ag
 
 * POST with form variables `agreedToDPS` and `agreedToTOS`
 * &lt;user-id&gt; must be the email address of an account which has already been confirmed
-* the requesting user must have been authenticated him/herself as the user with the given &lt;user-id&gt;
+* the requesting user must have authenticated him/herself as the user with the given &lt;user-id&gt;
 * `agreedToDPS` must be `true`
 * `agreedToTOS` must be `true`
 * if all conditions are met, `agreedToDPS` and `agreedToTOS` will be stored and the user may continue using the offered service
@@ -133,7 +134,7 @@ Should "Data Privacy Statement" and/or "Terms of Service" change, properties `ag
 
 * POST with form variable `newUserId`
 * &lt;user-id&gt; must be the email address of an account which has already been confirmed
-* the requesting user must have been authenticated him/herself either as the user with the given &lt;user-id&gt; or as a user with the role `user-admin`
+* the requesting user must have authenticated him/herself either as the user with the given &lt;user-id&gt; or as a user with the role `user-admin`
 * `newUserId` must be a valid email address (max. 64 char.s long) which is neither currently registered nor the new address of an account which is currently being renamed
 * if all conditions are met a registration email will be sent to `newUserId`
 * warning: currently, success of email submission can not be tested - it may be, that an email address is successfully registered which never receives any email
@@ -141,7 +142,7 @@ Should "Data Privacy Statement" and/or "Terms of Service" change, properties `ag
 ### POST /user/&lt;user-id&gt;/change-password ###
 
 * POST with form variables `oldPassword` and `newPassword`
-* the requesting user must have been authenticated him/herself as the user with the given &lt;user-id&gt;
+* the requesting user must have authenticated him/herself as the user with the given &lt;user-id&gt;
 * `oldPassword` must be the current password for the account with the given &lt;user-id&gt;
 * `newPassword` must contain a valid password (in this example, with at least 12 char.s and no other constraints)
 * if all conditions are met, a hash for the given `newPassword` will be stored in the account and the new password will become active
@@ -149,23 +150,23 @@ Should "Data Privacy Statement" and/or "Terms of Service" change, properties `ag
 ### POST /user/&lt;user-id&gt;/change-roles ###
 
 * POST with form variable `Roles` (containing a space-separated list of permitted user roles)
-* the requesting user must have been authenticated him/herself as a user with the role `user-admin`
+* the requesting user must have authenticated him/herself as a user with the role `user-admin`
 * if all conditions are met, the given `Roles` will be stored in the account for the given &lt;user-id&gt; and immediately become active
 
 ### GET /user/&lt;user-id&gt; ###
 
-* the requesting user must have been authenticated him/herself as the user with the given &lt;user-id&gt; or as a user with the role `user-admin`
+* the requesting user must have authenticated him/herself as the user with the given &lt;user-id&gt; or as a user with the role `user-admin`
 * if this condition is met, a JSON object with any public details of the account for the given &lt;user-id&gt; is sent back
 
 ### POST /user/&lt;user-id&gt; ###
 
 * POST with arbitrary form variables expect `Password`, `Salt`, `Hash`, `Salt`, `ConfirmationDeadline`, `PasswordDeadline`, `agreedToDPS`, `agreedToTOS` and `Roles`
-* the requesting user must have been authenticated him/herself as the user with the given &lt;user-id&gt; or as a user with the role `user-admin`
+* the requesting user must have authenticated him/herself as the user with the given &lt;user-id&gt; or as a user with the role `user-admin`
 * if all conditions are met, the given variables are written to the account for the given &lt;user-id&gt;
 
 ### DELETE /user/&lt;user-id&gt; ###
 
-* the requesting user must have been authenticated him/herself as the user with the given &lt;user-id&gt; or as a user with the role `user-admin`
+* the requesting user must have authenticated him/herself as the user with the given &lt;user-id&gt; or as a user with the role `user-admin`
 * if this condition is met, the account for the given &lt;user-id&gt; and any associated data is deleted
 * for a user with the role `user-admin` it is permitted to delete a non-existing user
 
