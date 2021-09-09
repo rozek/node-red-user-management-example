@@ -32,7 +32,7 @@ For testing and debugging purposes, the [following flow](show-user-registry.json
 
 ![](show-user-registry.png)
 
-# Typical User Lifecycle ##
+## Typical User Lifecycle ##
 
 A typical user lifecycle looks as follows:
 
@@ -46,6 +46,8 @@ A typical user lifecycle looks as follows:
 * should a user have forgotten his/her password, he/she may **start a "password reset" process**
 * last, but not least, every user may **delete his/her account**
 
+### User Administrators ###
+
 While "normal" users may only inspect and affect their own accounts, User Administrators (i.e., users with the role `user-admin`) may also manage the accounts of other people. In particular, they may
 
 * **register other users**
@@ -55,6 +57,8 @@ While "normal" users may only inspect and affect their own accounts, User Admini
 * **delete other users**
 
 But even User Administrators neither have access to other user's passwords nor can they change other user's agreement to the service's "Data Privacy Statement" and "Terms of Service"
+
+### "Data Privacy Statement" and "Terms of Service" ###
 
 > Nota bene: the legal documents mentioned above (i.e., "Data Privacy Statement" and "Terms of Service") are not part of this user management implementation but have to be provided separately
 
