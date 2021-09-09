@@ -18,7 +18,9 @@ Additionally, the example expects the global flow context to contain an object c
   * **Roles**<br>is either missing or contains a list of strings with the user's roles. There is no specific format for role names
   * **Salt**<br>contains a random "salt" value which is used during PBKDF2 password hash calculation
   * **Hash**<br>contains the actual PBKDF2 hash of the user's password
-  * **UUID**<br>contains a [version 4 UUID](https://en.wikipedia.org/wiki/Universally_unique_identifier#Version_4_(random)) which uniquely identifies a given user even after email address changes (this property also differs from the original specification)
+  * **UUID**<br>contains a [version 4 UUID](https://en.wikipedia.org/wiki/Universally_unique_identifier#Version_4_(random)) which uniquely identifies a given user even after email address changes (this property has been added to the original specification)
+  * **agreedToDPS**<br>indicates that the user has read and agreed to this service's "Data Privacy Statement" and must be set to `true` for an account to get confirmed (this property has been added to the original specification)
+  * **agreedToTOS**<br>indicates that the user has read and agreed to this service's "Terms of Service" and must be set to `true` for an account to get confirmed (this property has been added to the original specification)
 
 When used outside "node-red-within-express", the following flows allow such a registry to be loaded from an external JSON file called `registeredUsers.json` (or to be created if no such file exists or an existing file can not be loaded) and written back after changes:
 
@@ -30,12 +32,33 @@ For testing and debugging purposes, the [following flow](show-user-registry.json
 
 ![](show-user-registry.png)
 
-# User-initiated User Management ##
+# Typical User Lifecycle ##
+
+A typical user lifecycle looks as follows:
+
+* a new user gets registered<br>either by him/herself or by an administrator. In this implementation, new users who register themselves only have to specify their email address and (for legal reasons) that they have read and agreed to a "Data Privacy Statement" and to "Terms of Service". These legal documents are not part of this user management implementation but have to be provided separately
+* upon registration, an "account confirmation message" is sent by email to the address given during registration<br>this email contains a link which, when clicked, should navigate to a web page (or web application) where the new user *may* add additional information (such as his/her real name, f.e.), *must* define a password for his/her account, *must* agree to "Data Privacy Statement" and "Terms of Service" (if the account was created by an administrator rather than the user him/herself) and then send that information back to the server in order to confirm the account. If such a confirmation does not get completed within a certain period, the registration is automatically cancelled - until then, the given email address is reserved for the given account and no other account may be registered with the same address
+* upon confirmation, the user may "log in" using the password defined before and use the offered service
+* while logged in, a user may also
+  * change his/her email address
+  * change his/her password
+  * change other account details (except their agreement to "Data Privacy Statement" and "Terms of Service")
+* should a user have forgotten his/her password, he/she may start a "password reset"
+* last, but not least, every user may delete his/her account
+
+While "normal" users may only inspect and affect their own accounts, User Administrators (i.e., users with the role `user-admin`) may also manage the accounts of other people. In particular, they may
+
+* register new users
+* change other user's email addresses
+* change other user's roles (or their own)
+* inspect or change other user's account details and
+* delete users (including themselves)
+
+But even User Administrators neither have access to other user's passwords nor can they change other user's agreement to the service's "Data Privacy Statement" and "Terms of Service"
 
 
-![](permitted-users.png)
 
-![](permitted-roles.png)
+
 
 
 ## License ##
