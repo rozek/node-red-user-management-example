@@ -77,7 +77,7 @@ Should "Data Privacy Statement" and/or "Terms of Service" change, properties `ag
 * if all conditions are met a registration email will be sent to the given &lt;user-id&gt;
 * warning: currently, success of email submission can not be tested - it may be, that an email address is successfully registered which never receives any email
 
-### POST /user/&lt;user-id&gt;/send-confirmation-link ###
+### POST /user/&lt;user-id&gt;/send-confirmation-message ###
  
 * POST without body
 * &lt;user-id&gt; must be the email address of an account which still has to be confirmed (either because it has just been registered or because it is the new address of an account which is currently being renamed)
@@ -123,7 +123,7 @@ Should "Data Privacy Statement" and/or "Terms of Service" change, properties `ag
 * if all conditions are met, a hash for the given `newPassword` will be stored and the password reset process be marked as complete
 * warning: only the latest token will be accepted - and this only once
 
-### POST /user/&lt;user-id&gt;/agree-to-legal-statements ###
+### POST /user/&lt;user-id&gt;/update-legal-agreements ###
 
 * POST with form variables `agreedToDPS` and `agreedToTOS`
 * &lt;user-id&gt; must be the email address of an account which has already been confirmed
@@ -132,16 +132,16 @@ Should "Data Privacy Statement" and/or "Terms of Service" change, properties `ag
 * `agreedToTOS` must be `true`
 * if all conditions are met, `agreedToDPS` and `agreedToTOS` will be stored and the user may continue using the offered service
 
-### POST /user/&lt;user-id&gt;/login ###
+### POST /user/&lt;user-id&gt;/authenticate ###
 
 * POST with form variable `Password`
 * &lt;user-id&gt; must be the email address of an account which has already been confirmed
 * `Password` must be the current password for this account
 * if all conditions are met, a "bearer" token with the currently configured lifetime will be generated and returned in an "authorization" header. This token can now be used for further requests to authenticate the logged-in user
 * the token expires after a configured time of inactivity but - within its lifetime - it gets refreshed by every request which requires an authentication
-* explit logins are not necessary if "basic HTTP authentication" is used
+* explit authentications are not necessary if "basic HTTP authentication" is used
 
-### POST /user/&lt;user-id&gt;/change-userid ###
+### POST /user/&lt;user-id&gt;/change-email-address ###
 
 * POST with form variable `newUserId`
 * &lt;user-id&gt; must be the email address of an account which has already been confirmed
