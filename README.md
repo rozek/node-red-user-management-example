@@ -52,7 +52,7 @@ A typical user lifecycle looks as follows:
 
 ### User Administrators ###
 
-While "normal" users may only inspect and affect their own accounts, "User Administrators" (i.e., users with the role `user-admin`) may also manage the accounts of other people. In particular, they may
+While "normal" users may only inspect and modify their own accounts, "User Administrators" (i.e., users with the role `user-admin`) may also manage the accounts of other people. In particular, they may
 
 * **change other user's email addresses**<br>although the new addresses will have to be confirmed in the same way as if the users would have initiated the change themselves
 * **change other user's roles**<br>this function is only available to user administrators
