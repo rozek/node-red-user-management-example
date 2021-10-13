@@ -80,7 +80,7 @@ Should "Data Privacy Statement" and/or "Terms of Service" change, properties `ag
 ### POST /user/&lt;user-id&gt;/send-confirmation-link ###
  
 * POST without body
-* &lt;user-id&gt; must be the email address of an account which still has to be confirmed (either because it has just been registered or because it is the the new address of an account which is currently being renamed)
+* &lt;user-id&gt; must be the email address of an account which still has to be confirmed (either because it has just been registered or because it is the new address of an account which is currently being renamed)
 * the requesting user does not have to authenticate him/herself
 * if all conditions are met, another registration email (with the original deadline) will be sent to the given &lt;user-id&gt;
 * warning: currently, success of email submission can not be tested - it may be, that an email address is successfully registered which never receives any email
@@ -88,7 +88,7 @@ Should "Data Privacy Statement" and/or "Terms of Service" change, properties `ag
 ### POST /user/&lt;user-id&gt;/confirm ###
 
 * will be used either to confirm a newly registered account or to confirm the new email address of an existing account
-* confirming a newly registered account
+* **confirming a newly registered account**
   * POST with form variables `newPassword`, `agreedToDPS`, `agreedToTOS` and the confirmation `Token` from the submitted confirmation link, at least
   * &lt;user-id&gt; must be the email address of an account which still has to be confirmed because it has just been registered
   * the requesting user does not have to authenticate him/herself
@@ -98,9 +98,9 @@ Should "Data Privacy Statement" and/or "Terms of Service" change, properties `ag
   * `Token` must contain a valid confirmation token for the given account
   * if all conditions are met, a hash for the given `newPassword`, `agreedToDPS` and `agreedToTOS` will be stored and the account marked as confirmed
   * the user may now log-in
-* confirming the new email address of an existing account
+* **confirming the new email address of an existing account**
   * POST with the confirmation `Token` from the submitted confirmation link, at least
-  * &lt;user-id&gt; must be the email address of an account which still has to be confirmed because it is the the new address of another account which is currently being renamed
+  * &lt;user-id&gt; must be the email address of an account which still has to be confirmed because it is the new address of another account which is currently being renamed
   * the requesting user does not have to authenticate him/herself
   * `Token` must contain a valid confirmation token for the given account
   * if all conditions are met, any settings from the old account are copied to the new one, the new account is marked as confirmed and the old account deleted
@@ -137,7 +137,7 @@ Should "Data Privacy Statement" and/or "Terms of Service" change, properties `ag
 * POST with form variable `Password`
 * &lt;user-id&gt; must be the email address of an account which has already been confirmed
 * `Password` must be the current password for this account
-* if all conditions are met a "bearer" token with the currently configured lifetime will be generated and returned in an "authorization" header. This token can now be used for further requests to authenticate the logged-in user
+* if all conditions are met, a "bearer" token with the currently configured lifetime will be generated and returned in an "authorization" header. This token can now be used for further requests to authenticate the logged-in user
 * the token expires after a configured time of inactivity but - within its lifetime - it gets refreshed by every request which requires an authentication
 * explit logins are not necessary if "basic HTTP authentication" is used
 
@@ -147,7 +147,7 @@ Should "Data Privacy Statement" and/or "Terms of Service" change, properties `ag
 * &lt;user-id&gt; must be the email address of an account which has already been confirmed
 * the requesting user must have authenticated him/herself either as the user with the given &lt;user-id&gt; or as a user with the role `user-admin`
 * `newUserId` must be a valid email address (max. 64 char.s long) which is neither currently registered nor the new address of an account which is currently being renamed
-* if all conditions are met a registration email will be sent to `newUserId`
+* if all conditions are met, a registration email will be sent to `newUserId`
 * warning: currently, success of email submission can not be tested - it may be, that an email address is successfully registered which never receives any email
 
 ### POST /user/&lt;user-id&gt;/change-password ###
