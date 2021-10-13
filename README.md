@@ -69,28 +69,28 @@ Should "Data Privacy Statement" and/or "Terms of Service" change, properties `ag
 
 ## REST Interface ##
 
-### POST /user/&lt;email-address&gt;/register ###
+### POST /user/&lt;user-id&gt;/register ###
  
 * POST without body
-* &lt;email-address&gt; must be a valid email address (max. 64 char.s long) which is neither currently registered nor the new address of an account which is currently being renamed
+* &lt;user-id&gt; must be a valid email address (max. 64 char.s long) which is neither currently registered nor the new address of an account which is currently being renamed
 * the requesting user does not have to authenticate him/herself
-* if all conditions are met a registration email will be sent to the given &lt;email-address&gt;
+* if all conditions are met a registration email will be sent to the given &lt;user-id&gt;
 * warning: currently, success of email submission can not be tested - it may be, that an email address is successfully registered which never receives any email
 
-### POST /user/&lt;email-address&gt;/send-confirmation-message ###
+### POST /user/&lt;user-id&gt;/send-confirmation-message ###
  
 * POST without body
-* &lt;email-address&gt; must be the email address of an account which still has to be confirmed (either because it has just been registered or because it is the new address of an account which is currently being renamed)
+* &lt;user-id&gt; must be the email address of an account which still has to be confirmed (either because it has just been registered or because it is the new address of an account which is currently being renamed)
 * the requesting user does not have to authenticate him/herself
-* if all conditions are met, another registration email (with the original deadline) will be sent to the given &lt;email-address&gt;
+* if all conditions are met, another registration email (with the original deadline) will be sent to the given &lt;user-id&gt;
 * warning: currently, success of email submission can not be tested - it may be, that an email address is successfully registered which never receives any email
 
-### POST /user/&lt;email-address&gt;/confirm ###
+### POST /user/&lt;user-id&gt;/confirm ###
 
 * will be used either to confirm a newly registered account or to confirm the new email address of an existing account
 * **confirming a newly registered account**
   * POST with form variables `newPassword`, `agreedToDPS`, `agreedToTOS` and the confirmation `Token` from the submitted confirmation link, at least
-  * &lt;email-address&gt; must be the email address of an account which still has to be confirmed because it has just been registered
+  * &lt;user-id&gt; must be the email address of an account which still has to be confirmed because it has just been registered
   * the requesting user does not have to authenticate him/herself
   * `newPassword` must contain a valid password (in this example, with at least 12 char.s and no other constraints)
   * `agreedToDPS` must be `true`
@@ -100,85 +100,85 @@ Should "Data Privacy Statement" and/or "Terms of Service" change, properties `ag
   * the user may now log-in
 * **confirming the new email address of an existing account**
   * POST with the confirmation `Token` from the submitted confirmation link, at least
-  * &lt;email-address&gt; must be the email address of an account which still has to be confirmed because it is the new address of another account which is currently being renamed
+  * &lt;user-id&gt; must be the email address of an account which still has to be confirmed because it is the new address of another account which is currently being renamed
   * the requesting user does not have to authenticate him/herself
   * `Token` must contain a valid confirmation token for the given account
   * if all conditions are met, any settings from the old account are copied to the new one, the new account is marked as confirmed and the old account deleted
   * the user may now log-in using the new email address - the old one may no longer be used
 
-### POST /user/&lt;email-address&gt;/start-password-reset ###
+### POST /user/&lt;user-id&gt;/start-password-reset ###
  
 * POST without body
-* &lt;email-address&gt; must be the email address of an account which has already been confirmed
+* &lt;user-id&gt; must be the email address of an account which has already been confirmed
 * the requesting user does not have to authenticate him/herself
-* if this condition is met, a "password reset message" is sent to the given &lt;email-address&gt;
+* if this condition is met, a "password reset message" is sent to the given &lt;user-id&gt;
 * warning: currently, success of email submission can not be tested - it may be, that a "password reset message" is sent to an address which no longer receives any email
 
-### POST /user/&lt;email-address&gt;/reset-password ###
+### POST /user/&lt;user-id&gt;/reset-password ###
 
 * POST with form variable `newPassword` and the `Token` from the submitted password reset link
-* &lt;email-address&gt; must be the email address of an account which has already been confirmed but is currently in the process of a password reset
+* &lt;user-id&gt; must be the email address of an account which has already been confirmed but is currently in the process of a password reset
 * the requesting user does not have to authenticate him/herself
 * `newPassword` must contain a valid password (in this example, with at least 12 char.s and no other constraints)
 * if all conditions are met, a hash for the given `newPassword` will be stored and the password reset process be marked as complete
 * warning: only the latest token will be accepted - and this only once
 
-### POST /user/&lt;email-address&gt;/update-legal-agreements ###
+### POST /user/&lt;user-id&gt;/update-legal-agreements ###
 
 * POST with form variables `agreedToDPS` and `agreedToTOS`
-* &lt;email-address&gt; must be the email address of an account which has already been confirmed
-* the requesting user must have authenticated him/herself as the user with the given &lt;email-address&gt;
+* &lt;user-id&gt; must be the email address of an account which has already been confirmed
+* the requesting user must have authenticated him/herself as the user with the given &lt;user-id&gt;
 * `agreedToDPS` must be `true`
 * `agreedToTOS` must be `true`
 * if all conditions are met, `agreedToDPS` and `agreedToTOS` will be stored and the user may continue using the offered service
 
-### POST /user/&lt;email-address&gt;/authenticate ###
+### POST /user/&lt;user-id&gt;/authenticate ###
 
 * POST with form variable `Password`
-* &lt;email-address&gt; must be the email address of an account which has already been confirmed
+* &lt;user-id&gt; must be the email address of an account which has already been confirmed
 * `Password` must be the current password for this account
 * if all conditions are met, a "bearer" token with the currently configured lifetime will be generated and returned in an "authorization" header. This token can now be used for further requests to authenticate the logged-in user
 * the token expires after a configured time of inactivity but - within its lifetime - it gets refreshed by every request which requires an authentication
 * explit authentications are not necessary if "basic HTTP authentication" is used
 
-### POST /user/&lt;email-address&gt;/change-email-address ###
+### POST /user/&lt;user-id&gt;/change-user-id ###
 
-* POST with form variable `newEMailAddress`
-* &lt;email-address&gt; must be the email address of an account which has already been confirmed
-* the requesting user must have authenticated him/herself either as the user with the given &lt;email-address&gt; or as a user with the role `user-admin`
+* POST with form variable `newUserId`
+* &lt;user-id&gt; must be the email address of an account which has already been confirmed
+* the requesting user must have authenticated him/herself either as the user with the given &lt;user-id&gt; or as a user with the role `user-admin`
 * `newUserId` must be a valid email address (max. 64 char.s long) which is neither currently registered nor the new address of an account which is currently being renamed
-* if all conditions are met, a registration email will be sent to `newEMailAddress`
+* if all conditions are met, a registration email will be sent to `newUserId`
 * warning: currently, success of email submission can not be tested - it may be, that an email address is successfully registered which never receives any email
 
-### POST /user/&lt;email-address&gt;/change-password ###
+### POST /user/&lt;user-id&gt;/change-password ###
 
 * POST with form variables `oldPassword` and `newPassword`
-* the requesting user must have authenticated him/herself as the user with the given &lt;email-address&gt;
-* `oldPassword` must be the current password for the account with the given &lt;email-address&gt;
+* the requesting user must have authenticated him/herself as the user with the given &lt;user-id&gt;
+* `oldPassword` must be the current password for the account with the given &lt;user-id&gt;
 * `newPassword` must contain a valid password (in this example, with at least 12 char.s and no other constraints)
 * if all conditions are met, a hash for the given `newPassword` will be stored in the account and the new password will become active
 
-### POST /user/&lt;email-address&gt;/change-roles ###
+### POST /user/&lt;user-id&gt;/change-roles ###
 
 * POST with form variable `Roles` (containing a space-separated list of permitted user roles)
 * the requesting user must have authenticated him/herself as a user with the role `user-admin`
-* if all conditions are met, the given `Roles` will be stored in the account for the given &lt;email-address&gt; and immediately become active
+* if all conditions are met, the given `Roles` will be stored in the account for the given &lt;user-id&gt; and immediately become active
 
-### GET /user/&lt;email-address&gt; ###
+### GET /user/&lt;user-id&gt; ###
 
-* the requesting user must have authenticated him/herself as the user with the given &lt;email-address&gt; or as a user with the role `user-admin`
-* if this condition is met, a JSON object with any public details of the account for the given &lt;email-address&gt; is sent back
+* the requesting user must have authenticated him/herself as the user with the given &lt;user-id&gt; or as a user with the role `user-admin`
+* if this condition is met, a JSON object with any public details of the account for the given &lt;user-id&gt; is sent back
 
-### POST /user/&lt;email-address&gt; ###
+### POST /user/&lt;user-id&gt; ###
 
 * POST with arbitrary form variables expect `Password`, `Salt`, `Hash`, `Salt`, `ConfirmationDeadline`, `PasswordDeadline`, `agreedToDPS`, `agreedToTOS` and `Roles`
-* the requesting user must have authenticated him/herself as the user with the given &lt;email-address&gt; or as a user with the role `user-admin`
-* if all conditions are met, the given variables are written to the account for the given &lt;email-address&gt;
+* the requesting user must have authenticated him/herself as the user with the given &lt;user-id&gt; or as a user with the role `user-admin`
+* if all conditions are met, the given variables are written to the account for the given &lt;user-id&gt;
 
-### DELETE /user/&lt;email-address&gt; ###
+### DELETE /user/&lt;user-id&gt; ###
 
-* the requesting user must have authenticated him/herself as the user with the given &lt;email-address&gt; or as a user with the role `user-admin`
-* if this condition is met, the account for the given &lt;email-address&gt; and any associated data is deleted
+* the requesting user must have authenticated him/herself as the user with the given &lt;user-id&gt; or as a user with the role `user-admin`
+* if this condition is met, the account for the given &lt;user-id&gt; and any associated data is deleted
 * for a user with the role `user-admin` it is permitted to delete a non-existing user
 
 ## License ##
