@@ -178,7 +178,7 @@ Should "Data Privacy Statement" and/or "Terms of Service" change, properties `ag
 ### DELETE /user/&lt;email-address&gt; ###
 
 * the requesting user must have authenticated him/herself as the user with the given &lt;email-address&gt; or as a user with the role `user-admin`
-* if this condition is met, the account for the given &lt;user-id&gt; and any associated data is deleted
+* if this condition is met, the account for the given &lt;email-address&gt; and any associated data is deleted
 * for a user with the role `user-admin` it is permitted to delete a non-existing user
 
 ## License ##
