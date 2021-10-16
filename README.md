@@ -32,10 +32,6 @@ When used outside "node-red-within-express", the following flows allow such a re
 
 Just import [these flows](outside-node-red-within-express.json), place them on your Node-RED workspace and - if need be - check the "Inject once" setting of the node labelled "at Startup". By default, the created user registry contains a single user `node-red@mail.de` with the password `t0pS3cr3t!` and a single role `node-red` (this is exactly the same user who is also included in "node-red-within-express" by default)
 
-For testing and debugging purposes, the [following flow](show-user-registry.json) may also be imported, which dumps the current contents of the user registry onto Node-RED's debug console when clicked:
-
-![](show-user-registry.png)
-
 ## Typical User Lifecycles ##
 
 A typical user lifecycle looks as follows:
