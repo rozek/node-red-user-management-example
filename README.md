@@ -65,7 +65,7 @@ Should "Data Privacy Statement" and/or "Terms of Service" change, properties `ag
 
 Administrators also have to agree to these legal statements.
 
-## REST Interface ##
+## REST Interface for User Management ##
 
 ### POST /user/&lt;user-id&gt;/register ###
  
@@ -178,6 +178,30 @@ Administrators also have to agree to these legal statements.
 * the requesting user must have authenticated him/herself as the user with the given &lt;user-id&gt; or as a user with the role `user-admin`
 * if this condition is met, the account for the given &lt;user-id&gt; and any associated data is deleted
 * for a user with the role `user-admin` it is permitted to delete a non-existing user
+
+## REST Interface for Server Administration ##
+
+* **`GET /registered-users`**<br>
+* **`PUT /registered-users`**<br>
+<br>&nbsp;<br>
+* **`GET /permitted-users`**<br>
+* **`PUT /permitted-users`**<br>
+<br>&nbsp;<br>
+* **`GET /permitted-roles`**<br>
+* **`PUT /permitted-roles`**<br>
+
+## Installation ##
+
+This example may be installed as follows:
+
+* import [this flow](UserManagement.json) into your Node-RED instance
+* configure the "email" node, i.e. enter service details and credentials of an email account you may use for sending email messages
+* copy files `registeredUsers.json`, `permittedUsers.txt` and `permittedRoles.txt` into your Node-RED working directory
+* customize these files as needed
+
+## Postman Collection ##
+
+As usual, this repository contains a [collection of requests](PostmanCollection.json) which is to be imported into a [Postman](https://www.postman.com/) instance and simplifies testing the feedback mechanism.
 
 ## License ##
 
