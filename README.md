@@ -181,14 +181,16 @@ Administrators also have to agree to these legal statements.
 
 ## REST Interface for Server Administration ##
 
-* **`GET /registered-users`**<br>
-* **`PUT /registered-users`**<br>
+The following HTTP endpoints require the requesting user to authenticate as an administrator:
+
+* **`GET /registered-users`**<br>responds with a JSON file containing all currently registered users and their settings (see above for their description)
+* **`PUT /registered-users`**<br>updates the list of currently registered users. The request body should therefore contain a JSON specification of all these users and their settings (see above for their description)
 <br>&nbsp;<br>
-* **`GET /permitted-users`**<br>
-* **`PUT /permitted-users`**<br>
+* **`GET /permitted-users`**<br>responds with a list of all currently permitted users and their intended roles in plain text form. The list contains one user per line, each line starts with the user id (i.e., the user's email address) and (optionally) a blank-separated list of role names for that user
+* **`PUT /permitted-users`**<br>updates the list of all permitted users and their intended roles. The request body should therefore contain a text file with one line per user, starting with the user id (i.e., the user's email address) and (optionally) followed by a blank-separated list of role names for that user
 <br>&nbsp;<br>
-* **`GET /permitted-roles`**<br>
-* **`PUT /permitted-roles`**<br>
+* **`GET /permitted-roles`**<br>responds with a list of all currently permitted roles in plain text form - one role name per line
+* **`PUT /permitted-roles`**<br>updates the list of all permitted roles. The request body should therefore contain a text file with a white-space separated list of role names. You may use spaces, tabs, line-feeds and similar white-space characters for separation
 
 ## Installation ##
 
