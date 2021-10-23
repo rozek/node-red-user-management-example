@@ -1,0 +1,1017 @@
+{
+	"info": {
+		"_postman_id": "95f05c4d-0401-41c6-808c-eb5f18cb3ef5",
+		"name": "node-red-user-management-example",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "register user",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"if (pm.response.code === 200) {",
+							"  let Body = pm.response.text()",
+							"  if (Body.indexOf('?token=') >= 0) {",
+							"    pm.collectionVariables.set(",
+							"      'Confirmation-Token', Body.replace(/^[\\s\\S]*token=/,'').replace(/\\s[\\s\\S]*$/,'')",
+							"    )",
+							"  }",
+							"}",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "{{BaseURL}}/users/node-green@mail.de/register",
+					"host": [
+						"{{BaseURL}}"
+					],
+					"path": [
+						"users",
+						"node-green@mail.de",
+						"register"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "resend confirmation message",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"if (pm.response.code === 200) {",
+							"  let Body = pm.response.text()",
+							"  if (Body.indexOf('?token=') >= 0) {",
+							"    pm.collectionVariables.set(",
+							"      'Confirmation-Token', Body.replace(/^[\\s\\S]*token=/,'').replace(/\\s[\\s\\S]*$/,'')",
+							"    )",
+							"  }",
+							"}",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "{{BaseURL}}/users/node-green@mail.de/send-confirmation-message",
+					"host": [
+						"{{BaseURL}}"
+					],
+					"path": [
+						"users",
+						"node-green@mail.de",
+						"send-confirmation-message"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "confirm user",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "Token",
+							"value": "{{Confirmation-Token}}",
+							"type": "text"
+						},
+						{
+							"key": "newPassword",
+							"value": "v3ryS3cr3t!",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{BaseURL}}/users/node-green@mail.de/confirm",
+					"host": [
+						"{{BaseURL}}"
+					],
+					"path": [
+						"users",
+						"node-green@mail.de",
+						"confirm"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "start password reset",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"if (pm.response.code === 200) {",
+							"  let Body = pm.response.text()",
+							"  if (Body.indexOf('?token=') >= 0) {",
+							"    pm.collectionVariables.set(",
+							"      'Password-Token', Body.replace(/^[\\s\\S]*token=/,'').replace(/\\s[\\s\\S]*$/,'')",
+							"    )",
+							"  }",
+							"}",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "{{BaseURL}}/users/node-green@mail.de/start-password-reset",
+					"host": [
+						"{{BaseURL}}"
+					],
+					"path": [
+						"users",
+						"node-green@mail.de",
+						"start-password-reset"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "reset password",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "Token",
+							"value": "{{Password-Token}}",
+							"type": "text"
+						},
+						{
+							"key": "newPassword",
+							"value": "v3ryS3cr3t!",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{BaseURL}}/users/node-green@mail.de/reset-password",
+					"host": [
+						"{{BaseURL}}"
+					],
+					"path": [
+						"users",
+						"node-green@mail.de",
+						"reset-password"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "update legal agreements",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"if (pm.response.code === 200) {",
+							"  let AuthorizationHeader = pm.response.headers.get('authorization')",
+							"  pm.collectionVariables.set('Header-Token', AuthorizationHeader)",
+							"}",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "{{Header-Token}}",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "Token",
+							"value": "{{Password-Token}}",
+							"type": "text"
+						},
+						{
+							"key": "newPassword",
+							"value": "v3ryS3cr3t!",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{BaseURL}}/users/node-green@mail.de/update-legal-agreements",
+					"host": [
+						"{{BaseURL}}"
+					],
+					"path": [
+						"users",
+						"node-green@mail.de",
+						"update-legal-agreements"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "authenticate new user",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"if (pm.response.code === 200) {",
+							"  let AuthorizationHeader = pm.response.headers.get('authorization')",
+							"  pm.collectionVariables.set('Header-Token', AuthorizationHeader)",
+							"}",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "Password",
+							"value": "v3ryS3cr3t!",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{BaseURL}}/users/node-green@mail.de/authenticate",
+					"host": [
+						"{{BaseURL}}"
+					],
+					"path": [
+						"users",
+						"node-green@mail.de",
+						"authenticate"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "authenticate node-red@mail.de",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"if (pm.response.code === 200) {",
+							"  let AuthorizationHeader = pm.response.headers.get('authorization')",
+							"  pm.collectionVariables.set('Header-Token', AuthorizationHeader)",
+							"}",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "Password",
+							"value": "t0pS3cr3t!",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{BaseURL}}/users/node-red@mail.de/authenticate",
+					"host": [
+						"{{BaseURL}}"
+					],
+					"path": [
+						"users",
+						"node-red@mail.de",
+						"authenticate"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "change userid",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"if (pm.response.code === 200) {",
+							"  let AuthorizationHeader = pm.response.headers.get('authorization')",
+							"  pm.collectionVariables.set('Header-Token', AuthorizationHeader)",
+							"}",
+							"",
+							"if (pm.response.code === 200) {",
+							"  let Body = pm.response.text()",
+							"  if (Body.indexOf('?token=') >= 0) {",
+							"    pm.collectionVariables.set(",
+							"      'Confirmation-Token', Body.replace(/^[\\s\\S]*token=/,'').replace(/\\s[\\s\\S]*$/,'')",
+							"    )",
+							"  }",
+							"}",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "{{Header-Token}}",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "newUserId",
+							"value": "node-blue@mail.de",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{BaseURL}}/users/node-green@mail.de/change-userid",
+					"host": [
+						"{{BaseURL}}"
+					],
+					"path": [
+						"users",
+						"node-green@mail.de",
+						"change-userid"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "confirm changed userid",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "Token",
+							"value": "{{Confirmation-Token}}",
+							"type": "text"
+						},
+						{
+							"key": "newPassword",
+							"value": "v3ryS3cr3t!",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{BaseURL}}/users/node-blue@mail.de/confirm",
+					"host": [
+						"{{BaseURL}}"
+					],
+					"path": [
+						"users",
+						"node-blue@mail.de",
+						"confirm"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "change password",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"if (pm.response.code === 200) {",
+							"  let AuthorizationHeader = pm.response.headers.get('authorization')",
+							"  pm.collectionVariables.set('Header-Token', AuthorizationHeader)",
+							"}",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "{{Header-Token}}",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "Roles",
+							"value": "node-red",
+							"type": "text"
+						},
+						{
+							"key": "Roles",
+							"value": "user-admin",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{BaseURL}}/users/node-green@mail.de/change-roles",
+					"host": [
+						"{{BaseURL}}"
+					],
+					"path": [
+						"users",
+						"node-green@mail.de",
+						"change-roles"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "change roles",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"if (pm.response.code === 200) {",
+							"  let AuthorizationHeader = pm.response.headers.get('authorization')",
+							"  pm.collectionVariables.set('Header-Token', AuthorizationHeader)",
+							"}",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "{{Header-Token}}",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "Roles",
+							"value": "node-red",
+							"type": "text"
+						},
+						{
+							"key": "Roles",
+							"value": "user-admin",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{BaseURL}}/users/node-green@mail.de/change-roles",
+					"host": [
+						"{{BaseURL}}"
+					],
+					"path": [
+						"users",
+						"node-green@mail.de",
+						"change-roles"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get user info",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"if (pm.response.code === 200) {",
+							"  let AuthorizationHeader = pm.response.headers.get('authorization')",
+							"  pm.collectionVariables.set('Header-Token', AuthorizationHeader)",
+							"}",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "{{Header-Token}}",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{BaseURL}}/users/node-green@mail.de",
+					"host": [
+						"{{BaseURL}}"
+					],
+					"path": [
+						"users",
+						"node-green@mail.de"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "set user info",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"if (pm.response.code === 200) {",
+							"  let AuthorizationHeader = pm.response.headers.get('authorization')",
+							"  pm.collectionVariables.set('Header-Token', AuthorizationHeader)",
+							"}",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "{{Header-Token}}",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "Name",
+							"value": "Node-GREEN",
+							"type": "text"
+						},
+						{
+							"key": "Roles",
+							"value": "node-red",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{BaseURL}}/users/node-green@mail.de",
+					"host": [
+						"{{BaseURL}}"
+					],
+					"path": [
+						"users",
+						"node-green@mail.de"
+					],
+					"query": [
+						{
+							"key": "Name",
+							"value": "Node-RED",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "delete user",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"if (pm.response.code === 200) {",
+							"  let AuthorizationHeader = pm.response.headers.get('authorization')",
+							"  pm.collectionVariables.set('Header-Token', AuthorizationHeader)",
+							"}",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "{{Header-Token}}",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "Name",
+							"value": "Node-RED",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{BaseURL}}/users/node-blue@mail.de",
+					"host": [
+						"{{BaseURL}}"
+					],
+					"path": [
+						"users",
+						"node-blue@mail.de"
+					],
+					"query": [
+						{
+							"key": "Name",
+							"value": "Node-RED",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "registered-users",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"if (pm.response.code === 200) {",
+							"  let AuthorizationHeader = pm.response.headers.get('authorization')",
+							"  pm.collectionVariables.set('Header-Token', AuthorizationHeader)",
+							"}",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "{{Header-Token}}",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{BaseURL}}/registered-users",
+					"host": [
+						"{{BaseURL}}"
+					],
+					"path": [
+						"registered-users"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "registered-users",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"if (pm.response.code === 200) {",
+							"  let AuthorizationHeader = pm.response.headers.get('authorization')",
+							"  pm.collectionVariables.set('Header-Token', AuthorizationHeader)",
+							"}",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "{{Header-Token}}",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"node-red@mail.de\": {\n    \"Roles\": [\n      \"node-red\",\n      \"user-admin\"\n    ],\n    \"Salt\": \"4486e8d35b8275020b1301226cc77963\",\n    \"Hash\": \"ab2b740ea9148aa4f320af3f3ba60ee2e33bb8039c57eea2b29579ff3f3b16bec2401f19e3c6ed8ad36de432b80b6f973a12c41af5d50738e4bb902d0117df53\"\n  }\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{BaseURL}}/registered-users",
+					"host": [
+						"{{BaseURL}}"
+					],
+					"path": [
+						"registered-users"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "permitted-users",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"if (pm.response.code === 200) {",
+							"  let AuthorizationHeader = pm.response.headers.get('authorization')",
+							"  pm.collectionVariables.set('Header-Token', AuthorizationHeader)",
+							"}",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "{{Header-Token}}",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{BaseURL}}/permitted-users",
+					"host": [
+						"{{BaseURL}}"
+					],
+					"path": [
+						"permitted-users"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "permitted-users",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"if (pm.response.code === 200) {",
+							"  let AuthorizationHeader = pm.response.headers.get('authorization')",
+							"  pm.collectionVariables.set('Header-Token', AuthorizationHeader)",
+							"}",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "{{Header-Token}}",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "node-red@mail.de    node-red user-admin\nnode-green@mail.de\nnode-blue@mail.de\n"
+				},
+				"url": {
+					"raw": "{{BaseURL}}/permitted-users",
+					"host": [
+						"{{BaseURL}}"
+					],
+					"path": [
+						"permitted-users"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "permitted-roles",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"if (pm.response.code === 200) {",
+							"  let AuthorizationHeader = pm.response.headers.get('authorization')",
+							"  pm.collectionVariables.set('Header-Token', AuthorizationHeader)",
+							"}",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "{{Header-Token}}",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{BaseURL}}/permitted-roles",
+					"host": [
+						"{{BaseURL}}"
+					],
+					"path": [
+						"permitted-roles"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "permitted-roles",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"if (pm.response.code === 200) {",
+							"  let AuthorizationHeader = pm.response.headers.get('authorization')",
+							"  pm.collectionVariables.set('Header-Token', AuthorizationHeader)",
+							"}",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "{{Header-Token}}",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "node-red\nuser-admin\n"
+				},
+				"url": {
+					"raw": "{{BaseURL}}/permitted-roles",
+					"host": [
+						"{{BaseURL}}"
+					],
+					"path": [
+						"permitted-roles"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "BaseURL",
+			"value": "http://127.0.0.1:1880"
+		},
+		{
+			"key": "UserName",
+			"value": ""
+		},
+		{
+			"key": "Password",
+			"value": ""
+		},
+		{
+			"key": "Confirmation-Token",
+			"value": ""
+		},
+		{
+			"key": "Password-Token",
+			"value": ""
+		},
+		{
+			"key": "Header-Token",
+			"value": ""
+		}
+	]
+}
