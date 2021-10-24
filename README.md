@@ -19,7 +19,7 @@ Additionally, the example expects the global flow context to contain an object c
 
 * the object's property names are the **email addresses of registered users**<br>(this specification differs from the original one!)
 * the object's property values are JavaScript objects with the following properties, at least (additional properties may be added at will):
-  * **Roles**<br>is either missing or contains a list of strings with the user's roles. There is no specific format for role names except that a role name must not be longer than 64 characters and must not contain any white space
+  * **Roles**<br>is either missing or contains a list of strings with the user's roles. There is no specific format for role names except that a role name must not be longer than 64 characters and must not contain any white space. This example already defines the role `user-admin` to identify "User Administrators", i.e., users who are allowed to manage the settings of other users
   * **Salt**<br>is a string containing a random "salt" value which is used during PBKDF2 password hash calculation
   * **Hash**<br>is a string containing the actual PBKDF2 hash of the user's password
   * **UUID**<br>is a string containing a [version 4 UUID](https://en.wikipedia.org/wiki/Universally_unique_identifier#Version_4_(random)) which uniquely identifies a given user even after email address changes (this property has been added to the original specification). If you want to generate UUIDs for already existing users, this [online generator](https://www.uuidgenerator.net/version4) might be useful
