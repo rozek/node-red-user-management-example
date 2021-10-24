@@ -32,7 +32,7 @@ When used outside "node-red-within-express", the following flows allow such a re
 
 Just import [these flows](outside-node-red-within-express.json), place them on your Node-RED workspace but - if need be - disable the node labelled "at Startup" as the startup sequence is now a different one and will be handled by a different flow. By default, the created user registry contains a single user `node-red@mail.de` with the password `t0pS3cr3t!` and a single role `node-red` (this is exactly the same user who is also included in "node-red-within-express" by default)
 
-## Typical User Lifecycles ##
+## Typical User Management Lifecycles ##
 
 A typical user lifecycle looks as follows:
 
