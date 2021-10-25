@@ -25,6 +25,10 @@ Additionally, the example expects the global flow context to contain an object c
   * **UUID**<br>is a string containing a [version 4 UUID](https://en.wikipedia.org/wiki/Universally_unique_identifier#Version_4_(random)) which uniquely identifies a given user even after email address changes (this property has been added to the original specification). If you want to generate UUIDs for already existing users, this [online generator](https://www.uuidgenerator.net/version4) might be useful
   * **agreedToDPS**<br>is a boolean indicating that the user has read and agreed to this service's "Data Privacy Statement" and must be set to `true` for an account to get confirmed (this property has been added to the original specification)
   * **agreedToTOS**<br>is a boolean indicating that the user has read and agreed to this service's "Terms of Service" and must be set to `true` for an account to get confirmed (this property has been added to the original specification)
+  * **ConfirmationDeadline**<br>if present, `ConfirmationDeadline` indicates a pending user id conformation and contains the (UTC) time until when that process has to be completed (or the previously reserved new user id will be released)
+  * **ConfirmationToken**<br>contains the token required to complete a pending user id confirmation
+  * **PasswordDeadline**<br>if present, `PasswordDeadline` indicates a pending password reset and contains the (UTC) time until when that process has to be completed
+  * **PasswordToken**<br>contains the token required to complete a pending password reset
 
 When used outside "node-red-within-express", the following flows allow such a registry to be loaded from an external JSON file called `registeredUsers.json` (or to be created if no such file exists or an existing file can not be loaded) and written back after changes:
 
