@@ -26,9 +26,9 @@ Additionally, the example expects the global flow context to contain an object c
   * **agreedToDPS**<br>is a boolean indicating that the user has read and agreed to this service's "Data Privacy Statement" and must be set to `true` for an account to get confirmed (this property has been added to the original specification)
   * **agreedToTOS**<br>is a boolean indicating that the user has read and agreed to this service's "Terms of Service" and must be set to `true` for an account to get confirmed (this property has been added to the original specification)
   * **ConfirmationDeadline**<br>if present, `ConfirmationDeadline` indicates a pending user id conformation and contains the (UTC) time until when that process has to be completed (or the previously reserved new user id will be released)
-  * **ConfirmationToken**<br>contains the token required to complete a pending user id confirmation
+  * **ConfirmationToken**<br>contains the token required to complete a pending user id confirmation. Actually, this token should not be saved at all as it could be recomputed from known key data - but then, any server reboot or flow redeployment would break pending user id confirmations (because of a new token key). In order to avoid inconveniences for users, tokens are therefore explicitly saved
   * **PasswordDeadline**<br>if present, `PasswordDeadline` indicates a pending password reset and contains the (UTC) time until when that process has to be completed
-  * **PasswordToken**<br>contains the token required to complete a pending password reset
+  * **PasswordToken**<br>contains the token required to complete a pending password reset. Actually, this token should not be saved at all as it could be recomputed from known key data - but then, any server reboot or flow redeployment would break pending password resets (because of a new token key). In order to avoid inconveniences for users, tokens are therefore explicitly saved
 
 When used outside "node-red-within-express", the following flows allow such a registry to be loaded from an external JSON file called `registeredUsers.json` (or to be created if no such file exists or an existing file can not be loaded) and written back after changes:
 
