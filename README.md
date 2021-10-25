@@ -209,6 +209,8 @@ This example may be installed as follows:
 
 As usual, this repository contains a [collection of requests](PostmanCollection.json) which is to be imported into a [Postman](https://www.postman.com/) instance and simplifies testing the feedback mechanism.
 
+> Nota bene: you will have to change the user ids mentioned in the Postman Collection in order to access confirmation and password reset emails
+
 ## License ##
 
 [MIT License](LICENSE.md)
