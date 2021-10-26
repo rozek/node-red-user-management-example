@@ -8,6 +8,8 @@ This repository contains an example for user management based on Node-RED flows.
 
 > Nota bene: while this example already considers a few legal regulations, no guarantee can be given that these measures are correct and/or complete. **It is entirely your responsibility to offer a service which complies with the legal requirements!**
 
+> Just another small note: if you like this work and plan to use it, consider "starring" this repository (you will find the "Star" button on the top right of this page), so that I know which of my repositories to take most care of.
+
 ## Prerequisites ##
 
 The example requires the following Node-RED extensions
