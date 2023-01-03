@@ -1,0 +1,6216 @@
+[
+    {
+        "id": "ef4a1a03bf1a794e",
+        "type": "comment",
+        "z": "e3b17f2b13778f25",
+        "name": "User Management",
+        "info": "",
+        "x": 110,
+        "y": 40,
+        "wires": []
+    },
+    {
+        "id": "5e3d240492224fbd",
+        "type": "http in",
+        "z": "e3b17f2b13778f25",
+        "name": "set user info",
+        "url": "users/:UserId",
+        "method": "post",
+        "upload": false,
+        "swaggerDoc": "",
+        "x": 750,
+        "y": 980,
+        "wires": [
+            [
+                "807f1f02c1e35357"
+            ]
+        ]
+    },
+    {
+        "id": "e7bfcf98ea5654cc",
+        "type": "http in",
+        "z": "e3b17f2b13778f25",
+        "name": "register user",
+        "url": "users/:newUserId/register",
+        "method": "post",
+        "upload": false,
+        "swaggerDoc": "",
+        "x": 90,
+        "y": 100,
+        "wires": [
+            [
+                "f73acff8a40bca64"
+            ]
+        ]
+    },
+    {
+        "id": "18b51afde7f0238c",
+        "type": "http in",
+        "z": "e3b17f2b13778f25",
+        "name": "send confirmation message",
+        "url": "users/:newUserId/send-confirmation-message",
+        "method": "post",
+        "upload": false,
+        "swaggerDoc": "",
+        "x": 140,
+        "y": 340,
+        "wires": [
+            [
+                "406c09d5d6899890"
+            ]
+        ]
+    },
+    {
+        "id": "b6495fb9bf6bfa07",
+        "type": "http in",
+        "z": "e3b17f2b13778f25",
+        "name": "confirm user",
+        "url": "users/:newUserId/confirm",
+        "method": "post",
+        "upload": false,
+        "swaggerDoc": "",
+        "x": 90,
+        "y": 580,
+        "wires": [
+            [
+                "952c96b97797fd36"
+            ]
+        ]
+    },
+    {
+        "id": "6604761b5ec12fb0",
+        "type": "http in",
+        "z": "e3b17f2b13778f25",
+        "name": "start password reset",
+        "url": "users/:UserId/start-password-reset",
+        "method": "post",
+        "upload": false,
+        "swaggerDoc": "",
+        "x": 770,
+        "y": 100,
+        "wires": [
+            [
+                "ae8bd8b865b1c194"
+            ]
+        ]
+    },
+    {
+        "id": "1072cbd96571d9f4",
+        "type": "http in",
+        "z": "e3b17f2b13778f25",
+        "name": "reset password",
+        "url": "users/:UserId/reset-password",
+        "method": "post",
+        "upload": false,
+        "swaggerDoc": "",
+        "x": 760,
+        "y": 340,
+        "wires": [
+            [
+                "33aab5b3cf4bbcc2"
+            ]
+        ]
+    },
+    {
+        "id": "dcf7b78174627d74",
+        "type": "http in",
+        "z": "e3b17f2b13778f25",
+        "name": "authenticate user",
+        "url": "users/:UserId/authenticate",
+        "method": "post",
+        "upload": false,
+        "swaggerDoc": "",
+        "x": 100,
+        "y": 960,
+        "wires": [
+            [
+                "1b6b39d6a00d97d2"
+            ]
+        ]
+    },
+    {
+        "id": "f620c0fb6d20c195",
+        "type": "http in",
+        "z": "e3b17f2b13778f25",
+        "name": "get user info",
+        "url": "/users/:UserId",
+        "method": "get",
+        "upload": false,
+        "swaggerDoc": "",
+        "x": 750,
+        "y": 860,
+        "wires": [
+            [
+                "cfc8fcd0f3588e1a"
+            ]
+        ]
+    },
+    {
+        "id": "d5b882461545d5a2",
+        "type": "http in",
+        "z": "e3b17f2b13778f25",
+        "name": "change user id",
+        "url": "users/:UserId/change-userid",
+        "method": "post",
+        "upload": false,
+        "swaggerDoc": "",
+        "x": 1420,
+        "y": 100,
+        "wires": [
+            [
+                "dcf599a790f666da"
+            ]
+        ]
+    },
+    {
+        "id": "a623fb1853a237d4",
+        "type": "http in",
+        "z": "e3b17f2b13778f25",
+        "name": "change password",
+        "url": "users/:UserId/change-password",
+        "method": "post",
+        "upload": false,
+        "swaggerDoc": "",
+        "x": 1430,
+        "y": 460,
+        "wires": [
+            [
+                "01d51278f7bc10e5"
+            ]
+        ]
+    },
+    {
+        "id": "e411619bafb6f32b",
+        "type": "http in",
+        "z": "e3b17f2b13778f25",
+        "name": "delete user",
+        "url": "users/:UserId",
+        "method": "delete",
+        "upload": false,
+        "swaggerDoc": "",
+        "x": 1400,
+        "y": 900,
+        "wires": [
+            [
+                "4d6a73eb55dd4d59"
+            ]
+        ]
+    },
+    {
+        "id": "30961cbee6699d68",
+        "type": "http in",
+        "z": "e3b17f2b13778f25",
+        "name": "update legal agreements",
+        "url": "users/:UserId/update-legal-agreements",
+        "method": "post",
+        "upload": false,
+        "swaggerDoc": "",
+        "x": 790,
+        "y": 600,
+        "wires": [
+            [
+                "c2318a89dbd24a86"
+            ]
+        ]
+    },
+    {
+        "id": "ec1192450c728d12",
+        "type": "http in",
+        "z": "e3b17f2b13778f25",
+        "name": "change roles",
+        "url": "users/:UserId/change-roles",
+        "method": "post",
+        "upload": false,
+        "swaggerDoc": "",
+        "x": 1410,
+        "y": 700,
+        "wires": [
+            [
+                "301ef76ab930e8e3"
+            ]
+        ]
+    },
+    {
+        "id": "2648983a7e09dcb5",
+        "type": "reusable",
+        "z": "e3b17f2b13778f25",
+        "name": "",
+        "target": "same user or admin",
+        "outputs": 2,
+        "x": 1480,
+        "y": 960,
+        "wires": [
+            [
+                "bde3e7b751461c16"
+            ],
+            [
+                "eb233bed7b7f62eb"
+            ]
+        ]
+    },
+    {
+        "id": "bde3e7b751461c16",
+        "type": "reusable",
+        "z": "e3b17f2b13778f25",
+        "name": "",
+        "target": "delete user",
+        "outputs": 2,
+        "x": 1450,
+        "y": 1020,
+        "wires": [
+            [
+                "02be56855d02e7e8"
+            ],
+            [
+                "eb233bed7b7f62eb"
+            ]
+        ]
+    },
+    {
+        "id": "eb233bed7b7f62eb",
+        "type": "http response",
+        "z": "e3b17f2b13778f25",
+        "name": "",
+        "statusCode": "",
+        "headers": {},
+        "x": 1850,
+        "y": 900,
+        "wires": []
+    },
+    {
+        "id": "02be56855d02e7e8",
+        "type": "reusable",
+        "z": "e3b17f2b13778f25",
+        "name": "",
+        "target": "write userregistry",
+        "outputs": 1,
+        "x": 1650,
+        "y": 1020,
+        "wires": [
+            [
+                "6928be2cc7d793c7"
+            ]
+        ]
+    },
+    {
+        "id": "4d6a73eb55dd4d59",
+        "type": "reusable",
+        "z": "e3b17f2b13778f25",
+        "name": "",
+        "target": "authenticate",
+        "outputs": 2,
+        "x": 1570,
+        "y": 900,
+        "wires": [
+            [
+                "2648983a7e09dcb5"
+            ],
+            [
+                "eb233bed7b7f62eb"
+            ]
+        ]
+    },
+    {
+        "id": "807f1f02c1e35357",
+        "type": "reusable",
+        "z": "e3b17f2b13778f25",
+        "name": "",
+        "target": "authenticate",
+        "outputs": 2,
+        "x": 930,
+        "y": 980,
+        "wires": [
+            [
+                "d4438401f158e285"
+            ],
+            [
+                "ee44524acffde076"
+            ]
+        ]
+    },
+    {
+        "id": "ee44524acffde076",
+        "type": "http response",
+        "z": "e3b17f2b13778f25",
+        "name": "",
+        "statusCode": "",
+        "headers": {},
+        "x": 1190,
+        "y": 980,
+        "wires": []
+    },
+    {
+        "id": "d4438401f158e285",
+        "type": "reusable",
+        "z": "e3b17f2b13778f25",
+        "name": "",
+        "target": "same user or admin",
+        "outputs": 2,
+        "x": 820,
+        "y": 1040,
+        "wires": [
+            [
+                "5637499ac7af6b72"
+            ],
+            [
+                "ee44524acffde076"
+            ]
+        ]
+    },
+    {
+        "id": "5637499ac7af6b72",
+        "type": "reusable",
+        "z": "e3b17f2b13778f25",
+        "name": "",
+        "target": "update user settings",
+        "outputs": 2,
+        "x": 820,
+        "y": 1100,
+        "wires": [
+            [
+                "6313c362fa475aac"
+            ],
+            [
+                "ee44524acffde076"
+            ]
+        ]
+    },
+    {
+        "id": "6313c362fa475aac",
+        "type": "reusable",
+        "z": "e3b17f2b13778f25",
+        "name": "",
+        "target": "write userregistry",
+        "outputs": 1,
+        "x": 1050,
+        "y": 1100,
+        "wires": [
+            [
+                "5c6443c777095d76"
+            ]
+        ]
+    },
+    {
+        "id": "cfc8fcd0f3588e1a",
+        "type": "reusable",
+        "z": "e3b17f2b13778f25",
+        "name": "",
+        "target": "authenticate",
+        "outputs": 2,
+        "x": 930,
+        "y": 860,
+        "wires": [
+            [
+                "b53404a40bdd0523"
+            ],
+            [
+                "619d036228a0d396"
+            ]
+        ]
+    },
+    {
+        "id": "b53404a40bdd0523",
+        "type": "reusable",
+        "z": "e3b17f2b13778f25",
+        "name": "",
+        "target": "same user or admin",
+        "outputs": 2,
+        "x": 820,
+        "y": 920,
+        "wires": [
+            [
+                "52e887928cbdfef6"
+            ],
+            [
+                "619d036228a0d396"
+            ]
+        ]
+    },
+    {
+        "id": "619d036228a0d396",
+        "type": "http response",
+        "z": "e3b17f2b13778f25",
+        "name": "",
+        "statusCode": "",
+        "headers": {},
+        "x": 1190,
+        "y": 860,
+        "wires": []
+    },
+    {
+        "id": "52e887928cbdfef6",
+        "type": "reusable",
+        "z": "e3b17f2b13778f25",
+        "name": "",
+        "target": "retrieve user settings",
+        "outputs": 2,
+        "x": 1060,
+        "y": 920,
+        "wires": [
+            [
+                "619d036228a0d396"
+            ],
+            [
+                "619d036228a0d396"
+            ]
+        ]
+    },
+    {
+        "id": "301ef76ab930e8e3",
+        "type": "reusable",
+        "z": "e3b17f2b13778f25",
+        "name": "",
+        "target": "authenticate",
+        "outputs": 2,
+        "x": 1590,
+        "y": 700,
+        "wires": [
+            [
+                "5d9a2c21960ff9bb"
+            ],
+            [
+                "fb8df3c24dbf5ecc"
+            ]
+        ]
+    },
+    {
+        "id": "fb8df3c24dbf5ecc",
+        "type": "http response",
+        "z": "e3b17f2b13778f25",
+        "name": "",
+        "statusCode": "",
+        "headers": {},
+        "x": 1850,
+        "y": 700,
+        "wires": []
+    },
+    {
+        "id": "5d9a2c21960ff9bb",
+        "type": "reusable",
+        "z": "e3b17f2b13778f25",
+        "name": "",
+        "target": "admin only",
+        "outputs": 2,
+        "x": 1450,
+        "y": 760,
+        "wires": [
+            [
+                "49e11e7eb875abeb"
+            ],
+            [
+                "fb8df3c24dbf5ecc"
+            ]
+        ]
+    },
+    {
+        "id": "49e11e7eb875abeb",
+        "type": "reusable",
+        "z": "e3b17f2b13778f25",
+        "name": "",
+        "target": "validate roles and change",
+        "outputs": 2,
+        "x": 1500,
+        "y": 820,
+        "wires": [
+            [
+                "7258f6f11c44b81f"
+            ],
+            [
+                "fb8df3c24dbf5ecc"
+            ]
+        ]
+    },
+    {
+        "id": "7258f6f11c44b81f",
+        "type": "reusable",
+        "z": "e3b17f2b13778f25",
+        "name": "",
+        "target": "write userregistry",
+        "outputs": 1,
+        "x": 1730,
+        "y": 820,
+        "wires": [
+            [
+                "b3a5dacdd21cb63d"
+            ]
+        ]
+    },
+    {
+        "id": "01d51278f7bc10e5",
+        "type": "reusable",
+        "z": "e3b17f2b13778f25",
+        "name": "",
+        "target": "authenticate",
+        "outputs": 2,
+        "x": 1630,
+        "y": 460,
+        "wires": [
+            [
+                "806b5f87f078422c"
+            ],
+            [
+                "c10d8da1c5051ae3"
+            ]
+        ]
+    },
+    {
+        "id": "c10d8da1c5051ae3",
+        "type": "http response",
+        "z": "e3b17f2b13778f25",
+        "name": "",
+        "statusCode": "",
+        "headers": {},
+        "x": 1850,
+        "y": 460,
+        "wires": []
+    },
+    {
+        "id": "806b5f87f078422c",
+        "type": "reusable",
+        "z": "e3b17f2b13778f25",
+        "name": "",
+        "target": "same user only",
+        "outputs": 2,
+        "x": 1460,
+        "y": 520,
+        "wires": [
+            [
+                "58c73f2bd83750da"
+            ],
+            [
+                "c10d8da1c5051ae3"
+            ]
+        ]
+    },
+    {
+        "id": "58c73f2bd83750da",
+        "type": "reusable",
+        "z": "e3b17f2b13778f25",
+        "name": "",
+        "target": "validate old password",
+        "outputs": 2,
+        "x": 1480,
+        "y": 580,
+        "wires": [
+            [
+                "4551b5b4071f0609"
+            ],
+            [
+                "c10d8da1c5051ae3"
+            ]
+        ]
+    },
+    {
+        "id": "4551b5b4071f0609",
+        "type": "reusable",
+        "z": "e3b17f2b13778f25",
+        "name": "",
+        "target": "validate new password",
+        "outputs": 2,
+        "x": 1730,
+        "y": 580,
+        "wires": [
+            [
+                "04b9ca4c20164efe"
+            ],
+            [
+                "c10d8da1c5051ae3"
+            ]
+        ]
+    },
+    {
+        "id": "04b9ca4c20164efe",
+        "type": "reusable",
+        "z": "e3b17f2b13778f25",
+        "name": "",
+        "target": "set new password",
+        "outputs": 2,
+        "x": 1470,
+        "y": 640,
+        "wires": [
+            [
+                "39cb9fe686f4cbee"
+            ],
+            [
+                "c10d8da1c5051ae3"
+            ]
+        ]
+    },
+    {
+        "id": "39cb9fe686f4cbee",
+        "type": "reusable",
+        "z": "e3b17f2b13778f25",
+        "name": "",
+        "target": "write userregistry",
+        "outputs": 1,
+        "x": 1690,
+        "y": 640,
+        "wires": [
+            [
+                "f98d2173cee76549"
+            ]
+        ]
+    },
+    {
+        "id": "dcf599a790f666da",
+        "type": "reusable",
+        "z": "e3b17f2b13778f25",
+        "name": "",
+        "target": "authenticate",
+        "outputs": 2,
+        "x": 1610,
+        "y": 100,
+        "wires": [
+            [
+                "15a518056c9d1ee6"
+            ],
+            [
+                "04c04ac21707c157"
+            ]
+        ]
+    },
+    {
+        "id": "04c04ac21707c157",
+        "type": "http response",
+        "z": "e3b17f2b13778f25",
+        "name": "",
+        "statusCode": "",
+        "headers": {},
+        "x": 1850,
+        "y": 400,
+        "wires": []
+    },
+    {
+        "id": "15a518056c9d1ee6",
+        "type": "reusable",
+        "z": "e3b17f2b13778f25",
+        "name": "",
+        "target": "validate confirmed userid",
+        "outputs": 2,
+        "x": 1490,
+        "y": 160,
+        "wires": [
+            [
+                "cf9c4f89f9acc7ff"
+            ],
+            [
+                "04c04ac21707c157"
+            ]
+        ]
+    },
+    {
+        "id": "cf9c4f89f9acc7ff",
+        "type": "reusable",
+        "z": "e3b17f2b13778f25",
+        "name": "",
+        "target": "same user or admin",
+        "outputs": 2,
+        "x": 1740,
+        "y": 160,
+        "wires": [
+            [
+                "c52967e877ed5483"
+            ],
+            [
+                "04c04ac21707c157"
+            ]
+        ]
+    },
+    {
+        "id": "c52967e877ed5483",
+        "type": "reusable",
+        "z": "e3b17f2b13778f25",
+        "name": "",
+        "target": "validate new userid",
+        "outputs": 2,
+        "x": 1470,
+        "y": 220,
+        "wires": [
+            [
+                "f7403ee255274ab1"
+            ],
+            [
+                "04c04ac21707c157"
+            ]
+        ]
+    },
+    {
+        "id": "f7403ee255274ab1",
+        "type": "reusable",
+        "z": "e3b17f2b13778f25",
+        "name": "",
+        "target": "mark as userid change",
+        "outputs": 2,
+        "x": 1710,
+        "y": 220,
+        "wires": [
+            [
+                "25ae842120df80b1"
+            ],
+            [
+                "04c04ac21707c157"
+            ]
+        ]
+    },
+    {
+        "id": "25ae842120df80b1",
+        "type": "reusable",
+        "z": "e3b17f2b13778f25",
+        "name": "",
+        "target": "generate confirmation token",
+        "outputs": 2,
+        "x": 1500,
+        "y": 280,
+        "wires": [
+            [
+                "3ecef565abae2e94",
+                "35919867d6ec62c4"
+            ],
+            [
+                "04c04ac21707c157"
+            ]
+        ]
+    },
+    {
+        "id": "3ecef565abae2e94",
+        "type": "reusable",
+        "z": "e3b17f2b13778f25",
+        "name": "",
+        "target": "create confirmation message",
+        "outputs": 1,
+        "x": 1510,
+        "y": 340,
+        "wires": [
+            [
+                "6ee09e92f96203d0"
+            ]
+        ]
+    },
+    {
+        "id": "35919867d6ec62c4",
+        "type": "reusable",
+        "z": "e3b17f2b13778f25",
+        "name": "",
+        "target": "write userregistry",
+        "outputs": 1,
+        "x": 1750,
+        "y": 280,
+        "wires": [
+            [
+                "3cbac741740d5115"
+            ]
+        ]
+    },
+    {
+        "id": "6ee09e92f96203d0",
+        "type": "e-mail",
+        "z": "e3b17f2b13778f25",
+        "server": "smtp.mail.de",
+        "port": "465",
+        "secure": true,
+        "tls": true,
+        "name": "",
+        "dname": "",
+        "x": 1730,
+        "y": 340,
+        "wires": []
+    },
+    {
+        "id": "f97fef80e5166c2c",
+        "type": "http response",
+        "z": "e3b17f2b13778f25",
+        "name": "",
+        "statusCode": "",
+        "headers": {},
+        "x": 530,
+        "y": 1080,
+        "wires": []
+    },
+    {
+        "id": "1b6b39d6a00d97d2",
+        "type": "reusable",
+        "z": "e3b17f2b13778f25",
+        "name": "",
+        "target": "validate confirmed userid",
+        "outputs": 2,
+        "x": 330,
+        "y": 960,
+        "wires": [
+            [
+                "562c32fdcb016d59"
+            ],
+            [
+                "f97fef80e5166c2c"
+            ]
+        ]
+    },
+    {
+        "id": "562c32fdcb016d59",
+        "type": "reusable",
+        "z": "e3b17f2b13778f25",
+        "name": "",
+        "target": "login",
+        "outputs": 2,
+        "x": 110,
+        "y": 1020,
+        "wires": [
+            [
+                "80d54963edaec90c"
+            ],
+            [
+                "212d7397e1b04ac7"
+            ]
+        ]
+    },
+    {
+        "id": "c2318a89dbd24a86",
+        "type": "reusable",
+        "z": "e3b17f2b13778f25",
+        "name": "",
+        "target": "authenticate",
+        "outputs": 2,
+        "x": 1010,
+        "y": 600,
+        "wires": [
+            [
+                "3fe9beb1561da133"
+            ],
+            [
+                "5f74248e5546e0b8"
+            ]
+        ]
+    },
+    {
+        "id": "5f74248e5546e0b8",
+        "type": "http response",
+        "z": "e3b17f2b13778f25",
+        "name": "",
+        "statusCode": "",
+        "headers": {},
+        "x": 1190,
+        "y": 780,
+        "wires": []
+    },
+    {
+        "id": "3fe9beb1561da133",
+        "type": "reusable",
+        "z": "e3b17f2b13778f25",
+        "name": "",
+        "target": "same user only",
+        "outputs": 2,
+        "x": 800,
+        "y": 660,
+        "wires": [
+            [
+                "2cb4a6a89d844ce8"
+            ],
+            [
+                "5f74248e5546e0b8"
+            ]
+        ]
+    },
+    {
+        "id": "2cb4a6a89d844ce8",
+        "type": "reusable",
+        "z": "e3b17f2b13778f25",
+        "name": "",
+        "target": "validate legal agreements",
+        "outputs": 2,
+        "x": 1030,
+        "y": 660,
+        "wires": [
+            [
+                "d684bebd318b2645"
+            ],
+            [
+                "5f74248e5546e0b8"
+            ]
+        ]
+    },
+    {
+        "id": "8f5da8c2f42138be",
+        "type": "reusable",
+        "z": "e3b17f2b13778f25",
+        "name": "",
+        "target": "write userregistry",
+        "outputs": 1,
+        "x": 1070,
+        "y": 720,
+        "wires": [
+            [
+                "e562b5d735fd1715"
+            ]
+        ]
+    },
+    {
+        "id": "7d4a497017f7c0cb",
+        "type": "http response",
+        "z": "e3b17f2b13778f25",
+        "name": "",
+        "statusCode": "",
+        "headers": {},
+        "x": 1190,
+        "y": 340,
+        "wires": []
+    },
+    {
+        "id": "33aab5b3cf4bbcc2",
+        "type": "reusable",
+        "z": "e3b17f2b13778f25",
+        "name": "",
+        "target": "validate confirmed userid",
+        "outputs": 2,
+        "x": 990,
+        "y": 340,
+        "wires": [
+            [
+                "0bc3346782eab0e3"
+            ],
+            [
+                "7d4a497017f7c0cb"
+            ]
+        ]
+    },
+    {
+        "id": "e35e5c61b766b822",
+        "type": "reusable",
+        "z": "e3b17f2b13778f25",
+        "name": "",
+        "target": "validate token & reset password",
+        "outputs": 2,
+        "x": 850,
+        "y": 460,
+        "wires": [
+            [
+                "41259cf751ed08d6"
+            ],
+            [
+                "7d4a497017f7c0cb"
+            ]
+        ]
+    },
+    {
+        "id": "063397ca1cb62adf",
+        "type": "reusable",
+        "z": "e3b17f2b13778f25",
+        "name": "",
+        "target": "write userregistry",
+        "outputs": 1,
+        "x": 1030,
+        "y": 520,
+        "wires": [
+            [
+                "9cfd5221dcb5cc48"
+            ]
+        ]
+    },
+    {
+        "id": "41259cf751ed08d6",
+        "type": "reusable",
+        "z": "e3b17f2b13778f25",
+        "name": "",
+        "target": "set new password",
+        "outputs": 2,
+        "x": 810,
+        "y": 520,
+        "wires": [
+            [
+                "063397ca1cb62adf"
+            ],
+            [
+                "7d4a497017f7c0cb"
+            ]
+        ]
+    },
+    {
+        "id": "ae8bd8b865b1c194",
+        "type": "reusable",
+        "z": "e3b17f2b13778f25",
+        "name": "",
+        "target": "validate confirmed userid",
+        "outputs": 2,
+        "x": 830,
+        "y": 160,
+        "wires": [
+            [
+                "8193fd887fc279a6"
+            ],
+            [
+                "35069e4e9eed9c56"
+            ]
+        ]
+    },
+    {
+        "id": "35069e4e9eed9c56",
+        "type": "http response",
+        "z": "e3b17f2b13778f25",
+        "name": "",
+        "statusCode": "",
+        "headers": {},
+        "x": 1190,
+        "y": 100,
+        "wires": []
+    },
+    {
+        "id": "8193fd887fc279a6",
+        "type": "reusable",
+        "z": "e3b17f2b13778f25",
+        "name": "",
+        "target": "initiate password reset",
+        "outputs": 2,
+        "x": 1090,
+        "y": 160,
+        "wires": [
+            [
+                "b2342bc3685efca4"
+            ],
+            [
+                "35069e4e9eed9c56"
+            ]
+        ]
+    },
+    {
+        "id": "b2342bc3685efca4",
+        "type": "reusable",
+        "z": "e3b17f2b13778f25",
+        "name": "",
+        "target": "generate password token",
+        "outputs": 1,
+        "x": 830,
+        "y": 220,
+        "wires": [
+            [
+                "b0dbd262bd1c1036",
+                "e7be0bf5c57eba1b"
+            ]
+        ]
+    },
+    {
+        "id": "b0dbd262bd1c1036",
+        "type": "reusable",
+        "z": "e3b17f2b13778f25",
+        "name": "",
+        "target": "write userregistry",
+        "outputs": 1,
+        "x": 1070,
+        "y": 220,
+        "wires": [
+            [
+                "fdb0ae1ecfab2090"
+            ]
+        ]
+    },
+    {
+        "id": "e7be0bf5c57eba1b",
+        "type": "reusable",
+        "z": "e3b17f2b13778f25",
+        "name": "",
+        "target": "create password reset message",
+        "outputs": 1,
+        "x": 860,
+        "y": 280,
+        "wires": [
+            [
+                "bd22fc2db0fee1bb"
+            ]
+        ]
+    },
+    {
+        "id": "bd22fc2db0fee1bb",
+        "type": "e-mail",
+        "z": "e3b17f2b13778f25",
+        "server": "smtp.mail.de",
+        "port": "465",
+        "secure": true,
+        "tls": true,
+        "name": "",
+        "dname": "",
+        "x": 1090,
+        "y": 280,
+        "wires": []
+    },
+    {
+        "id": "b3850b99e256b383",
+        "type": "http response",
+        "z": "e3b17f2b13778f25",
+        "name": "",
+        "statusCode": "",
+        "headers": {},
+        "x": 530,
+        "y": 880,
+        "wires": []
+    },
+    {
+        "id": "952c96b97797fd36",
+        "type": "reusable",
+        "z": "e3b17f2b13778f25",
+        "name": "",
+        "target": "validate unconfirmed userid",
+        "outputs": 3,
+        "x": 320,
+        "y": 580,
+        "wires": [
+            [
+                "791c39e5e4408139"
+            ],
+            [
+                "b2bc37c41f870fb0"
+            ],
+            [
+                "b3850b99e256b383"
+            ]
+        ]
+    },
+    {
+        "id": "b2f7987b58cb630b",
+        "type": "reusable",
+        "z": "e3b17f2b13778f25",
+        "name": "",
+        "target": "validate legal agreements",
+        "outputs": 2,
+        "x": 430,
+        "y": 640,
+        "wires": [
+            [
+                "cf1277957dbd592e"
+            ],
+            [
+                "b3850b99e256b383"
+            ]
+        ]
+    },
+    {
+        "id": "cf1277957dbd592e",
+        "type": "reusable",
+        "z": "e3b17f2b13778f25",
+        "name": "",
+        "target": "validate token and confirm",
+        "outputs": 2,
+        "x": 180,
+        "y": 700,
+        "wires": [
+            [
+                "568c9d59d769cdf1"
+            ],
+            [
+                "b3850b99e256b383"
+            ]
+        ]
+    },
+    {
+        "id": "15a27514783b7c58",
+        "type": "reusable",
+        "z": "e3b17f2b13778f25",
+        "name": "",
+        "target": "write userregistry",
+        "outputs": 1,
+        "x": 410,
+        "y": 760,
+        "wires": [
+            [
+                "cb9a6bbaf544ab25"
+            ]
+        ]
+    },
+    {
+        "id": "791c39e5e4408139",
+        "type": "reusable",
+        "z": "e3b17f2b13778f25",
+        "name": "",
+        "target": "validate new password",
+        "outputs": 2,
+        "x": 170,
+        "y": 640,
+        "wires": [
+            [
+                "b2f7987b58cb630b"
+            ],
+            [
+                "b3850b99e256b383"
+            ]
+        ]
+    },
+    {
+        "id": "2fda0945dbf26ea9",
+        "type": "reusable",
+        "z": "e3b17f2b13778f25",
+        "name": "",
+        "target": "store legal agreements",
+        "outputs": 2,
+        "x": 170,
+        "y": 760,
+        "wires": [
+            [
+                "15a27514783b7c58"
+            ],
+            [
+                "b3850b99e256b383"
+            ]
+        ],
+        "outputLabels": [
+            "success",
+            "failure"
+        ]
+    },
+    {
+        "id": "d684bebd318b2645",
+        "type": "reusable",
+        "z": "e3b17f2b13778f25",
+        "name": "",
+        "target": "store legal agreements",
+        "outputs": 2,
+        "x": 830,
+        "y": 720,
+        "wires": [
+            [
+                "8f5da8c2f42138be"
+            ],
+            [
+                "5f74248e5546e0b8"
+            ]
+        ]
+    },
+    {
+        "id": "568c9d59d769cdf1",
+        "type": "reusable",
+        "z": "e3b17f2b13778f25",
+        "name": "",
+        "target": "set new password",
+        "outputs": 2,
+        "x": 430,
+        "y": 700,
+        "wires": [
+            [
+                "2fda0945dbf26ea9"
+            ],
+            [
+                "b3850b99e256b383"
+            ]
+        ]
+    },
+    {
+        "id": "b2bc37c41f870fb0",
+        "type": "reusable",
+        "z": "e3b17f2b13778f25",
+        "name": "",
+        "target": "validate token and confirm",
+        "outputs": 2,
+        "x": 180,
+        "y": 820,
+        "wires": [
+            [
+                "f2aa40723b29c719"
+            ],
+            [
+                "b3850b99e256b383"
+            ]
+        ]
+    },
+    {
+        "id": "f2aa40723b29c719",
+        "type": "reusable",
+        "z": "e3b17f2b13778f25",
+        "name": "",
+        "target": "write userregistry",
+        "outputs": 1,
+        "x": 430,
+        "y": 820,
+        "wires": [
+            [
+                "cb9a6bbaf544ab25"
+            ]
+        ]
+    },
+    {
+        "id": "406c09d5d6899890",
+        "type": "reusable",
+        "z": "e3b17f2b13778f25",
+        "name": "",
+        "target": "validate unconfirmed userid",
+        "outputs": 3,
+        "x": 180,
+        "y": 400,
+        "wires": [
+            [
+                "a1a013d0f631ca97"
+            ],
+            [
+                "a1a013d0f631ca97"
+            ],
+            [
+                "b2993d8b19df848c"
+            ]
+        ]
+    },
+    {
+        "id": "b2993d8b19df848c",
+        "type": "http response",
+        "z": "e3b17f2b13778f25",
+        "name": "",
+        "statusCode": "",
+        "headers": {},
+        "x": 530,
+        "y": 340,
+        "wires": []
+    },
+    {
+        "id": "a1a013d0f631ca97",
+        "type": "reusable",
+        "z": "e3b17f2b13778f25",
+        "name": "",
+        "target": "generate confirmation token",
+        "outputs": 1,
+        "x": 180,
+        "y": 460,
+        "wires": [
+            [
+                "dbdb8ed93e855438",
+                "65540a43947f1042"
+            ]
+        ]
+    },
+    {
+        "id": "dbdb8ed93e855438",
+        "type": "reusable",
+        "z": "e3b17f2b13778f25",
+        "name": "",
+        "target": "write userregistry",
+        "outputs": 1,
+        "x": 430,
+        "y": 460,
+        "wires": [
+            [
+                "cd81b18b56e985e3"
+            ]
+        ]
+    },
+    {
+        "id": "65540a43947f1042",
+        "type": "reusable",
+        "z": "e3b17f2b13778f25",
+        "name": "",
+        "target": "create confirmation message",
+        "outputs": 1,
+        "x": 190,
+        "y": 520,
+        "wires": [
+            [
+                "c8e7e8beaaf52545"
+            ]
+        ]
+    },
+    {
+        "id": "c8e7e8beaaf52545",
+        "type": "e-mail",
+        "z": "e3b17f2b13778f25",
+        "server": "smtp.mail.de",
+        "port": "465",
+        "secure": true,
+        "tls": true,
+        "name": "",
+        "dname": "",
+        "x": 410,
+        "y": 520,
+        "wires": []
+    },
+    {
+        "id": "f73acff8a40bca64",
+        "type": "reusable",
+        "z": "e3b17f2b13778f25",
+        "name": "",
+        "target": "validate new userid",
+        "outputs": 2,
+        "x": 150,
+        "y": 160,
+        "wires": [
+            [
+                "b9e2a6754cbedc5a"
+            ],
+            [
+                "f05d41042f6dca21"
+            ]
+        ]
+    },
+    {
+        "id": "f05d41042f6dca21",
+        "type": "http response",
+        "z": "e3b17f2b13778f25",
+        "name": "",
+        "statusCode": "",
+        "headers": {},
+        "x": 530,
+        "y": 100,
+        "wires": []
+    },
+    {
+        "id": "b9e2a6754cbedc5a",
+        "type": "reusable",
+        "z": "e3b17f2b13778f25",
+        "name": "",
+        "target": "register new user",
+        "outputs": 2,
+        "x": 370,
+        "y": 160,
+        "wires": [
+            [
+                "74e6ec86550a900a"
+            ],
+            [
+                "f05d41042f6dca21"
+            ]
+        ]
+    },
+    {
+        "id": "74e6ec86550a900a",
+        "type": "reusable",
+        "z": "e3b17f2b13778f25",
+        "name": "",
+        "target": "generate confirmation token",
+        "outputs": 1,
+        "x": 180,
+        "y": 220,
+        "wires": [
+            [
+                "c2bf663fa582c6a7",
+                "2a6a31321d0ecc0e"
+            ]
+        ]
+    },
+    {
+        "id": "c2bf663fa582c6a7",
+        "type": "reusable",
+        "z": "e3b17f2b13778f25",
+        "name": "",
+        "target": "write userregistry",
+        "outputs": 1,
+        "x": 430,
+        "y": 220,
+        "wires": [
+            [
+                "538903353565e033"
+            ]
+        ]
+    },
+    {
+        "id": "2a6a31321d0ecc0e",
+        "type": "reusable",
+        "z": "e3b17f2b13778f25",
+        "name": "",
+        "target": "create confirmation message",
+        "outputs": 1,
+        "x": 190,
+        "y": 280,
+        "wires": [
+            [
+                "30c4e26539e32854"
+            ]
+        ]
+    },
+    {
+        "id": "30c4e26539e32854",
+        "type": "e-mail",
+        "z": "e3b17f2b13778f25",
+        "server": "smtp.mail.de",
+        "port": "465",
+        "secure": true,
+        "tls": true,
+        "name": "",
+        "dname": "",
+        "x": 410,
+        "y": 280,
+        "wires": []
+    },
+    {
+        "id": "80d54963edaec90c",
+        "type": "reusable",
+        "z": "e3b17f2b13778f25",
+        "name": "",
+        "target": "verify legal agreements",
+        "outputs": 2,
+        "x": 310,
+        "y": 1020,
+        "wires": [
+            [
+                "212d7397e1b04ac7"
+            ],
+            [
+                "f97fef80e5166c2c"
+            ]
+        ]
+    },
+    {
+        "id": "212d7397e1b04ac7",
+        "type": "change",
+        "z": "e3b17f2b13778f25",
+        "name": "204 (no content)",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "",
+                "tot": "str"
+            },
+            {
+                "t": "set",
+                "p": "statusCode",
+                "pt": "msg",
+                "to": "204",
+                "tot": "num"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 180,
+        "y": 1080,
+        "wires": [
+            [
+                "f97fef80e5166c2c"
+            ]
+        ]
+    },
+    {
+        "id": "538903353565e033",
+        "type": "change",
+        "z": "e3b17f2b13778f25",
+        "name": "204 (no content)",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "",
+                "tot": "str"
+            },
+            {
+                "t": "set",
+                "p": "statusCode",
+                "pt": "msg",
+                "to": "204",
+                "tot": "num"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 360,
+        "y": 100,
+        "wires": [
+            [
+                "f05d41042f6dca21"
+            ]
+        ]
+    },
+    {
+        "id": "cd81b18b56e985e3",
+        "type": "change",
+        "z": "e3b17f2b13778f25",
+        "name": "204 (no content)",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "",
+                "tot": "str"
+            },
+            {
+                "t": "set",
+                "p": "statusCode",
+                "pt": "msg",
+                "to": "204",
+                "tot": "num"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 460,
+        "y": 400,
+        "wires": [
+            [
+                "b2993d8b19df848c"
+            ]
+        ]
+    },
+    {
+        "id": "fdb0ae1ecfab2090",
+        "type": "change",
+        "z": "e3b17f2b13778f25",
+        "name": "204 (no content)",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "",
+                "tot": "str"
+            },
+            {
+                "t": "set",
+                "p": "statusCode",
+                "pt": "msg",
+                "to": "204",
+                "tot": "num"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 1020,
+        "y": 100,
+        "wires": [
+            [
+                "35069e4e9eed9c56"
+            ]
+        ]
+    },
+    {
+        "id": "9cfd5221dcb5cc48",
+        "type": "change",
+        "z": "e3b17f2b13778f25",
+        "name": "204 (no content)",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "",
+                "tot": "str"
+            },
+            {
+                "t": "set",
+                "p": "statusCode",
+                "pt": "msg",
+                "to": "204",
+                "tot": "num"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 1120,
+        "y": 460,
+        "wires": [
+            [
+                "7d4a497017f7c0cb"
+            ]
+        ]
+    },
+    {
+        "id": "5c6443c777095d76",
+        "type": "change",
+        "z": "e3b17f2b13778f25",
+        "name": "204 (no content)",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "",
+                "tot": "str"
+            },
+            {
+                "t": "set",
+                "p": "statusCode",
+                "pt": "msg",
+                "to": "204",
+                "tot": "num"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 1120,
+        "y": 1040,
+        "wires": [
+            [
+                "ee44524acffde076"
+            ]
+        ]
+    },
+    {
+        "id": "cb9a6bbaf544ab25",
+        "type": "change",
+        "z": "e3b17f2b13778f25",
+        "name": "204 (no content)",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "",
+                "tot": "str"
+            },
+            {
+                "t": "set",
+                "p": "statusCode",
+                "pt": "msg",
+                "to": "204",
+                "tot": "num"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 180,
+        "y": 880,
+        "wires": [
+            [
+                "b3850b99e256b383"
+            ]
+        ]
+    },
+    {
+        "id": "e562b5d735fd1715",
+        "type": "change",
+        "z": "e3b17f2b13778f25",
+        "name": "204 (no content)",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "",
+                "tot": "str"
+            },
+            {
+                "t": "set",
+                "p": "statusCode",
+                "pt": "msg",
+                "to": "204",
+                "tot": "num"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 840,
+        "y": 780,
+        "wires": [
+            [
+                "5f74248e5546e0b8"
+            ]
+        ]
+    },
+    {
+        "id": "3cbac741740d5115",
+        "type": "change",
+        "z": "e3b17f2b13778f25",
+        "name": "204 (no content)",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "",
+                "tot": "str"
+            },
+            {
+                "t": "set",
+                "p": "statusCode",
+                "pt": "msg",
+                "to": "204",
+                "tot": "num"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 1500,
+        "y": 400,
+        "wires": [
+            [
+                "04c04ac21707c157"
+            ]
+        ]
+    },
+    {
+        "id": "6928be2cc7d793c7",
+        "type": "change",
+        "z": "e3b17f2b13778f25",
+        "name": "204 (no content)",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "",
+                "tot": "str"
+            },
+            {
+                "t": "set",
+                "p": "statusCode",
+                "pt": "msg",
+                "to": "204",
+                "tot": "num"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 1780,
+        "y": 960,
+        "wires": [
+            [
+                "eb233bed7b7f62eb"
+            ]
+        ]
+    },
+    {
+        "id": "b3a5dacdd21cb63d",
+        "type": "change",
+        "z": "e3b17f2b13778f25",
+        "name": "204 (no content)",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "",
+                "tot": "str"
+            },
+            {
+                "t": "set",
+                "p": "statusCode",
+                "pt": "msg",
+                "to": "204",
+                "tot": "num"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 1780,
+        "y": 760,
+        "wires": [
+            [
+                "fb8df3c24dbf5ecc"
+            ]
+        ]
+    },
+    {
+        "id": "f98d2173cee76549",
+        "type": "change",
+        "z": "e3b17f2b13778f25",
+        "name": "204 (no content)",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "",
+                "tot": "str"
+            },
+            {
+                "t": "set",
+                "p": "statusCode",
+                "pt": "msg",
+                "to": "204",
+                "tot": "num"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 1780,
+        "y": 520,
+        "wires": [
+            [
+                "c10d8da1c5051ae3"
+            ]
+        ]
+    },
+    {
+        "id": "0bc3346782eab0e3",
+        "type": "reusable",
+        "z": "e3b17f2b13778f25",
+        "name": "",
+        "target": "validate new password",
+        "outputs": 2,
+        "x": 830,
+        "y": 400,
+        "wires": [
+            [
+                "e35e5c61b766b822"
+            ],
+            [
+                "7d4a497017f7c0cb"
+            ]
+        ]
+    },
+    {
+        "id": "2c4cbc6ed20d63d9",
+        "type": "comment",
+        "z": "e3b17f2b13778f25",
+        "name": "Functions for Administrators",
+        "info": "",
+        "x": 140,
+        "y": 1160,
+        "wires": []
+    },
+    {
+        "id": "c950b670e38ed748",
+        "type": "http in",
+        "z": "e3b17f2b13778f25",
+        "name": "",
+        "url": "registered-users",
+        "method": "get",
+        "upload": false,
+        "swaggerDoc": "",
+        "x": 120,
+        "y": 1220,
+        "wires": [
+            [
+                "9b66ad9a29ec5ee0"
+            ]
+        ]
+    },
+    {
+        "id": "9b66ad9a29ec5ee0",
+        "type": "reusable",
+        "z": "e3b17f2b13778f25",
+        "name": "",
+        "target": "authenticate",
+        "outputs": 2,
+        "x": 330,
+        "y": 1220,
+        "wires": [
+            [
+                "0e280300ec866100"
+            ],
+            [
+                "fd109e8df9a8abf1"
+            ]
+        ]
+    },
+    {
+        "id": "fd109e8df9a8abf1",
+        "type": "http response",
+        "z": "e3b17f2b13778f25",
+        "name": "",
+        "statusCode": "",
+        "headers": {},
+        "x": 530,
+        "y": 1220,
+        "wires": []
+    },
+    {
+        "id": "0e280300ec866100",
+        "type": "reusable",
+        "z": "e3b17f2b13778f25",
+        "name": "",
+        "target": "admin only",
+        "outputs": 2,
+        "x": 130,
+        "y": 1280,
+        "wires": [
+            [
+                "1a8a8d3ebd25cef0"
+            ],
+            [
+                "fd109e8df9a8abf1"
+            ]
+        ]
+    },
+    {
+        "id": "1a8a8d3ebd25cef0",
+        "type": "reusable",
+        "z": "e3b17f2b13778f25",
+        "name": "",
+        "target": "readout userregistry",
+        "outputs": 1,
+        "x": 340,
+        "y": 1280,
+        "wires": [
+            [
+                "fd109e8df9a8abf1"
+            ]
+        ],
+        "outputLabels": [
+            "return"
+        ]
+    },
+    {
+        "id": "cc742c537e6fb1c7",
+        "type": "http in",
+        "z": "e3b17f2b13778f25",
+        "name": "",
+        "url": "registered-users",
+        "method": "put",
+        "upload": false,
+        "swaggerDoc": "",
+        "x": 120,
+        "y": 1340,
+        "wires": [
+            [
+                "913519ae96bf0568"
+            ]
+        ]
+    },
+    {
+        "id": "913519ae96bf0568",
+        "type": "reusable",
+        "z": "e3b17f2b13778f25",
+        "name": "",
+        "target": "authenticate",
+        "outputs": 2,
+        "x": 330,
+        "y": 1340,
+        "wires": [
+            [
+                "dacecbc403d23dcc"
+            ],
+            [
+                "7e932b705938795c"
+            ]
+        ]
+    },
+    {
+        "id": "7e932b705938795c",
+        "type": "http response",
+        "z": "e3b17f2b13778f25",
+        "name": "",
+        "statusCode": "",
+        "headers": {},
+        "x": 530,
+        "y": 1520,
+        "wires": []
+    },
+    {
+        "id": "dacecbc403d23dcc",
+        "type": "reusable",
+        "z": "e3b17f2b13778f25",
+        "name": "",
+        "target": "admin only",
+        "outputs": 2,
+        "x": 130,
+        "y": 1400,
+        "wires": [
+            [
+                "ae92d962dc296d23"
+            ],
+            [
+                "7e932b705938795c"
+            ]
+        ]
+    },
+    {
+        "id": "ae92d962dc296d23",
+        "type": "function",
+        "z": "e3b17f2b13778f25",
+        "name": "require text or JSON",
+        "func": "  let ContentType = msg.req.headers['content-type'] || ''\n  if (\n    ! ContentType.startsWith('text/plain') &&\n    ! ContentType.startsWith('application/json')\n  ) {\n    msg.payload    = 'Bad Request (wrong MIME type)'\n    msg.statusCode = 400\n    return [null,msg]\n  }\n  \n  return [msg,null]\n",
+        "outputs": 2,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 340,
+        "y": 1400,
+        "wires": [
+            [
+                "504e32ebd71851ec"
+            ],
+            [
+                "7e932b705938795c"
+            ]
+        ]
+    },
+    {
+        "id": "504e32ebd71851ec",
+        "type": "reusable",
+        "z": "e3b17f2b13778f25",
+        "name": "",
+        "target": "inscribe userregistry",
+        "outputs": 2,
+        "x": 160,
+        "y": 1460,
+        "wires": [
+            [
+                "dd769ebc566ebc35"
+            ],
+            [
+                "7e932b705938795c"
+            ]
+        ],
+        "outputLabels": [
+            "success",
+            "failure"
+        ]
+    },
+    {
+        "id": "dd769ebc566ebc35",
+        "type": "reusable",
+        "z": "e3b17f2b13778f25",
+        "name": "",
+        "target": "write userregistry",
+        "outputs": 1,
+        "x": 390,
+        "y": 1460,
+        "wires": [
+            [
+                "381b5e2f70639ee0"
+            ]
+        ]
+    },
+    {
+        "id": "6163ca07be24a191",
+        "type": "http in",
+        "z": "e3b17f2b13778f25",
+        "name": "",
+        "url": "permitted-users",
+        "method": "get",
+        "upload": false,
+        "swaggerDoc": "",
+        "x": 780,
+        "y": 1220,
+        "wires": [
+            [
+                "f66c5f05c278041d"
+            ]
+        ]
+    },
+    {
+        "id": "f66c5f05c278041d",
+        "type": "reusable",
+        "z": "e3b17f2b13778f25",
+        "name": "",
+        "target": "authenticate",
+        "outputs": 2,
+        "x": 990,
+        "y": 1220,
+        "wires": [
+            [
+                "53e399d6c1192f99"
+            ],
+            [
+                "591cb401616d503a"
+            ]
+        ]
+    },
+    {
+        "id": "591cb401616d503a",
+        "type": "http response",
+        "z": "e3b17f2b13778f25",
+        "name": "",
+        "statusCode": "",
+        "headers": {},
+        "x": 1190,
+        "y": 1220,
+        "wires": []
+    },
+    {
+        "id": "53e399d6c1192f99",
+        "type": "reusable",
+        "z": "e3b17f2b13778f25",
+        "name": "",
+        "target": "admin only",
+        "outputs": 2,
+        "x": 790,
+        "y": 1280,
+        "wires": [
+            [
+                "43de2ed78c7d17e0"
+            ],
+            [
+                "591cb401616d503a"
+            ]
+        ]
+    },
+    {
+        "id": "43de2ed78c7d17e0",
+        "type": "reusable",
+        "z": "e3b17f2b13778f25",
+        "name": "",
+        "target": "readout permittedusers",
+        "outputs": 1,
+        "x": 1010,
+        "y": 1280,
+        "wires": [
+            [
+                "591cb401616d503a"
+            ]
+        ],
+        "outputLabels": [
+            "return"
+        ]
+    },
+    {
+        "id": "b4aff7df72358794",
+        "type": "http in",
+        "z": "e3b17f2b13778f25",
+        "name": "",
+        "url": "permitted-users",
+        "method": "put",
+        "upload": false,
+        "swaggerDoc": "",
+        "x": 780,
+        "y": 1340,
+        "wires": [
+            [
+                "95ae548577c6ab65"
+            ]
+        ]
+    },
+    {
+        "id": "95ae548577c6ab65",
+        "type": "reusable",
+        "z": "e3b17f2b13778f25",
+        "name": "",
+        "target": "authenticate",
+        "outputs": 2,
+        "x": 990,
+        "y": 1340,
+        "wires": [
+            [
+                "01a32896d4be669c"
+            ],
+            [
+                "b9584e272213aa5b"
+            ]
+        ]
+    },
+    {
+        "id": "b9584e272213aa5b",
+        "type": "http response",
+        "z": "e3b17f2b13778f25",
+        "name": "",
+        "statusCode": "",
+        "headers": {},
+        "x": 1190,
+        "y": 1520,
+        "wires": []
+    },
+    {
+        "id": "01a32896d4be669c",
+        "type": "reusable",
+        "z": "e3b17f2b13778f25",
+        "name": "",
+        "target": "admin only",
+        "outputs": 2,
+        "x": 790,
+        "y": 1400,
+        "wires": [
+            [
+                "394789a9c823c570"
+            ],
+            [
+                "b9584e272213aa5b"
+            ]
+        ]
+    },
+    {
+        "id": "394789a9c823c570",
+        "type": "function",
+        "z": "e3b17f2b13778f25",
+        "name": "require plain text",
+        "func": "  let ContentType = msg.req.headers['content-type'] || ''\n  if (! ContentType.startsWith('text/plain')) {\n    msg.payload    = 'Bad Request (wrong MIME type)'\n    msg.statusCode = 400\n    return [null,msg]\n  }\n  \n  return [msg,null]\n",
+        "outputs": 2,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 990,
+        "y": 1400,
+        "wires": [
+            [
+                "3ab3d87becc12af2"
+            ],
+            [
+                "b9584e272213aa5b"
+            ]
+        ]
+    },
+    {
+        "id": "3ab3d87becc12af2",
+        "type": "reusable",
+        "z": "e3b17f2b13778f25",
+        "name": "",
+        "target": "inscribe permittedusers",
+        "outputs": 2,
+        "x": 830,
+        "y": 1460,
+        "wires": [
+            [
+                "a9d0fe783cd62f9f"
+            ],
+            [
+                "b9584e272213aa5b"
+            ]
+        ],
+        "outputLabels": [
+            "return",
+            null
+        ]
+    },
+    {
+        "id": "a9d0fe783cd62f9f",
+        "type": "reusable",
+        "z": "e3b17f2b13778f25",
+        "name": "",
+        "target": "write permittedusers",
+        "outputs": 1,
+        "x": 1080,
+        "y": 1460,
+        "wires": [
+            [
+                "3b433b62844d30aa"
+            ]
+        ]
+    },
+    {
+        "id": "f8beaa81078cb4da",
+        "type": "http in",
+        "z": "e3b17f2b13778f25",
+        "name": "",
+        "url": "permitted-roles",
+        "method": "get",
+        "upload": false,
+        "swaggerDoc": "",
+        "x": 1440,
+        "y": 1220,
+        "wires": [
+            [
+                "1db0b9a021f3d173"
+            ]
+        ]
+    },
+    {
+        "id": "1db0b9a021f3d173",
+        "type": "reusable",
+        "z": "e3b17f2b13778f25",
+        "name": "",
+        "target": "authenticate",
+        "outputs": 2,
+        "x": 1650,
+        "y": 1220,
+        "wires": [
+            [
+                "3208cb552413f6d9"
+            ],
+            [
+                "b36607f832e98231"
+            ]
+        ]
+    },
+    {
+        "id": "b36607f832e98231",
+        "type": "http response",
+        "z": "e3b17f2b13778f25",
+        "name": "",
+        "statusCode": "",
+        "headers": {},
+        "x": 1850,
+        "y": 1220,
+        "wires": []
+    },
+    {
+        "id": "3208cb552413f6d9",
+        "type": "reusable",
+        "z": "e3b17f2b13778f25",
+        "name": "",
+        "target": "admin only",
+        "outputs": 2,
+        "x": 1450,
+        "y": 1280,
+        "wires": [
+            [
+                "d6ed302f288a884e"
+            ],
+            [
+                "b36607f832e98231"
+            ]
+        ]
+    },
+    {
+        "id": "d6ed302f288a884e",
+        "type": "reusable",
+        "z": "e3b17f2b13778f25",
+        "name": "",
+        "target": "readout permittedroles",
+        "outputs": 1,
+        "x": 1670,
+        "y": 1280,
+        "wires": [
+            [
+                "b36607f832e98231"
+            ]
+        ],
+        "outputLabels": [
+            "return"
+        ]
+    },
+    {
+        "id": "26884665b5e5ace8",
+        "type": "http in",
+        "z": "e3b17f2b13778f25",
+        "name": "",
+        "url": "permitted-roles",
+        "method": "put",
+        "upload": false,
+        "swaggerDoc": "",
+        "x": 1440,
+        "y": 1340,
+        "wires": [
+            [
+                "5846adadeef1b0a1"
+            ]
+        ]
+    },
+    {
+        "id": "5846adadeef1b0a1",
+        "type": "reusable",
+        "z": "e3b17f2b13778f25",
+        "name": "",
+        "target": "authenticate",
+        "outputs": 2,
+        "x": 1650,
+        "y": 1340,
+        "wires": [
+            [
+                "3f0478152c17ff18"
+            ],
+            [
+                "f57a1d66c6261705"
+            ]
+        ]
+    },
+    {
+        "id": "f57a1d66c6261705",
+        "type": "http response",
+        "z": "e3b17f2b13778f25",
+        "name": "",
+        "statusCode": "",
+        "headers": {},
+        "x": 1850,
+        "y": 1520,
+        "wires": []
+    },
+    {
+        "id": "3f0478152c17ff18",
+        "type": "reusable",
+        "z": "e3b17f2b13778f25",
+        "name": "",
+        "target": "admin only",
+        "outputs": 2,
+        "x": 1450,
+        "y": 1400,
+        "wires": [
+            [
+                "efdc436cf41225db"
+            ],
+            [
+                "f57a1d66c6261705"
+            ]
+        ]
+    },
+    {
+        "id": "efdc436cf41225db",
+        "type": "function",
+        "z": "e3b17f2b13778f25",
+        "name": "require plain text",
+        "func": "  let ContentType = msg.req.headers['content-type'] || ''\n  if (! ContentType.startsWith('text/plain')) {\n    msg.payload    = 'Bad Request (wrong MIME type)'\n    msg.statusCode = 400\n    return [null,msg]\n  }\n  \n  return [msg,null]\n",
+        "outputs": 2,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1650,
+        "y": 1400,
+        "wires": [
+            [
+                "60c0a39d71433c56"
+            ],
+            [
+                "f57a1d66c6261705"
+            ]
+        ]
+    },
+    {
+        "id": "60c0a39d71433c56",
+        "type": "reusable",
+        "z": "e3b17f2b13778f25",
+        "name": "",
+        "target": "inscribe permittedroles",
+        "outputs": 2,
+        "x": 1490,
+        "y": 1460,
+        "wires": [
+            [
+                "688321a3d5e8629c"
+            ],
+            [
+                "f57a1d66c6261705"
+            ]
+        ],
+        "outputLabels": [
+            "return",
+            null
+        ]
+    },
+    {
+        "id": "688321a3d5e8629c",
+        "type": "reusable",
+        "z": "e3b17f2b13778f25",
+        "name": "",
+        "target": "write permittedroles",
+        "outputs": 1,
+        "x": 1740,
+        "y": 1460,
+        "wires": [
+            [
+                "c64d1b98a349252d"
+            ]
+        ]
+    },
+    {
+        "id": "465c422651fda24c",
+        "type": "inject",
+        "z": "e3b17f2b13778f25",
+        "name": "show",
+        "props": [
+            {
+                "p": "payload"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payloadType": "date",
+        "x": 90,
+        "y": 1580,
+        "wires": [
+            [
+                "3dad0e4f92b99d65"
+            ]
+        ]
+    },
+    {
+        "id": "1878e484e994eb0c",
+        "type": "debug",
+        "z": "e3b17f2b13778f25",
+        "name": "on console",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 490,
+        "y": 1580,
+        "wires": []
+    },
+    {
+        "id": "a03faebbf850c6d4",
+        "type": "inject",
+        "z": "e3b17f2b13778f25",
+        "name": "show",
+        "props": [
+            {
+                "p": "payload"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payloadType": "date",
+        "x": 750,
+        "y": 1580,
+        "wires": [
+            [
+                "aaffa995bd05d868"
+            ]
+        ]
+    },
+    {
+        "id": "45c8b39bbf347eba",
+        "type": "debug",
+        "z": "e3b17f2b13778f25",
+        "name": "on console",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1150,
+        "y": 1580,
+        "wires": []
+    },
+    {
+        "id": "1b842effc19c0fb5",
+        "type": "inject",
+        "z": "e3b17f2b13778f25",
+        "name": "show",
+        "props": [
+            {
+                "p": "payload"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payloadType": "date",
+        "x": 1410,
+        "y": 1580,
+        "wires": [
+            [
+                "9bf26674c4e51def"
+            ]
+        ]
+    },
+    {
+        "id": "bde5ae25da2847f6",
+        "type": "debug",
+        "z": "e3b17f2b13778f25",
+        "name": "on console",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1810,
+        "y": 1580,
+        "wires": []
+    },
+    {
+        "id": "3dad0e4f92b99d65",
+        "type": "reusable",
+        "z": "e3b17f2b13778f25",
+        "name": "",
+        "target": "readout userregistry",
+        "outputs": 1,
+        "x": 280,
+        "y": 1580,
+        "wires": [
+            [
+                "1878e484e994eb0c"
+            ]
+        ]
+    },
+    {
+        "id": "aaffa995bd05d868",
+        "type": "reusable",
+        "z": "e3b17f2b13778f25",
+        "name": "",
+        "target": "readout permittedusers",
+        "outputs": 1,
+        "x": 950,
+        "y": 1580,
+        "wires": [
+            [
+                "45c8b39bbf347eba"
+            ]
+        ]
+    },
+    {
+        "id": "9bf26674c4e51def",
+        "type": "reusable",
+        "z": "e3b17f2b13778f25",
+        "name": "",
+        "target": "readout permittedroles",
+        "outputs": 1,
+        "x": 1610,
+        "y": 1580,
+        "wires": [
+            [
+                "bde5ae25da2847f6"
+            ]
+        ]
+    },
+    {
+        "id": "381b5e2f70639ee0",
+        "type": "change",
+        "z": "e3b17f2b13778f25",
+        "name": "204 (no content)",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "",
+                "tot": "str"
+            },
+            {
+                "t": "set",
+                "p": "statusCode",
+                "pt": "msg",
+                "to": "204",
+                "tot": "num"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 180,
+        "y": 1520,
+        "wires": [
+            [
+                "7e932b705938795c"
+            ]
+        ]
+    },
+    {
+        "id": "3b433b62844d30aa",
+        "type": "change",
+        "z": "e3b17f2b13778f25",
+        "name": "204 (no content)",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "",
+                "tot": "str"
+            },
+            {
+                "t": "set",
+                "p": "statusCode",
+                "pt": "msg",
+                "to": "204",
+                "tot": "num"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 840,
+        "y": 1520,
+        "wires": [
+            [
+                "b9584e272213aa5b"
+            ]
+        ]
+    },
+    {
+        "id": "c64d1b98a349252d",
+        "type": "change",
+        "z": "e3b17f2b13778f25",
+        "name": "204 (no content)",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "",
+                "tot": "str"
+            },
+            {
+                "t": "set",
+                "p": "statusCode",
+                "pt": "msg",
+                "to": "204",
+                "tot": "num"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 1500,
+        "y": 1520,
+        "wires": [
+            [
+                "f57a1d66c6261705"
+            ]
+        ]
+    },
+    {
+        "id": "d304ecf1d6c78f6d",
+        "type": "comment",
+        "z": "e3b17f2b13778f25",
+        "name": "Header-based authorization (w/ expiration)",
+        "info": "",
+        "x": 3480,
+        "y": 1100,
+        "wires": []
+    },
+    {
+        "id": "e0ddacd8d05f34af",
+        "type": "function",
+        "z": "e3b17f2b13778f25",
+        "name": "validate authorization",
+        "func": "  let TokenHeader = msg.req.headers['authorization'] || ''\n  if (TokenHeader.startsWith('Bearer')) {\n    let UserRegistry = global.get('UserRegistry') || Object.create(null)\n\n    let Token = TokenHeader.replace(/^Bearer\\s+/,'').trim()\n    if (Token !== '') {\n      let [UserId,Expiration,Digest] = Token.split(':')\n        UserId = UserId.toLowerCase()\n      if (\n        (UserId !== '') && (UserId in UserRegistry) && (UserRegistry[UserId] != null) &&\n        /^\\d+$/.test(Expiration) && /^[0-9a-fA-F]+$/.test(Digest)\n      ) {\n        let TokenKey = global.get('TokenKey')\n          const HMAC = crypto.createHmac('sha256',TokenKey)\n          HMAC.update(UserId + ':' + Expiration)\n        let expectedDigest = HMAC.digest('hex')\n\n        if (\n          (Digest === expectedDigest) &&\n          (parseInt(Expiration,10) >= Date.now())\n        ) {\n          let UserRoles = UserRegistry[UserId].Roles || []\n          if (\n            (msg.requiredRole == null) ||\n            (UserRoles.indexOf(msg.requiredRole) >= 0)\n          ) {\n            msg.authenticatedUser = UserId\n            msg.authorizedRoles   = UserRoles\n\n            msg.headers = msg.headers || {}\n            msg.headers['authorization'] = 'Bearer ' + Token\n            return [msg,null]                                      // authorized\n          } else {\n            msg.cookies = msg.cookies || {}\n            msg.cookies.authorization = null\n\n            msg.payload    = 'Unauthorized'\n            msg.statusCode = 401\n            return [null,msg]                                  // not authorized\n          }\n        }\n      }\n    }\n  }\n\n  msg.payload    = 'Unauthorized'\n  msg.statusCode = 401\n  return [null,msg]                                            // not authorized\n",
+        "outputs": 2,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [
+            {
+                "var": "crypto",
+                "module": "crypto"
+            }
+        ],
+        "x": 3460,
+        "y": 1360,
+        "wires": [
+            [
+                "820752857f91fddc"
+            ],
+            [
+                "a45ef59d451c13f7"
+            ]
+        ]
+    },
+    {
+        "id": "e8e7fe7c5039de7b",
+        "type": "function",
+        "z": "e3b17f2b13778f25",
+        "name": "validate credentials",
+        "func": "/**** expect credentials to be sent as part of a form or in JSON format ****/\n\n  let ContentType = msg.req.headers['content-type'] || ''\n  if (\n    ! ContentType.startsWith('application/x-www-form-urlencoded') &&\n    ! ContentType.startsWith('application/json')\n  ) {\n    msg.payload    = 'Bad Request (wrong content type)'\n    msg.statusCode = 400\n    return [null,msg]\n  }\n\n/**** validate credentials ****/\n\n  let UserId   = (msg.payload.UserId  || '').toLowerCase()\n  let Password = msg.payload.Password || ''\n\n  let UserRegistry = global.get('UserRegistry') || Object.create(null)\n  if ((UserId in UserRegistry) && (UserRegistry[UserId] != null)) {\n    let UserSpecs = UserRegistry[UserId]\n    if (UserSpecs.Password === Password) {              // internal optimization\n      return withAuthorizationOf(UserId,UserSpecs.Roles || [])\n    }\n\n    let PBKDF2Iterations = global.get('PBKDF2Iterations') || 100000\n    crypto.pbkdf2(\n      Password, Buffer.from(UserSpecs.Salt,'hex'), PBKDF2Iterations, 64, 'sha512',\n      function (Error, computedHash) {\n        if ((Error == null) && (computedHash.toString('hex') === UserSpecs.Hash)) {\n          UserSpecs.Password = Password       // speeds up future auth. requests\n          return withAuthorizationOf(UserId,UserSpecs.Roles || [])\n        } else {\n          return withoutAuthorization()\n        }\n      }\n    )\n  } else {\n    return withoutAuthorization()\n  }\n\n  function withAuthorizationOf (UserName, UserRoles) {\n    if ((msg.requiredRole == null) || (UserRoles.indexOf(msg.requiredRole) >= 0)) {\n      msg.authenticatedUser = UserId\n      msg.authorizedRoles   = UserRoles\n\n      node.send([msg,null])\n      node.done()\n    } else {\n      return withoutAuthorization()\n    }\n  }\n\n  function withoutAuthorization () {\n    msg.payload    = 'Unauthorized'\n    msg.statusCode = 401\n\n    node.send([null,msg])\n    node.done()\n  }\n",
+        "outputs": 2,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [
+            {
+                "var": "crypto",
+                "module": "crypto"
+            }
+        ],
+        "x": 3450,
+        "y": 1480,
+        "wires": [
+            [
+                "89ae9c509e01de74"
+            ],
+            [
+                "7d9eea5283f3f7dd"
+            ]
+        ]
+    },
+    {
+        "id": "d1c67d22c56c444c",
+        "type": "inject",
+        "z": "e3b17f2b13778f25",
+        "name": "at Startup",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": true,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payloadType": "date",
+        "x": 3410,
+        "y": 1220,
+        "wires": [
+            [
+                "fc2f9703182a1a30"
+            ]
+        ]
+    },
+    {
+        "id": "fc2f9703182a1a30",
+        "type": "function",
+        "z": "e3b17f2b13778f25",
+        "name": "generate Token Key",
+        "func": "  let TokenKey = global.get('TokenKey')\n  if (TokenKey == null) {     // do not change TokenKey upon Node-RED deployment\n    global.set('TokenKey',crypto.randomBytes(16).toString('hex'))\n  }\n  return msg\n",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [
+            {
+                "var": "crypto",
+                "module": "crypto"
+            }
+        ],
+        "x": 3620,
+        "y": 1220,
+        "wires": [
+            [
+                "92e38c6d6fb57bec"
+            ]
+        ]
+    },
+    {
+        "id": "92e38c6d6fb57bec",
+        "type": "debug",
+        "z": "e3b17f2b13778f25",
+        "name": "Status",
+        "active": true,
+        "tosidebar": false,
+        "console": false,
+        "tostatus": true,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "'token key generated'",
+        "statusType": "jsonata",
+        "x": 3830,
+        "y": 1220,
+        "wires": []
+    },
+    {
+        "id": "9c2597fb87a99a0d",
+        "type": "inject",
+        "z": "e3b17f2b13778f25",
+        "name": "at Startup",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": true,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payloadType": "date",
+        "x": 3410,
+        "y": 1160,
+        "wires": [
+            [
+                "5f55b8594bdc51df"
+            ]
+        ]
+    },
+    {
+        "id": "5f55b8594bdc51df",
+        "type": "change",
+        "z": "e3b17f2b13778f25",
+        "name": "set token lifetime",
+        "rules": [
+            {
+                "t": "set",
+                "p": "TokenLifetime",
+                "pt": "global",
+                "to": "2*60*1000",
+                "tot": "jsonata"
+            },
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "TokenLifetime",
+                "tot": "global"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 3610,
+        "y": 1160,
+        "wires": [
+            [
+                "71e5af9e8ff9a1e0"
+            ]
+        ]
+    },
+    {
+        "id": "71e5af9e8ff9a1e0",
+        "type": "debug",
+        "z": "e3b17f2b13778f25",
+        "name": "Status",
+        "active": true,
+        "tosidebar": false,
+        "console": false,
+        "tostatus": true,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "payload",
+        "statusType": "msg",
+        "x": 3830,
+        "y": 1160,
+        "wires": []
+    },
+    {
+        "id": "820752857f91fddc",
+        "type": "function",
+        "z": "e3b17f2b13778f25",
+        "name": "refresh token",
+        "func": "  let Expiration   = Date.now() + global.get('TokenLifetime')\n  let TokenContent = msg.authenticatedUser + ':' + Expiration\n\n  let TokenKey = global.get('TokenKey')\n    const HMAC = crypto.createHmac('sha256',TokenKey)\n    HMAC.update(TokenContent)\n  let Digest = HMAC.digest('hex')\n\n  msg.headers = msg.headers || {}\n  msg.headers['authorization'] = 'Bearer ' + TokenContent + ':' + Digest\n  return msg\n",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [
+            {
+                "var": "crypto",
+                "module": "crypto"
+            }
+        ],
+        "x": 3630,
+        "y": 1300,
+        "wires": [
+            [
+                "18dce74713d15193"
+            ]
+        ]
+    },
+    {
+        "id": "89ae9c509e01de74",
+        "type": "function",
+        "z": "e3b17f2b13778f25",
+        "name": "create token",
+        "func": "  let Expiration   = Date.now() + global.get('TokenLifetime')\n  let TokenContent = msg.authenticatedUser + ':' + Expiration\n\n  let TokenKey = global.get('TokenKey')\n    const HMAC = crypto.createHmac('sha256',TokenKey)\n    HMAC.update(TokenContent)\n  let Digest = HMAC.digest('hex')\n\n  msg.headers = msg.headers || {}\n  msg.headers['authorization'] = 'Bearer ' + TokenContent + ':' + Digest\n  return msg\n",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [
+            {
+                "var": "crypto",
+                "module": "crypto"
+            }
+        ],
+        "x": 3650,
+        "y": 1420,
+        "wires": [
+            [
+                "e5b66347438b219f"
+            ]
+        ]
+    },
+    {
+        "id": "c860e92e1c1ccc2c",
+        "type": "reusable-in",
+        "z": "e3b17f2b13778f25",
+        "name": "authenticate",
+        "info": "describe your reusable flow here",
+        "scope": "global",
+        "x": 3390,
+        "y": 1300,
+        "wires": [
+            [
+                "e0ddacd8d05f34af"
+            ]
+        ]
+    },
+    {
+        "id": "955535295a5e4c83",
+        "type": "reusable-in",
+        "z": "e3b17f2b13778f25",
+        "name": "login",
+        "info": "describe your reusable flow here",
+        "scope": "global",
+        "x": 3370,
+        "y": 1420,
+        "wires": [
+            [
+                "e8e7fe7c5039de7b"
+            ]
+        ]
+    },
+    {
+        "id": "18dce74713d15193",
+        "type": "reusable-out",
+        "z": "e3b17f2b13778f25",
+        "name": "authorized",
+        "position": 1,
+        "x": 3810,
+        "y": 1300,
+        "wires": []
+    },
+    {
+        "id": "a45ef59d451c13f7",
+        "type": "reusable-out",
+        "z": "e3b17f2b13778f25",
+        "name": "unauthorized",
+        "position": "2",
+        "x": 3810,
+        "y": 1340,
+        "wires": []
+    },
+    {
+        "id": "e5b66347438b219f",
+        "type": "reusable-out",
+        "z": "e3b17f2b13778f25",
+        "name": "success",
+        "position": 1,
+        "x": 3820,
+        "y": 1420,
+        "wires": []
+    },
+    {
+        "id": "7d9eea5283f3f7dd",
+        "type": "reusable-out",
+        "z": "e3b17f2b13778f25",
+        "name": "failure",
+        "position": "2",
+        "x": 3830,
+        "y": 1460,
+        "wires": []
+    },
+    {
+        "id": "4ff756863926cd3c",
+        "type": "inject",
+        "z": "e3b17f2b13778f25",
+        "name": "every 15 minutes",
+        "props": [
+            {
+                "p": "payload"
+            }
+        ],
+        "repeat": "900",
+        "crontab": "",
+        "once": true,
+        "onceDelay": "900",
+        "topic": "",
+        "payloadType": "date",
+        "x": 2110,
+        "y": 1220,
+        "wires": [
+            [
+                "9729489683549962"
+            ]
+        ]
+    },
+    {
+        "id": "9729489683549962",
+        "type": "function",
+        "z": "e3b17f2b13778f25",
+        "name": "review Deadlines",
+        "func": "  let now = Date.now()\n\n  let UserRegistry = global.get('UserRegistry') || Object.create(null)\n\n  let RegistryWasChanged = false\n  for (let UserId in UserRegistry) {\n    let UserEntry = UserRegistry[UserId]\n    if (UserEntry.PasswordDeadline < now) {\n      delete UserEntry.PasswordDeadline\n      delete UserEntry.PasswordToken\n      RegistryWasChanged = true\n    }\n\n    if (UserEntry.ConfirmationDeadline < now) {\n      if (UserEntry.changingFrom == null) {\n        delete UserRegistry[UserId]\n        RegistryWasChanged = true\n      } else {\n        delete UserRegistry[UserEntry.changingFrom].changingTo\n        delete UserRegistry[UserId]\n        RegistryWasChanged = true\n      }\n    }\n  }\n\n  if (RegistryWasChanged) {\n    global.set('UserRegistry',UserRegistry)\n    return [null,msg]\n  } else {\n    return [msg,null]\n  }\n",
+        "outputs": 2,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 2130,
+        "y": 1280,
+        "wires": [
+            [
+                "a6fcf3cf483c604f"
+            ],
+            [
+                "375cb41422600480"
+            ]
+        ]
+    },
+    {
+        "id": "a6fcf3cf483c604f",
+        "type": "reusable",
+        "z": "e3b17f2b13778f25",
+        "name": "",
+        "target": "write userregistry",
+        "outputs": 1,
+        "x": 2350,
+        "y": 1280,
+        "wires": [
+            [
+                "375cb41422600480"
+            ]
+        ]
+    },
+    {
+        "id": "375cb41422600480",
+        "type": "debug",
+        "z": "e3b17f2b13778f25",
+        "name": "done",
+        "active": true,
+        "tosidebar": false,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 2510,
+        "y": 1220,
+        "wires": []
+    },
+    {
+        "id": "ad5cd3a60c05098f",
+        "type": "inject",
+        "z": "e3b17f2b13778f25",
+        "name": "at Startup",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": true,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payloadType": "date",
+        "x": 2750,
+        "y": 1220,
+        "wires": [
+            [
+                "a76ebf054541bd1f"
+            ]
+        ]
+    },
+    {
+        "id": "a76ebf054541bd1f",
+        "type": "template",
+        "z": "e3b17f2b13778f25",
+        "name": "create Confirmation Message Template",
+        "field": "ConfirmationMessage",
+        "fieldType": "global",
+        "format": "handlebars",
+        "syntax": "mustache",
+        "template": "Thanks for signing up! Please click the link below to confirm your account:\n\nhttps://xxx/confirm-email?token=${ConfirmationToken}\n\nThis link will expire in 12 hours. If you didn't sign up for an account, you can ignore this message.",
+        "output": "str",
+        "x": 2860,
+        "y": 1280,
+        "wires": [
+            [
+                "60238d1ab4e82390"
+            ]
+        ]
+    },
+    {
+        "id": "60238d1ab4e82390",
+        "type": "template",
+        "z": "e3b17f2b13778f25",
+        "name": "create Password Reset Message Template",
+        "field": "PasswordMessage",
+        "fieldType": "global",
+        "format": "handlebars",
+        "syntax": "mustache",
+        "template": "Click the link below to reset your password:\n\nhttps://xxx/reset-password?token=${PasswordToken}\n\nThis link will expire in 1 hour. If you didn't request a password reset, you can ignore this message.",
+        "output": "str",
+        "x": 2870,
+        "y": 1340,
+        "wires": [
+            [
+                "9b6a41d4e6695df0"
+            ]
+        ]
+    },
+    {
+        "id": "9b6a41d4e6695df0",
+        "type": "debug",
+        "z": "e3b17f2b13778f25",
+        "name": "Status",
+        "active": true,
+        "tosidebar": false,
+        "console": false,
+        "tostatus": true,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "'message templates created'",
+        "statusType": "jsonata",
+        "x": 3130,
+        "y": 1340,
+        "wires": []
+    },
+    {
+        "id": "309c741f66ecee89",
+        "type": "reusable-in",
+        "z": "e3b17f2b13778f25",
+        "name": "same User or Admin",
+        "info": "describe your reusable flow here",
+        "scope": "local",
+        "x": 3420,
+        "y": 160,
+        "wires": [
+            [
+                "4110eab931796793"
+            ]
+        ]
+    },
+    {
+        "id": "4110eab931796793",
+        "type": "function",
+        "z": "e3b17f2b13778f25",
+        "name": "check",
+        "func": "  if (\n    (msg.req.params.UserId.trim().toLowerCase() === msg.authenticatedUser) ||\n    (msg.authorizedRoles.indexOf('user-admin') >= 0)\n  ) {\n    msg.UserId = msg.authenticatedUser\n    return [msg,null]\n  } else {\n    msg.payload    = 'Forbidden'\n    msg.statusCode = 403\n    return [null,msg]\n  }\n",
+        "outputs": 2,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 3610,
+        "y": 160,
+        "wires": [
+            [
+                "d7004a3ebd244c1e"
+            ],
+            [
+                "a306417bd7d018b2"
+            ]
+        ]
+    },
+    {
+        "id": "d7004a3ebd244c1e",
+        "type": "reusable-out",
+        "z": "e3b17f2b13778f25",
+        "name": "valid",
+        "position": 1,
+        "x": 3750,
+        "y": 140,
+        "wires": []
+    },
+    {
+        "id": "a306417bd7d018b2",
+        "type": "reusable-out",
+        "z": "e3b17f2b13778f25",
+        "name": "invalid",
+        "position": "2",
+        "x": 3750,
+        "y": 180,
+        "wires": []
+    },
+    {
+        "id": "f3c3a378241c3eef",
+        "type": "reusable-in",
+        "z": "e3b17f2b13778f25",
+        "name": "delete User",
+        "info": "describe your reusable flow here",
+        "scope": "local",
+        "x": 2730,
+        "y": 880,
+        "wires": [
+            [
+                "39eb48d963904e54"
+            ]
+        ]
+    },
+    {
+        "id": "39eb48d963904e54",
+        "type": "function",
+        "z": "e3b17f2b13778f25",
+        "name": "do it",
+        "func": "  let UserRegistry = global.get('UserRegistry') || Object.create(null)\n\n  msg.payload    = 'No Content'\n  msg.statusCode = 204\n\n  let UserId = (msg.req.params.UserId || '').trim().toLowerCase()\n  if (UserId in UserRegistry) {\n    let UserEntry = UserRegistry[UserId]\n\n  /**** take care of accounts which are in the process of being renamed ****/\n\n    if (UserEntry.changingTo != null) {\n      delete UserRegistry[UserEntry.changingTo]\n    }\n\n    if (UserEntry.changingFrom != null) {\n      delete UserRegistry[UserEntry.changingFrom].changingTo\n    }\n\n  /**** now its safe to delete the account ****/\n\n    delete UserRegistry[UserId]\n    global.set('UserRegistry',UserRegistry)\n\n    return [msg,null]\n  } else {\n    return [null,msg]\n  }\n",
+        "outputs": 2,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 2890,
+        "y": 880,
+        "wires": [
+            [
+                "57ef48111e9c4df4"
+            ],
+            [
+                "5eab7235defd4a7a"
+            ]
+        ]
+    },
+    {
+        "id": "57ef48111e9c4df4",
+        "type": "reusable-out",
+        "z": "e3b17f2b13778f25",
+        "name": "done",
+        "position": 1,
+        "x": 3070,
+        "y": 860,
+        "wires": []
+    },
+    {
+        "id": "5eab7235defd4a7a",
+        "type": "reusable-out",
+        "z": "e3b17f2b13778f25",
+        "name": "no change",
+        "position": "2",
+        "x": 3050,
+        "y": 900,
+        "wires": []
+    },
+    {
+        "id": "947049b269add1f1",
+        "type": "reusable-in",
+        "z": "e3b17f2b13778f25",
+        "name": "update User Settings",
+        "info": "describe your reusable flow here",
+        "scope": "local",
+        "x": 2760,
+        "y": 780,
+        "wires": [
+            [
+                "9c3e86121ff32675"
+            ]
+        ]
+    },
+    {
+        "id": "9c3e86121ff32675",
+        "type": "function",
+        "z": "e3b17f2b13778f25",
+        "name": "do it",
+        "func": "/**** expect settings to be sent as part of a form or in JSON format ****/\n\n  let ContentType = msg.req.headers['content-type'] || ''\n  if (\n    ! ContentType.startsWith('application/x-www-form-urlencoded') &&\n    ! ContentType.startsWith('application/json')\n  ) {\n    msg.payload    = 'Bad Request (wrong content type)'\n    msg.statusCode = 400\n    return [null,msg]\n  }\n\n/**** validate settings ****/\n\n  let UserRegistry = global.get('UserRegistry')\n\n  let UserId = (msg.req.params.UserId || '').trim().toLowerCase()\n  if (! (UserId in UserRegistry)) {\n    msg.payload    = 'Not Found (no such user) ' + UserId\n    msg.statusCode = 404\n    return [null,msg]\n  }\n\n  let newSettings = Object.assign({}, msg.payload)\n    delete newSettings.UserId\n  if (\n    ('UserId' in newSettings) || ('Password' in newSettings) ||\n    ('Salt'   in newSettings) || ('Hash'     in newSettings) ||\n    ('changingFrom'         in newSettings) || ('changingTo'        in newSettings) ||\n    ('ConfirmationDeadline' in newSettings) || ('ConfirmationToken' in newSettings) ||\n    ('PasswordDeadline'     in newSettings) || ('PasswordToken'     in newSettings)\n  ) {\n    msg.payload    = 'Forbidden (forbidden settings)'\n    msg.statusCode = 403\n    return [null,msg]\n  }\n\n  if ('Roles' in newSettings) {\n    if (msg.authorizedRoles.indexOf('user-admin') < 0) {\n      msg.payload    = 'Forbidden (admin privileges required)'\n      msg.statusCode = 403\n      return [null,msg]\n    }\n\n    let Roles = newSettings.Roles\n    if (typeof Roles === 'string') {\n      Roles = Roles.trim().replace(/\\s+/g,' ').split(' ')\n    }\n\n    if (! Array.isArray(Roles)) {\n      msg.payload    = 'Bad Request (invalid \"Roles\" setting)'\n      msg.statusCode = 400\n      return [null,msg]\n    }\n\n    let permittedRoles = global.get('permittedRoles') || Object.create(null)\n    for (let i = 0, l = Roles.length; i < l; i++) {\n      let Role = Roles[i]\n      if (! (Role in permittedRoles)) {\n        msg.payload    = 'Bad Request (non-permitted role) ' + Role\n        msg.statusCode = 400\n        return [null,msg]\n      }\n    }\n\n    newSettings.Roles = Roles\n  }\n\n/**** update settings ****/\n\n  let UserEntry = UserRegistry[UserId] || Object.create(null)\n    UserEntry = Object.assign(UserEntry,newSettings)\n    for (let Key in UserEntry) {\n      if (UserEntry[Key] == null) {\n        delete UserEntry[Key]\n      }\n    }\n  UserRegistry[UserId] = UserEntry\n\n  global.set('UserRegistry',UserRegistry)\n\n  msg.payload    = 'No Content'\n  msg.statusCode = 204\n  return [msg,null]\n",
+        "outputs": 2,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 2950,
+        "y": 780,
+        "wires": [
+            [
+                "536982faa210ed7e"
+            ],
+            [
+                "678f8f1a92a78137"
+            ]
+        ]
+    },
+    {
+        "id": "536982faa210ed7e",
+        "type": "reusable-out",
+        "z": "e3b17f2b13778f25",
+        "name": "success",
+        "position": 1,
+        "x": 3100,
+        "y": 760,
+        "wires": []
+    },
+    {
+        "id": "678f8f1a92a78137",
+        "type": "reusable-out",
+        "z": "e3b17f2b13778f25",
+        "name": "failure",
+        "position": "2",
+        "x": 3090,
+        "y": 800,
+        "wires": []
+    },
+    {
+        "id": "c315d01bcd0bda8a",
+        "type": "reusable-in",
+        "z": "e3b17f2b13778f25",
+        "name": "retrieve User Settings",
+        "info": "describe your reusable flow here",
+        "scope": "local",
+        "x": 2760,
+        "y": 700,
+        "wires": [
+            [
+                "981280c881f7138f"
+            ]
+        ]
+    },
+    {
+        "id": "981280c881f7138f",
+        "type": "function",
+        "z": "e3b17f2b13778f25",
+        "name": "do it",
+        "func": "  let UserRegistry = global.get('UserRegistry')\n\n  let UserId = (msg.req.params.UserId || '').trim().toLowerCase()\n  if (! (UserId in UserRegistry)) {\n    msg.payload    = 'Not Found (no such user) ' + UserId\n    msg.statusCode = 404\n    return [null,msg]\n  }\n\n  let UserEntry = UserRegistry[UserId]\n  let Result = {}\n    for (let Key in UserEntry) {\n      if (UserEntry.hasOwnProperty(Key)) {\n        switch (Key) {\n          case 'UserId': case 'Password':\n          case 'Salt':   case 'Hash':\n            break\n          case 'changingFrom':         case 'changingTo':\n          case 'ConfirmationDeadline': case 'PasswordDeadline':\n            if (msg.authorizedRoles.indexOf('user-admin') < 0) { break }\n//          break - no break here!\n          default:\n            Result[Key] = UserEntry[Key]\n        }\n      }\n    }\n  msg.headers = msg.headers || {}\n  msg.headers['Content-Type'] = 'application/json'\n\n  msg.payload    = JSON.stringify(Result)\n  msg.statusCode = 200\n  return [msg,null]\n",
+        "outputs": 2,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 2950,
+        "y": 700,
+        "wires": [
+            [
+                "b0146f7385a4475a"
+            ],
+            [
+                "5260a61be57db7d5"
+            ]
+        ]
+    },
+    {
+        "id": "b0146f7385a4475a",
+        "type": "reusable-out",
+        "z": "e3b17f2b13778f25",
+        "name": "success",
+        "position": 1,
+        "x": 3100,
+        "y": 680,
+        "wires": []
+    },
+    {
+        "id": "5260a61be57db7d5",
+        "type": "reusable-out",
+        "z": "e3b17f2b13778f25",
+        "name": "failure",
+        "position": "2",
+        "x": 3090,
+        "y": 720,
+        "wires": []
+    },
+    {
+        "id": "0a3d2c23905e457e",
+        "type": "reusable-in",
+        "z": "e3b17f2b13778f25",
+        "name": "Admin only",
+        "info": "describe your reusable flow here",
+        "scope": "local",
+        "x": 3390,
+        "y": 240,
+        "wires": [
+            [
+                "78d79093df66695f"
+            ]
+        ]
+    },
+    {
+        "id": "78d79093df66695f",
+        "type": "function",
+        "z": "e3b17f2b13778f25",
+        "name": "check",
+        "func": "  if (msg.authorizedRoles.indexOf('user-admin') >= 0) {\n    msg.UserId = msg.authenticatedUser\n    return [msg,null]\n  } else {\n    msg.payload    = 'Forbidden'\n    msg.statusCode = 403\n    return [null,msg]\n  }\n",
+        "outputs": 2,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 3550,
+        "y": 240,
+        "wires": [
+            [
+                "0282fe815c6b95e3"
+            ],
+            [
+                "457344c99fe95661"
+            ]
+        ]
+    },
+    {
+        "id": "0282fe815c6b95e3",
+        "type": "reusable-out",
+        "z": "e3b17f2b13778f25",
+        "name": "valid",
+        "position": 1,
+        "x": 3690,
+        "y": 220,
+        "wires": []
+    },
+    {
+        "id": "457344c99fe95661",
+        "type": "reusable-out",
+        "z": "e3b17f2b13778f25",
+        "name": "invalid",
+        "position": "2",
+        "x": 3690,
+        "y": 260,
+        "wires": []
+    },
+    {
+        "id": "0deb946bfc03fcab",
+        "type": "reusable-in",
+        "z": "e3b17f2b13778f25",
+        "name": "validate Roles and change",
+        "info": "describe your reusable flow here",
+        "scope": "local",
+        "x": 2780,
+        "y": 600,
+        "wires": [
+            [
+                "946ecf221370a5b1"
+            ]
+        ]
+    },
+    {
+        "id": "946ecf221370a5b1",
+        "type": "function",
+        "z": "e3b17f2b13778f25",
+        "name": "do it",
+        "func": "/**** expect roles to be sent as part of a form or in JSON format ****/\n\n  let ContentType = msg.req.headers['content-type'] || ''\n  if (\n    ! ContentType.startsWith('application/x-www-form-urlencoded') &&\n    ! ContentType.startsWith('application/json')\n  ) {\n    msg.payload    = 'Bad Request (wrong content type)'\n    msg.statusCode = 400\n    return [null,msg]\n  }\n\n/**** validate roles ****/\n\n  let Roles = msg.payload.Roles\n  if (typeof Roles === 'string') {\n    Roles = Roles.trim().replace(/\\s+/g,' ').split(' ')\n  }\n\n  if (! Array.isArray(Roles)) {\n    msg.payload    = 'Bad Request (invalid roles)'\n    msg.statusCode = 400\n    return [null,msg]\n  }\n\n  let permittedRoles = global.get('permittedRoles') || Object.create(null)\n  for (let i = 0, l = Roles.length; i < l; i++) {\n    let Role = Roles[i]\n    if (! (Role in permittedRoles)) {\n      msg.payload    = 'Bad Request (non-permitted role) ' + Role\n      msg.statusCode = 400\n      return [null,msg]\n    }\n  }\n\n/**** update roles ****/\n\n  let UserRegistry = global.get('UserRegistry')\n\n  let UserId = msg.req.params.UserId.trim().toLowerCase()\n  if (! (UserId in UserRegistry)) {\n    msg.payload    = 'Bad Request (no such user)'\n    msg.statusCode = 400\n    return [null,msg]\n  }\n\n  UserRegistry[UserId].Roles = Roles\n\n  msg.payload    = 'No Content'\n  msg.statusCode = 204\n  return [msg,null]\n",
+        "outputs": 2,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 2970,
+        "y": 600,
+        "wires": [
+            [
+                "ff2a1810ef95fe58"
+            ],
+            [
+                "65eca0e1b26b8353"
+            ]
+        ]
+    },
+    {
+        "id": "ff2a1810ef95fe58",
+        "type": "reusable-out",
+        "z": "e3b17f2b13778f25",
+        "name": "success",
+        "position": 1,
+        "x": 3120,
+        "y": 580,
+        "wires": []
+    },
+    {
+        "id": "65eca0e1b26b8353",
+        "type": "reusable-out",
+        "z": "e3b17f2b13778f25",
+        "name": "failure",
+        "position": "2",
+        "x": 3110,
+        "y": 620,
+        "wires": []
+    },
+    {
+        "id": "b61e34bac305dcdc",
+        "type": "reusable-in",
+        "z": "e3b17f2b13778f25",
+        "name": "same User only",
+        "info": "describe your reusable flow here",
+        "scope": "local",
+        "x": 3400,
+        "y": 80,
+        "wires": [
+            [
+                "a581466ec2fec6fd"
+            ]
+        ]
+    },
+    {
+        "id": "a581466ec2fec6fd",
+        "type": "function",
+        "z": "e3b17f2b13778f25",
+        "name": "check",
+        "func": "  if (msg.req.params.UserId.trim().toLowerCase() === msg.authenticatedUser) {\n    msg.UserId = msg.authenticatedUser\n    return [msg,null]\n  } else {\n    msg.payload    = 'Forbidden'\n    msg.statusCode = 403\n    return [null,msg]\n  }\n",
+        "outputs": 2,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 3570,
+        "y": 80,
+        "wires": [
+            [
+                "ef6bdcb28e80b652"
+            ],
+            [
+                "ff8c6678e2dcbacd"
+            ]
+        ]
+    },
+    {
+        "id": "ef6bdcb28e80b652",
+        "type": "reusable-out",
+        "z": "e3b17f2b13778f25",
+        "name": "valid",
+        "position": 1,
+        "x": 3710,
+        "y": 60,
+        "wires": []
+    },
+    {
+        "id": "ff8c6678e2dcbacd",
+        "type": "reusable-out",
+        "z": "e3b17f2b13778f25",
+        "name": "invalid",
+        "position": "2",
+        "x": 3710,
+        "y": 100,
+        "wires": []
+    },
+    {
+        "id": "cd92f2d8032813e6",
+        "type": "reusable-in",
+        "z": "e3b17f2b13778f25",
+        "name": "validate old Password",
+        "info": "describe your reusable flow here",
+        "scope": "local",
+        "x": 2760,
+        "y": 520,
+        "wires": [
+            [
+                "bb9e7a08d94f1bd6"
+            ]
+        ]
+    },
+    {
+        "id": "bb9e7a08d94f1bd6",
+        "type": "function",
+        "z": "e3b17f2b13778f25",
+        "name": "do it",
+        "func": "/**** expect the old password to be sent as part of a form or in JSON format ****/\n\n  let ContentType = msg.req.headers['content-type'] || ''\n  if (\n    ! ContentType.startsWith('application/x-www-form-urlencoded') &&\n    ! ContentType.startsWith('application/json')\n  ) {\n    msg.payload    = 'Bad Request (wrong content type)'\n    msg.statusCode = 400\n    return [null,msg]\n  }\n\n/**** validate old password ****/\n\n  let UserId      = msg.authenticatedUser\n  let oldPassword = msg.payload.oldPassword || ''\n\n  let UserRegistry = global.get('UserRegistry')\n\n  let UserEntry = UserRegistry[UserId]\n  if (UserEntry.Password === oldPassword) {             // internal optimization\n    return [msg,null]\n  }\n\n  let PBKDF2Iterations = global.get('PBKDF2Iterations') || 100000\n  crypto.pbkdf2(\n    oldPassword, Buffer.from(UserSpecs.Salt,'hex'), PBKDF2Iterations, 64, 'sha512',\n    function (Error, computedHash) {\n      if ((Error == null) && (computedHash.toString('hex') === UserSpecs.Hash)) {\n        node.send([msg,null])\n        node.done()\n      } else {\n        msg.payload    = 'Unauthorized'\n        msg.statusCode = 401\n\n        node.send([null,msg])\n        node.done()\n      }\n    }\n  )\n",
+        "outputs": 2,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 2950,
+        "y": 520,
+        "wires": [
+            [
+                "f491781d918a3528"
+            ],
+            [
+                "300a55d143174730"
+            ]
+        ]
+    },
+    {
+        "id": "f491781d918a3528",
+        "type": "reusable-out",
+        "z": "e3b17f2b13778f25",
+        "name": "success",
+        "position": 1,
+        "x": 3100,
+        "y": 500,
+        "wires": []
+    },
+    {
+        "id": "300a55d143174730",
+        "type": "reusable-out",
+        "z": "e3b17f2b13778f25",
+        "name": "failure",
+        "position": "2",
+        "x": 3090,
+        "y": 540,
+        "wires": []
+    },
+    {
+        "id": "613be0bb1224a04f",
+        "type": "reusable-in",
+        "z": "e3b17f2b13778f25",
+        "name": "validate new UserId",
+        "info": "describe your reusable flow here",
+        "scope": "local",
+        "x": 2100,
+        "y": 100,
+        "wires": [
+            [
+                "b52648482f3bf5c9"
+            ]
+        ]
+    },
+    {
+        "id": "b52648482f3bf5c9",
+        "type": "function",
+        "z": "e3b17f2b13778f25",
+        "name": "do it",
+        "func": "  let newUserId = (msg.req.params.newUserId || msg.payload.newUserId || '').trim().toLowerCase()\n  if (newUserId === '') {\n    msg.payload    = 'Bad Request (missing EMail address)'\n    msg.statusCode = 400\n    return [null,msg]\n  }\n\n/**** standard EMail address validation ****/\n\n  const EMailAddressPattern = /(?:[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*|\"(?:[\\x01-\\x08\\x0b\\x0c\\x0e-\\x1f\\x21\\x23-\\x5b\\x5d-\\x7f]|\\\\[\\x01-\\x09\\x0b\\x0c\\x0e-\\x7f])*\")@(?:(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?|\\[(?:(?:(2(5[0-5]|[0-4][0-9])|1[0-9][0-9]|[1-9]?[0-9]))\\.){3}(?:(2(5[0-5]|[0-4][0-9])|1[0-9][0-9]|[1-9]?[0-9])|[a-z0-9-]*[a-z0-9]:(?:[\\x01-\\x08\\x0b\\x0c\\x0e-\\x1f\\x21-\\x5a\\x53-\\x7f]|\\\\[\\x01-\\x09\\x0b\\x0c\\x0e-\\x7f])+)\\])/\n  // see https://stackoverflow.com/questions/201323/how-to-validate-an-email-address-using-a-regular-expression\n\n  if (! EMailAddressPattern.test(newUserId)) {\n    msg.payload    = 'Bad Request (invalid EMail address)'\n    msg.statusCode = 400\n    return [null,msg]\n  }\n\n  if (newUserId.length > 64) {\n    msg.payload    = 'Bad Request (EMail address too long)'\n    msg.statusCode = 400\n    return [null,msg]\n  }\n\n  msg.newUserId = newUserId\n  return [msg,null]\n",
+        "outputs": 2,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 2270,
+        "y": 100,
+        "wires": [
+            [
+                "ee6ce9618d1835ac"
+            ],
+            [
+                "543dbe4ba7485e0a"
+            ]
+        ]
+    },
+    {
+        "id": "409230ebc1606eff",
+        "type": "comment",
+        "z": "e3b17f2b13778f25",
+        "name": "basic building blocks",
+        "info": "",
+        "x": 2100,
+        "y": 40,
+        "wires": []
+    },
+    {
+        "id": "ee6ce9618d1835ac",
+        "type": "reusable-out",
+        "z": "e3b17f2b13778f25",
+        "name": "valid",
+        "position": 1,
+        "x": 2410,
+        "y": 80,
+        "wires": []
+    },
+    {
+        "id": "543dbe4ba7485e0a",
+        "type": "reusable-out",
+        "z": "e3b17f2b13778f25",
+        "name": "invalid",
+        "position": "2",
+        "x": 2410,
+        "y": 120,
+        "wires": []
+    },
+    {
+        "id": "92c7e545d63adb98",
+        "type": "reusable-in",
+        "z": "e3b17f2b13778f25",
+        "name": "register new User",
+        "info": "describe your reusable flow here",
+        "scope": "local",
+        "x": 2090,
+        "y": 180,
+        "wires": [
+            [
+                "8380498d8ad7c238"
+            ]
+        ]
+    },
+    {
+        "id": "8380498d8ad7c238",
+        "type": "function",
+        "z": "e3b17f2b13778f25",
+        "name": "do it",
+        "func": "  let newUserId = msg.newUserId\n\n/**** accounts not confirmed in time may be deleted ****/\n\n  let UserRegistry = global.get('UserRegistry') || Object.create(null)\n  if (newUserId in UserRegistry) {\n    let UserEntry = UserRegistry[newUserId]\n    if (\n      (UserEntry.ConfirmationDeadline != null) &&\n      (UserEntry.ConfirmationDeadline < Date.now())\n    ) {\n      if (UserEntry.changingFrom != null) {\n        delete UserRegistry[UserEntry.changingFrom].changingTo\n      }\n      delete UserRegistry[newUserId]\n      global.set('UserRegistry',UserRegistry)\n    }\n  }\n\n/**** account must not have been created yet ****/\n\n  if (newUserId in UserRegistry) {\n    msg.payload    = 'Bad Request (EMail address in use)'\n    msg.statusCode = 400\n    return [null,msg]\n  }\n\n/**** new users may have to be permitted first ****/\n\n  let permittedUsers = global.get('permittedUsers')\n  if ((permittedUsers != null) && ! (newUserId in permittedUsers)) {\n    msg.payload    = 'Not Permitted (EMail address not permitted)'\n    msg.statusCode = 403\n    return [null,msg]\n  }\n\n/**** prepare account and ask for confirmation ****/\n\n  UserRegistry[newUserId] = {\n    ConfirmationDeadline: Date.now() + 12*60*60*1000 // 12 hours\n  }                                                              // no UUID yet!\n\n  let newUserRoles = permittedUsers[newUserId]\n  if (Array.isArray(newUserRoles) && (newUserRoles.length > 0)) {\n    UserRegistry[newUserId].Roles = newUserRoles.slice()\n  }\n  global.set('UserRegistry',UserRegistry)\n\n/**** that's it! ****/\n\n  return [msg,null]\n",
+        "outputs": 2,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 2270,
+        "y": 180,
+        "wires": [
+            [
+                "65abb73bf5ad308f"
+            ],
+            [
+                "91da15f504056005"
+            ]
+        ]
+    },
+    {
+        "id": "65abb73bf5ad308f",
+        "type": "reusable-out",
+        "z": "e3b17f2b13778f25",
+        "name": "success",
+        "position": 1,
+        "x": 2420,
+        "y": 160,
+        "wires": []
+    },
+    {
+        "id": "91da15f504056005",
+        "type": "reusable-out",
+        "z": "e3b17f2b13778f25",
+        "name": "failure",
+        "position": "2",
+        "x": 2410,
+        "y": 200,
+        "wires": []
+    },
+    {
+        "id": "7e12493bb2fe1813",
+        "type": "reusable-in",
+        "z": "e3b17f2b13778f25",
+        "name": "generate Confirmation Token",
+        "info": "describe your reusable flow here",
+        "scope": "local",
+        "x": 2120,
+        "y": 260,
+        "wires": [
+            [
+                "e7b2be3127a99d7f"
+            ]
+        ]
+    },
+    {
+        "id": "e7b2be3127a99d7f",
+        "type": "function",
+        "z": "e3b17f2b13778f25",
+        "name": "do it",
+        "func": "  let newUserId    = msg.newUserId\n  let UserRegistry = global.get('UserRegistry')                  // should exist\n  let UserEntry    = UserRegistry[newUserId]\n  let Deadline     = UserEntry.ConfirmationDeadline\n\n  let TokenContent = newUserId + ':' + Deadline\n\n  let TokenKey = global.get('TokenKey')\n    const HMAC = crypto.createHmac('sha256',TokenKey)\n    HMAC.update(TokenContent)\n  let Digest = HMAC.digest('hex')\n\n  let ConfirmationToken = Buffer.from(TokenContent + ':' + Digest,'utf8').toString('base64')\n  msg.ConfirmationToken = ConfirmationToken\n\n  UserEntry.ConfirmationToken = ConfirmationToken\n  global.set('UserRegistry',UserRegistry)\n\n  return msg\n",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [
+            {
+                "var": "crypto",
+                "module": "crypto"
+            }
+        ],
+        "x": 2330,
+        "y": 260,
+        "wires": [
+            [
+                "b17deb1e82bc0e49"
+            ]
+        ]
+    },
+    {
+        "id": "b17deb1e82bc0e49",
+        "type": "reusable-out",
+        "z": "e3b17f2b13778f25",
+        "name": "return",
+        "position": 1,
+        "x": 2470,
+        "y": 260,
+        "wires": []
+    },
+    {
+        "id": "0c0723069a8e2695",
+        "type": "reusable-in",
+        "z": "e3b17f2b13778f25",
+        "name": "create Confirmation Message",
+        "info": "describe your reusable flow here",
+        "scope": "local",
+        "x": 2130,
+        "y": 320,
+        "wires": [
+            [
+                "4efda84951dab382"
+            ]
+        ]
+    },
+    {
+        "id": "4efda84951dab382",
+        "type": "function",
+        "z": "e3b17f2b13778f25",
+        "name": "do it",
+        "func": "  let ConfirmationToken = msg.ConfirmationToken\n\n/**** create confirmation message ****/\n\n  msg.to      = msg.newUserId\n  msg.topic   = 'Account Confirmation'\n  msg.payload = (global.get('ConfirmationMessage') || '')\n    .replace('${ConfirmationToken}',ConfirmationToken)\n\n  return msg\n",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 2350,
+        "y": 320,
+        "wires": [
+            [
+                "736b407050b316e5"
+            ]
+        ]
+    },
+    {
+        "id": "736b407050b316e5",
+        "type": "reusable-out",
+        "z": "e3b17f2b13778f25",
+        "name": "return",
+        "position": 1,
+        "x": 2490,
+        "y": 320,
+        "wires": []
+    },
+    {
+        "id": "86bd3e62fa7d0984",
+        "type": "reusable-in",
+        "z": "e3b17f2b13778f25",
+        "name": "validate unconfirmed UserId",
+        "info": "describe your reusable flow here",
+        "scope": "local",
+        "x": 2120,
+        "y": 420,
+        "wires": [
+            [
+                "e9a78522d4ee232b"
+            ]
+        ]
+    },
+    {
+        "id": "e9a78522d4ee232b",
+        "type": "function",
+        "z": "e3b17f2b13778f25",
+        "name": "do it",
+        "func": "  let newUserId = (msg.req.params.newUserId || '').trim().toLowerCase()\n  if (newUserId === '') {\n    msg.payload    = 'Bad Request (missing EMail address)'\n    msg.statusCode = 400\n    return [null,null,msg]\n  }\n\n/**** standard EMail address validation ****/\n\n  const EMailAddressPattern = /(?:[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*|\"(?:[\\x01-\\x08\\x0b\\x0c\\x0e-\\x1f\\x21\\x23-\\x5b\\x5d-\\x7f]|\\\\[\\x01-\\x09\\x0b\\x0c\\x0e-\\x7f])*\")@(?:(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?|\\[(?:(?:(2(5[0-5]|[0-4][0-9])|1[0-9][0-9]|[1-9]?[0-9]))\\.){3}(?:(2(5[0-5]|[0-4][0-9])|1[0-9][0-9]|[1-9]?[0-9])|[a-z0-9-]*[a-z0-9]:(?:[\\x01-\\x08\\x0b\\x0c\\x0e-\\x1f\\x21-\\x5a\\x53-\\x7f]|\\\\[\\x01-\\x09\\x0b\\x0c\\x0e-\\x7f])+)\\])/\n  // see https://stackoverflow.com/questions/201323/how-to-validate-an-email-address-using-a-regular-expression\n\n  if (! EMailAddressPattern.test(newUserId)) {\n    msg.payload    = 'Bad Request (invalid EMail address)'\n    msg.statusCode = 400\n    return [null,null,msg]\n  }\n\n  if (newUserId.length > 64) {\n    msg.payload    = 'Bad Request (EMail address too long)'\n    msg.statusCode = 400\n    return [null,null,msg]\n  }\n\n/**** account must already have been created ****/\n\n  let UserRegistry = global.get('UserRegistry') || Object.create(null)\n  if (! (newUserId in UserRegistry)) {\n    msg.payload    = 'Bad Request (no such user)'\n    msg.statusCode = 400\n    return [null,null,msg]\n  }\n\n/**** account must still have to be confirmed... ****/\n\n  let UserEntry = UserRegistry[newUserId]\n  if (UserEntry.ConfirmationDeadline == null) {\n    msg.payload    = 'Bad Request (already confirmed)'\n    msg.statusCode = 400\n    return [null,null,msg]\n  }\n\n/**** ...and confirmation deadline must not have been passed ****/\n\n  if (UserEntry.ConfirmationDeadline < Date.now()) {\n    if (UserEntry.changingFrom != null) {\n      delete UserRegistry[UserEntry.changingFrom].changingTo\n    }\n    delete UserRegistry[newUserId]\n    global.set('UserRegistry',UserRegistry)\n\n    msg.payload    = 'Bad Request (no such user)'\n    msg.statusCode = 400\n    return [null,null,msg]\n  }\n\n  msg.newUserId = newUserId\n  if (UserEntry.changingFrom == null) {\n    return [msg,null,null,null]\n  } else {\n    return [null,msg,null]\n  }\n",
+        "outputs": 3,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 2330,
+        "y": 420,
+        "wires": [
+            [
+                "a6a93a42dbb084dc"
+            ],
+            [
+                "c417849821e32232"
+            ],
+            [
+                "de239bf26e93769f"
+            ]
+        ]
+    },
+    {
+        "id": "a6a93a42dbb084dc",
+        "type": "reusable-out",
+        "z": "e3b17f2b13778f25",
+        "name": "creating",
+        "position": 1,
+        "x": 2480,
+        "y": 380,
+        "wires": []
+    },
+    {
+        "id": "c417849821e32232",
+        "type": "reusable-out",
+        "z": "e3b17f2b13778f25",
+        "name": "changing",
+        "position": "2",
+        "x": 2480,
+        "y": 420,
+        "wires": []
+    },
+    {
+        "id": "7d32e33976e54c72",
+        "type": "reusable-in",
+        "z": "e3b17f2b13778f25",
+        "name": "validate Token and confirm",
+        "info": "describe your reusable flow here",
+        "scope": "local",
+        "x": 2120,
+        "y": 540,
+        "wires": [
+            [
+                "84b2d00797843185"
+            ]
+        ]
+    },
+    {
+        "id": "84b2d00797843185",
+        "type": "function",
+        "z": "e3b17f2b13778f25",
+        "name": "do it",
+        "func": "  let newUserId    = msg.newUserId\n  let UserRegistry = global.get('UserRegistry') || Object.create(null)\n  let UserEntry    = UserRegistry[newUserId]\n\n/**** validate Confirmation Token (deadline has already been validated) ****/\n\n  if (UserEntry.ConfirmationToken == null) {\n    msg.payload    = 'Bad Request (not to be confirmed)'\n    msg.statusCode = 400\n    return [null,msg]\n  }\n\n  if (msg.payload.Token !== UserEntry.ConfirmationToken) {\n    msg.payload    = 'Bad Request (invalid token)'\n    msg.statusCode = 400\n    return [null,msg]\n  }\n\n/**** ok, confirm account ****/\n\n  delete UserEntry.ConfirmationDeadline\n  delete UserEntry.ConfirmationToken\n\n  if (UserEntry.changingFrom == null) {\n    UserEntry.UUID = newUUID                             // generates a new UUID\n    UserRegistry[newUserId] = UserEntry\n\n    msg.UserId = newUserId            // a password will be set in the next step\n    return [msg,null]\n  } else {\n    UserEntry = Object.assign(UserEntry, UserRegistry[UserEntry.changingFrom])\n    UserRegistry[newUserId] = UserEntry                    // keeps the old UUID\n\n    delete UserRegistry[UserEntry.changingFrom]\n    delete UserRegistry[UserEntry.changingTo]               // was copied before\n    delete UserEntry.changingFrom\n\n    return [msg,null]\n  }\n\n  function newUUID () {\n    let Id = '', IdPart\n    IdPart = Math.round(Math.random()*0xffffffff).toString(16)\n      Id += IdPart + '00000000'.slice(IdPart.length) + '-'\n      IdPart = Math.round(Math.random()*0xffff).toString(16)\n      Id += IdPart + '0000'.slice(IdPart.length) + '-4'\n      IdPart = Math.round(Math.random()*0xfff).toString(16)\n      Id += IdPart + '000'.slice(IdPart.length) + '-'\n      IdPart = Math.round(Math.random()*0x3fff+0x8000).toString(16)\n      Id += IdPart + '-'\n      IdPart = Math.round(Math.random()*0xffffffffffff).toString(16)\n      Id += IdPart + '000000000000'.slice(IdPart.length)\n    return Id.toLowerCase()\n  }\n",
+        "outputs": 2,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 2330,
+        "y": 540,
+        "wires": [
+            [
+                "f3cafa082281ee6c"
+            ],
+            [
+                "d3e6bc548fd98498"
+            ]
+        ]
+    },
+    {
+        "id": "c65995c2a9e53fab",
+        "type": "reusable-in",
+        "z": "e3b17f2b13778f25",
+        "name": "validate new Password",
+        "info": "describe your reusable flow here",
+        "scope": "local",
+        "x": 2110,
+        "y": 640,
+        "wires": [
+            [
+                "280f5b0c690c85af"
+            ]
+        ]
+    },
+    {
+        "id": "280f5b0c690c85af",
+        "type": "function",
+        "z": "e3b17f2b13778f25",
+        "name": "do it",
+        "func": "/**** expect the new password to be sent as part of a form or in JSON format ****/\n\n  let ContentType = msg.req.headers['content-type'] || ''\n  if (\n    ! ContentType.startsWith('application/x-www-form-urlencoded') &&\n    ! ContentType.startsWith('application/json')\n  ) {\n    msg.payload    = 'Bad Request (wrong content type)'\n    msg.statusCode = 400\n    return [null,msg]\n  }\n\n/**** validate password ****/\n\n  let newPassword = msg.payload.newPassword || ''\n  if (newPassword.length < 10) {\n    msg.payload    = 'Bad Request (Password too short)'\n    msg.statusCode = 400\n    return [null,msg]\n  }\n\n  if (newPassword.length > 64) {\n    msg.payload    = 'Bad Request (Password too long)'\n    msg.statusCode = 400\n    return [null,msg]\n  }\n\n  msg.newPassword = newPassword\n  return [msg,null]\n",
+        "outputs": 2,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 2310,
+        "y": 640,
+        "wires": [
+            [
+                "b801cd5a07557779"
+            ],
+            [
+                "80b828917d05d29b"
+            ]
+        ]
+    },
+    {
+        "id": "b801cd5a07557779",
+        "type": "reusable-out",
+        "z": "e3b17f2b13778f25",
+        "name": "valid",
+        "position": 1,
+        "x": 2450,
+        "y": 620,
+        "wires": []
+    },
+    {
+        "id": "80b828917d05d29b",
+        "type": "reusable-out",
+        "z": "e3b17f2b13778f25",
+        "name": "invalid",
+        "position": "2",
+        "x": 2450,
+        "y": 660,
+        "wires": []
+    },
+    {
+        "id": "d7ad23c584f7d2fc",
+        "type": "reusable-in",
+        "z": "e3b17f2b13778f25",
+        "name": "set new Password",
+        "info": "describe your reusable flow here",
+        "scope": "local",
+        "x": 2090,
+        "y": 720,
+        "wires": [
+            [
+                "9de4d7152fab7c70"
+            ]
+        ]
+    },
+    {
+        "id": "9de4d7152fab7c70",
+        "type": "function",
+        "z": "e3b17f2b13778f25",
+        "name": "do it",
+        "func": "  let UserId       = msg.UserId\n  let UserRegistry = global.get('UserRegistry') || Object.create(null)\n  let UserEntry    = UserRegistry[UserId]\n\n  let newPassword = msg.newPassword\n\n  let Salt = crypto.randomBytes(16)\n\n  let PBKDF2Iterations = global.get('PBKDF2Iterations') || 100000\n  crypto.pbkdf2(\n    newPassword, Salt, PBKDF2Iterations, 64, 'sha512',\n    function (Error, Hash) {\n      if (Error == null) {\n        let UserSpecs = UserRegistry[UserId]\n          UserSpecs.Password = newPassword              // internal optimization\n          UserSpecs.Salt = Salt.toString('hex')\n          UserSpecs.Hash = Hash.toString('hex')\n        msg.payload    = 'No Content'\n        msg.statusCode = 204\n\n        node.send([msg,null])\n        node.done()\n      } else {\n        msg.payload    = 'Internal Server Error'  // password may still be reset\n        msg.statusCode = 500\n\n        node.send([null,msg])\n        node.done()\n      }\n    }\n  )\n",
+        "outputs": 2,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [
+            {
+                "var": "crypto",
+                "module": "crypto"
+            }
+        ],
+        "x": 2270,
+        "y": 720,
+        "wires": [
+            [
+                "b7a91e8d315d3d86"
+            ],
+            [
+                "b98acd3f14f86272"
+            ]
+        ]
+    },
+    {
+        "id": "b7a91e8d315d3d86",
+        "type": "reusable-out",
+        "z": "e3b17f2b13778f25",
+        "name": "success",
+        "position": 1,
+        "x": 2420,
+        "y": 700,
+        "wires": []
+    },
+    {
+        "id": "b98acd3f14f86272",
+        "type": "reusable-out",
+        "z": "e3b17f2b13778f25",
+        "name": "failure",
+        "position": "2",
+        "x": 2410,
+        "y": 740,
+        "wires": []
+    },
+    {
+        "id": "7be0168a45152b95",
+        "type": "reusable-in",
+        "z": "e3b17f2b13778f25",
+        "name": "validate confirmed UserId",
+        "info": "describe your reusable flow here",
+        "scope": "local",
+        "x": 2110,
+        "y": 820,
+        "wires": [
+            [
+                "82215bbf73413117"
+            ]
+        ]
+    },
+    {
+        "id": "82215bbf73413117",
+        "type": "function",
+        "z": "e3b17f2b13778f25",
+        "name": "do it",
+        "func": "  let UserId = (msg.req.params.UserId || '').trim().toLowerCase()\n  if (UserId === '') {\n    msg.payload    = 'Bad Request (missing EMail address)'\n    msg.statusCode = 400\n    return [null,msg]\n  }\n\n/**** standard EMail address validation ****/\n\n  const EMailAddressPattern = /(?:[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*|\"(?:[\\x01-\\x08\\x0b\\x0c\\x0e-\\x1f\\x21\\x23-\\x5b\\x5d-\\x7f]|\\\\[\\x01-\\x09\\x0b\\x0c\\x0e-\\x7f])*\")@(?:(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?|\\[(?:(?:(2(5[0-5]|[0-4][0-9])|1[0-9][0-9]|[1-9]?[0-9]))\\.){3}(?:(2(5[0-5]|[0-4][0-9])|1[0-9][0-9]|[1-9]?[0-9])|[a-z0-9-]*[a-z0-9]:(?:[\\x01-\\x08\\x0b\\x0c\\x0e-\\x1f\\x21-\\x5a\\x53-\\x7f]|\\\\[\\x01-\\x09\\x0b\\x0c\\x0e-\\x7f])+)\\])/\n  // see https://stackoverflow.com/questions/201323/how-to-validate-an-email-address-using-a-regular-expression\n\n  if (! EMailAddressPattern.test(UserId)) {\n    msg.payload    = 'Bad Request (invalid EMail address)'\n    msg.statusCode = 400\n    return [null,msg]\n  }\n\n  if (UserId.length > 64) {\n    msg.payload    = 'Bad Request (EMail address too long)'\n    msg.statusCode = 400\n    return [null,msg]\n  }\n\n/**** account must already have been created... ****/\n\n  let UserRegistry = global.get('UserRegistry') || Object.create(null)\n  if (! (UserId in UserRegistry)) {\n    msg.payload    = 'Bad Request (no such user)'\n    msg.statusCode = 400\n    return [null,msg]\n  }\n\n/**** ...and confirmed ****/\n\n  let UserEntry = UserRegistry[UserId]\n  if (UserEntry.ConfirmationDeadline != null) {\n    msg.payload    = 'Bad Request (not yet confirmed)'\n    msg.statusCode = 400\n    return [null,msg]\n  }\n\n  msg.UserId = msg.payload.UserId = UserId //\"msg.payload.UserId\" is for \"login\"\n  return [msg,null]\n",
+        "outputs": 2,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 2310,
+        "y": 820,
+        "wires": [
+            [
+                "d2b7123dbf351814"
+            ],
+            [
+                "5b65f5183bb5dce2"
+            ]
+        ]
+    },
+    {
+        "id": "d2b7123dbf351814",
+        "type": "reusable-out",
+        "z": "e3b17f2b13778f25",
+        "name": "valid",
+        "position": 1,
+        "x": 2450,
+        "y": 800,
+        "wires": []
+    },
+    {
+        "id": "5b65f5183bb5dce2",
+        "type": "reusable-out",
+        "z": "e3b17f2b13778f25",
+        "name": "invalid",
+        "position": "2",
+        "x": 2450,
+        "y": 840,
+        "wires": []
+    },
+    {
+        "id": "5ba882e6fcd36cc9",
+        "type": "reusable-in",
+        "z": "e3b17f2b13778f25",
+        "name": "initiate Password Reset",
+        "info": "describe your reusable flow here",
+        "scope": "local",
+        "x": 2110,
+        "y": 900,
+        "wires": [
+            [
+                "a06ff33a3bd58d26"
+            ]
+        ]
+    },
+    {
+        "id": "a06ff33a3bd58d26",
+        "type": "function",
+        "z": "e3b17f2b13778f25",
+        "name": "do it",
+        "func": "  let UserId = msg.UserId\n\n/**** prepare password reset ****/\n\n  let UserRegistry = global.get('UserRegistry')\n  let UserEntry    = UserRegistry[UserId]             // a reference, not a copy\n\n  UserEntry.PasswordDeadline = Date.now() + 1*60*60*1000 // 1 hour\n\n  return msg\n",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 2310,
+        "y": 900,
+        "wires": [
+            [
+                "6aefdd9f9892a20e"
+            ]
+        ]
+    },
+    {
+        "id": "6aefdd9f9892a20e",
+        "type": "reusable-out",
+        "z": "e3b17f2b13778f25",
+        "name": "return",
+        "position": 1,
+        "x": 2450,
+        "y": 900,
+        "wires": []
+    },
+    {
+        "id": "b95ff9fc8911c041",
+        "type": "reusable-in",
+        "z": "e3b17f2b13778f25",
+        "name": "generate Password Token",
+        "info": "describe your reusable flow here",
+        "scope": "local",
+        "x": 2110,
+        "y": 960,
+        "wires": [
+            [
+                "1f67c63d669346a3"
+            ]
+        ]
+    },
+    {
+        "id": "1f67c63d669346a3",
+        "type": "function",
+        "z": "e3b17f2b13778f25",
+        "name": "do it",
+        "func": "  let UserId       = msg.UserId\n  let UserRegistry = global.get('UserRegistry')                  // should exist\n  let UserEntry    = UserRegistry[UserId]\n  let Deadline     = UserEntry.PasswordDeadline\n\n  let TokenContent = UserId + ':' + Deadline\n\n  let TokenKey = global.get('TokenKey')\n    const HMAC = crypto.createHmac('sha256',TokenKey)\n    HMAC.update(TokenContent)\n  let Digest = HMAC.digest('hex')\n\n  let PasswordToken = Buffer.from(TokenContent + ':' + Digest,'utf8').toString('base64')\n  msg.PasswordToken = PasswordToken\n\n  UserEntry.PasswordToken = PasswordToken\n  global.set('UserRegistry',UserRegistry)\n\n  return msg\n",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [
+            {
+                "var": "crypto",
+                "module": "crypto"
+            }
+        ],
+        "x": 2310,
+        "y": 960,
+        "wires": [
+            [
+                "0dd57225620bb52e"
+            ]
+        ]
+    },
+    {
+        "id": "0dd57225620bb52e",
+        "type": "reusable-out",
+        "z": "e3b17f2b13778f25",
+        "name": "return",
+        "position": 1,
+        "x": 2450,
+        "y": 960,
+        "wires": []
+    },
+    {
+        "id": "feec7be4fdc99267",
+        "type": "reusable-in",
+        "z": "e3b17f2b13778f25",
+        "name": "create Password Reset Message",
+        "info": "describe your reusable flow here",
+        "scope": "local",
+        "x": 2140,
+        "y": 1020,
+        "wires": [
+            [
+                "6ce20870afabfe87"
+            ]
+        ]
+    },
+    {
+        "id": "6ce20870afabfe87",
+        "type": "function",
+        "z": "e3b17f2b13778f25",
+        "name": "do it",
+        "func": "  let PasswordToken = msg.PasswordToken\n\n/**** create password reset message ****/\n\n  msg.to      = msg.UserId\n  msg.topic   = 'Password Reset'\n  msg.payload = (global.get('PasswordMessage') || '')\n    .replace('${PasswordToken}',PasswordToken)\n\n  return msg\n",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 2370,
+        "y": 1020,
+        "wires": [
+            [
+                "452687d137fe319f"
+            ]
+        ]
+    },
+    {
+        "id": "452687d137fe319f",
+        "type": "reusable-out",
+        "z": "e3b17f2b13778f25",
+        "name": "return",
+        "position": 1,
+        "x": 2510,
+        "y": 1020,
+        "wires": []
+    },
+    {
+        "id": "7d3e9b1b48941adf",
+        "type": "reusable-in",
+        "z": "e3b17f2b13778f25",
+        "name": "validate Token & reset Password",
+        "info": "describe your reusable flow here",
+        "scope": "local",
+        "x": 2790,
+        "y": 100,
+        "wires": [
+            [
+                "f1d5fc9fa8a2093c"
+            ]
+        ]
+    },
+    {
+        "id": "f1d5fc9fa8a2093c",
+        "type": "function",
+        "z": "e3b17f2b13778f25",
+        "name": "do it",
+        "func": "  let UserId       = msg.UserId\n  let UserRegistry = global.get('UserRegistry') || Object.create(null)\n  let UserEntry    = UserRegistry[UserId]\n\n/**** validate Password Reset Token ****/\n\n  if (UserEntry.PasswordToken == null) {\n    msg.payload    = 'Bad Request (not within password reset)'\n    msg.statusCode = 400\n    return [null,null,msg]\n  }\n\n  if (msg.payload.Token !== UserEntry.PasswordToken) {\n    msg.payload    = 'Bad Request (invalid token)'\n    msg.statusCode = 400\n    return [null,msg]\n  }\n\n/**** ok, token seems valid (password will be set in the next step) ****/\n\n  delete UserEntry.PasswordDeadline\n  delete UserEntry.PasswordToken\n\n  return [msg,null]            // password will actually be set in the next step\n",
+        "outputs": 2,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 3010,
+        "y": 100,
+        "wires": [
+            [
+                "ae1163e042cc3531"
+            ],
+            [
+                "bdf6891ce9f4f30b"
+            ]
+        ]
+    },
+    {
+        "id": "ae1163e042cc3531",
+        "type": "reusable-out",
+        "z": "e3b17f2b13778f25",
+        "name": "success",
+        "position": 1,
+        "x": 3160,
+        "y": 80,
+        "wires": []
+    },
+    {
+        "id": "bdf6891ce9f4f30b",
+        "type": "reusable-out",
+        "z": "e3b17f2b13778f25",
+        "name": "failure",
+        "position": "2",
+        "x": 3150,
+        "y": 120,
+        "wires": []
+    },
+    {
+        "id": "baf845ffc5c86c01",
+        "type": "reusable-in",
+        "z": "e3b17f2b13778f25",
+        "name": "validate legal Agreements",
+        "info": "describe your reusable flow here",
+        "scope": "local",
+        "x": 2770,
+        "y": 180,
+        "wires": [
+            [
+                "28fe423e202aa7cc"
+            ]
+        ]
+    },
+    {
+        "id": "28fe423e202aa7cc",
+        "type": "function",
+        "z": "e3b17f2b13778f25",
+        "name": "do it",
+        "func": "  let UserId       = msg.UserId || msg.newUserId\n  let UserRegistry = global.get('UserRegistry') || Object.create(null)\n  let UserEntry    = UserRegistry[UserId]\n\n/**** expect the agreements to be sent as part of a form or in JSON format ****/\n\n  let ContentType = msg.req.headers['content-type'] || ''\n  if (\n    ! ContentType.startsWith('application/x-www-form-urlencoded') &&\n    ! ContentType.startsWith('application/json')\n  ) {\n    msg.payload    = 'Bad Request (wrong content type)'\n    msg.statusCode = 400\n    return [null,msg]\n  }\n\n/**** validate Agreements ****/\n\n  let agreedToDPS = (msg.payload.agreedToDPS === 'true')\n  if (! agreedToDPS) {\n    msg.payload    = 'Bad Request (agreement to data privacy statement not given)'\n    msg.statusCode = 400\n    return [null,msg]\n  }\n\n  let agreedToTOS = (msg.payload.agreedToTOS === 'true')\n  if (! agreedToTOS) {\n    msg.payload    = 'Bad Request (agreement to terms of service not given)'\n    msg.statusCode = 400\n    return [null,msg]\n  }\n\n  return [msg,null]\n",
+        "outputs": 2,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 2970,
+        "y": 180,
+        "wires": [
+            [
+                "6b96de5095ca7402"
+            ],
+            [
+                "d44c28cd8dcaaea4"
+            ]
+        ]
+    },
+    {
+        "id": "f4b8bf83c0551ef6",
+        "type": "reusable-in",
+        "z": "e3b17f2b13778f25",
+        "name": "verify legal Agreements",
+        "info": "describe your reusable flow here",
+        "scope": "local",
+        "x": 2770,
+        "y": 340,
+        "wires": [
+            [
+                "b45d5f7acce3fd30"
+            ]
+        ]
+    },
+    {
+        "id": "b45d5f7acce3fd30",
+        "type": "function",
+        "z": "e3b17f2b13778f25",
+        "name": "do it",
+        "func": "  let authenticatedUser = msg.authenticatedUser\n  let UserRegistry      = global.get('UserRegistry') || Object.create(null)\n  let UserEntry         = UserRegistry[authenticatedUser]\n\n  if (UserEntry.agreedToDPS && UserEntry.agreedToTOS) {\n    return [msg,null]\n  } else {\n    let AgreementURL = global.get('AgreementURL')\n\n    msg.statusCode = 303\n    msg.payload    = ''\n\n    msg.headers = msg.headers || {}\n    msg.headers['Location'] = AgreementURL.replace('{{UserId}}',authenticatedUser)\n\n    return [null,msg]\n  }\n",
+        "outputs": 2,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 2970,
+        "y": 340,
+        "wires": [
+            [
+                "aacde3558c095a3e"
+            ],
+            [
+                "458534ba85036a76"
+            ]
+        ]
+    },
+    {
+        "id": "aacde3558c095a3e",
+        "type": "reusable-out",
+        "z": "e3b17f2b13778f25",
+        "name": "valid",
+        "position": 1,
+        "x": 3110,
+        "y": 320,
+        "wires": []
+    },
+    {
+        "id": "458534ba85036a76",
+        "type": "reusable-out",
+        "z": "e3b17f2b13778f25",
+        "name": "invalid",
+        "position": "2",
+        "x": 3110,
+        "y": 360,
+        "wires": []
+    },
+    {
+        "id": "5932b81cdd920b45",
+        "type": "reusable-in",
+        "z": "e3b17f2b13778f25",
+        "name": "mark as UserId Change",
+        "info": "describe your reusable flow here",
+        "scope": "local",
+        "x": 2770,
+        "y": 440,
+        "wires": [
+            [
+                "1c3e46c40a33ce4b"
+            ]
+        ]
+    },
+    {
+        "id": "1c3e46c40a33ce4b",
+        "type": "function",
+        "z": "e3b17f2b13778f25",
+        "name": "do it",
+        "func": "  let oldUserId = msg.authenticatedUser\n  let newUserId = msg.newUserId\n\n/**** mark new registration as a userid change ****/\n\n  let UserRegistry = global.get('UserRegistry') || Object.create(null)\n    let oldUserEntry = UserRegistry[oldUserId]\n    if (oldUserEntry.changingTo != null) {\n      delete UserRegistry[oldUserEntry.changingTo]\n    }\n    oldUserEntry.changingTo = newUserId\n\n    UserRegistry[newUserId] = {\n      ConfirmationDeadline: Date.now() + 12*60*60*1000, // 12 hours\n      changingFrom:         oldUserId\n    }                   // no UUID yet, will be transferred from original entry!\n  global.set('UserRegistry',UserRegistry)\n\n  return msg\n",
+        "outputs": 2,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 2970,
+        "y": 440,
+        "wires": [
+            [
+                "48be582bc98c728f"
+            ],
+            [
+                "43cd89a7282b33a4"
+            ]
+        ]
+    },
+    {
+        "id": "48be582bc98c728f",
+        "type": "reusable-out",
+        "z": "e3b17f2b13778f25",
+        "name": "success",
+        "position": 1,
+        "x": 3120,
+        "y": 420,
+        "wires": []
+    },
+    {
+        "id": "43cd89a7282b33a4",
+        "type": "reusable-out",
+        "z": "e3b17f2b13778f25",
+        "name": "failure",
+        "position": "2",
+        "x": 3110,
+        "y": 460,
+        "wires": []
+    },
+    {
+        "id": "de239bf26e93769f",
+        "type": "reusable-out",
+        "z": "e3b17f2b13778f25",
+        "name": "invalid",
+        "position": "3",
+        "x": 2470,
+        "y": 460,
+        "wires": []
+    },
+    {
+        "id": "f3cafa082281ee6c",
+        "type": "reusable-out",
+        "z": "e3b17f2b13778f25",
+        "name": "success",
+        "position": 1,
+        "x": 2480,
+        "y": 520,
+        "wires": []
+    },
+    {
+        "id": "d3e6bc548fd98498",
+        "type": "reusable-out",
+        "z": "e3b17f2b13778f25",
+        "name": "failure",
+        "position": "2",
+        "x": 2470,
+        "y": 560,
+        "wires": []
+    },
+    {
+        "id": "bc10409ba5e10584",
+        "type": "reusable-in",
+        "z": "e3b17f2b13778f25",
+        "name": "store legal Agreements",
+        "info": "describe your reusable flow here",
+        "scope": "local",
+        "x": 2770,
+        "y": 260,
+        "wires": [
+            [
+                "1ec6847c550a6bdf"
+            ]
+        ]
+    },
+    {
+        "id": "1ec6847c550a6bdf",
+        "type": "function",
+        "z": "e3b17f2b13778f25",
+        "name": "do it",
+        "func": "  let UserId       = msg.UserId || msg.newUserId\n  let UserRegistry = global.get('UserRegistry') || Object.create(null)\n  let UserEntry    = UserRegistry[UserId]\n\n  UserEntry.agreedToDPS = true\n  UserEntry.agreedToTOS = true\n\n  return [msg,null]\n",
+        "outputs": 2,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 2970,
+        "y": 260,
+        "wires": [
+            [
+                "e330c7b91a2c93cc"
+            ],
+            [
+                "d73211b47c8fc581"
+            ]
+        ]
+    },
+    {
+        "id": "e330c7b91a2c93cc",
+        "type": "reusable-out",
+        "z": "e3b17f2b13778f25",
+        "name": "success",
+        "position": 1,
+        "x": 3120,
+        "y": 240,
+        "wires": []
+    },
+    {
+        "id": "d73211b47c8fc581",
+        "type": "reusable-out",
+        "z": "e3b17f2b13778f25",
+        "name": "failure",
+        "position": "2",
+        "x": 3110,
+        "y": 280,
+        "wires": []
+    },
+    {
+        "id": "6b96de5095ca7402",
+        "type": "reusable-out",
+        "z": "e3b17f2b13778f25",
+        "name": "valid",
+        "position": 1,
+        "x": 3110,
+        "y": 160,
+        "wires": []
+    },
+    {
+        "id": "d44c28cd8dcaaea4",
+        "type": "reusable-out",
+        "z": "e3b17f2b13778f25",
+        "name": "invalid",
+        "position": "2",
+        "x": 3110,
+        "y": 200,
+        "wires": []
+    },
+    {
+        "id": "87977a53f13ce14e",
+        "type": "reusable-in",
+        "z": "e3b17f2b13778f25",
+        "name": "inscribe UserRegistry",
+        "info": "describe your reusable flow here",
+        "scope": "local",
+        "x": 3420,
+        "y": 340,
+        "wires": [
+            [
+                "e55f9711c50d9992"
+            ]
+        ]
+    },
+    {
+        "id": "e3d2a9adfd7db9e2",
+        "type": "reusable-in",
+        "z": "e3b17f2b13778f25",
+        "name": "readout UserRegistry",
+        "info": "describe your reusable flow here",
+        "scope": "local",
+        "x": 3420,
+        "y": 400,
+        "wires": [
+            [
+                "8b5cdcb6cf1f530c"
+            ]
+        ]
+    },
+    {
+        "id": "7f9c287bc365e584",
+        "type": "reusable-out",
+        "z": "e3b17f2b13778f25",
+        "name": "return",
+        "position": 1,
+        "x": 3750,
+        "y": 400,
+        "wires": []
+    },
+    {
+        "id": "e55f9711c50d9992",
+        "type": "function",
+        "z": "e3b17f2b13778f25",
+        "name": "do it",
+        "func": "  const EMailAddressPattern = /(?:[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*|\"(?:[\\x01-\\x08\\x0b\\x0c\\x0e-\\x1f\\x21\\x23-\\x5b\\x5d-\\x7f]|\\\\[\\x01-\\x09\\x0b\\x0c\\x0e-\\x7f])*\")@(?:(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?|\\[(?:(?:(2(5[0-5]|[0-4][0-9])|1[0-9][0-9]|[1-9]?[0-9]))\\.){3}(?:(2(5[0-5]|[0-4][0-9])|1[0-9][0-9]|[1-9]?[0-9])|[a-z0-9-]*[a-z0-9]:(?:[\\x01-\\x08\\x0b\\x0c\\x0e-\\x1f\\x21-\\x5a\\x53-\\x7f]|\\\\[\\x01-\\x09\\x0b\\x0c\\x0e-\\x7f])+)\\])/\n  // see https://stackoverflow.com/questions/201323/how-to-validate-an-email-address-using-a-regular-expression\n\n  let permittedRoles = global.get('permittedRoles') || Object.create(null)\n\n  let UserSet\n  try {\n    UserSet = (\n      typeof msg.payload === 'string' ? JSON.parse(msg.payload) : msg.payload\n    )\n  } catch (Signal) {\n    msg.payload    = 'Bad Request (no valid JSON)'\n    msg.statusCode = 400\n    return [null,msg]\n  }\n\n  let UserRegistry = Object.create(null)\n  for (let UserId in UserSet) {\n    if (UserSet.hasOwnProperty(UserId)) {\n      if ((typeof UserId !== 'string') || ! EMailAddressPattern.test(UserId)) {\n        msg.payload    = 'Bad Request (invalid EMail address) ' + UserId\n        msg.statusCode = 400\n        return [null,msg]\n      }\n\n      if (UserId.length > 64) {\n        msg.payload    = 'Bad Request (EMail address too long) ' + UserId\n        msg.statusCode = 400\n        return [null,msg]\n      }\n\n      UserId = UserId.toLowerCase()\n\n    /**** validate roles ****/\n\n      let Roles = UserSet[UserId].Roles\n      if (Roles != null) {\n        if (! Array.isArray(Roles)) {\n          msg.payload    = 'Bad Request (invalid role list) ' + UserId\n          msg.statusCode = 400\n          return [null,msg]\n        }\n\n        for (let i = 0, l = Roles.length; i < l; i++) {\n          if (! (Roles[i] in permittedRoles)) {\n            msg.payload    = 'Bad Request (invalid role) ' + Roles[i]\n            msg.statusCode = 400\n            return [null,msg]\n          }\n        }\n\n        if (Roles.length === 0) {\n          delete UserSet[UserId].Roles\n        }\n      }\n\n    /**** validate salt and hash ****/\n\n      let Salt = UserSet[UserId].Salt\n      let Hash = UserSet[UserId].Hash\n      if ((Salt != null) && (Hash != null)) {\n        if (\n          (typeof Salt !== 'string') || ! /^[0-9a-f]+$/.test(Salt) || (Salt.length !== 32) ||\n          (typeof Hash !== 'string') || ! /^[0-9a-f]+$/.test(Hash) || (Hash.length !== 128)\n        ) {\n          msg.payload    = 'Bad Request (invalid password hash) ' + UserId\n          msg.statusCode = 400\n          return [null,msg]\n        }\n      } else {\n        delete UserSet[UserId].Salt\n        delete UserSet[UserId].Hash\n      }\n\n    /**** validate Confirmation Deadline ****/\n\n      let ConfirmationDeadline = UserSet[UserId].ConfirmationDeadline\n      if (ConfirmationDeadline != null) {\n        if (\n          (typeof ConfirmationDeadline !== 'number') ||\n          (ConfirmationDeadline <= 0)\n        ) {\n          msg.payload    = 'Bad Request (invalid confirmation deadline) ' + ConfirmationDeadline\n          msg.statusCode = 400\n          return [null,msg]\n        }\n      }\n\n    /**** validate Password Deadline ****/\n\n      let PasswordDeadline = UserSet[UserId].PasswordDeadline\n      if (PasswordDeadline != null) {\n        if (\n          (typeof PasswordDeadline !== 'number') ||\n          (PasswordDeadline <= 0)\n        ) {\n          msg.payload    = 'Bad Request (invalid password deadline) ' + PasswordDeadline\n          msg.statusCode = 400\n          return [null,msg]\n        }\n      }\n\n    /**** seems ok ****/\n\n      UserRegistry[UserId.toLowerCase()] = UserSet[UserId]\n    }\n  }\n\n  global.set('UserRegistry',UserRegistry)\n\n  msg.payload = ''\n  return [msg,null]\n",
+        "outputs": 2,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 3610,
+        "y": 340,
+        "wires": [
+            [
+                "4ffff61c66297b22"
+            ],
+            [
+                "a1ac3191bf20b7ab"
+            ]
+        ]
+    },
+    {
+        "id": "8b5cdcb6cf1f530c",
+        "type": "function",
+        "z": "e3b17f2b13778f25",
+        "name": "do it",
+        "func": "  msg._payload = msg.payload                                 // preserve payload\n\n  let UserRegistry = global.get('UserRegistry') || Object.create(null)\n\n  let UserSet = {}\n  for (let UserId in UserRegistry) {\n    let UserEntry = Object.assign({},UserRegistry[UserId])\n      delete UserEntry.Password          // never write passwords in plain text!\n    UserSet[UserId] = UserEntry\n  }\n\n  msg.payload = UserSet                // will be stringified by Node-RED itself\n  return msg\n",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 3610,
+        "y": 400,
+        "wires": [
+            [
+                "7f9c287bc365e584"
+            ]
+        ]
+    },
+    {
+        "id": "8bd709b01958c65d",
+        "type": "reusable-in",
+        "z": "e3b17f2b13778f25",
+        "name": "inscribe permittedUsers",
+        "info": "describe your reusable flow here",
+        "scope": "local",
+        "x": 3430,
+        "y": 480,
+        "wires": [
+            [
+                "e53fe08547b10756"
+            ]
+        ]
+    },
+    {
+        "id": "e3fac13d37db880a",
+        "type": "reusable-in",
+        "z": "e3b17f2b13778f25",
+        "name": "readout permittedUsers",
+        "info": "describe your reusable flow here",
+        "scope": "local",
+        "x": 3430,
+        "y": 540,
+        "wires": [
+            [
+                "9c86f58f4207ca76"
+            ]
+        ]
+    },
+    {
+        "id": "2ddc2af87e87a02e",
+        "type": "reusable-out",
+        "z": "e3b17f2b13778f25",
+        "name": "return",
+        "position": 1,
+        "x": 3770,
+        "y": 540,
+        "wires": []
+    },
+    {
+        "id": "e53fe08547b10756",
+        "type": "function",
+        "z": "e3b17f2b13778f25",
+        "name": "do it",
+        "func": "  const EMailAddressPattern = /(?:[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*|\"(?:[\\x01-\\x08\\x0b\\x0c\\x0e-\\x1f\\x21\\x23-\\x5b\\x5d-\\x7f]|\\\\[\\x01-\\x09\\x0b\\x0c\\x0e-\\x7f])*\")@(?:(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?|\\[(?:(?:(2(5[0-5]|[0-4][0-9])|1[0-9][0-9]|[1-9]?[0-9]))\\.){3}(?:(2(5[0-5]|[0-4][0-9])|1[0-9][0-9]|[1-9]?[0-9])|[a-z0-9-]*[a-z0-9]:(?:[\\x01-\\x08\\x0b\\x0c\\x0e-\\x1f\\x21-\\x5a\\x53-\\x7f]|\\\\[\\x01-\\x09\\x0b\\x0c\\x0e-\\x7f])+)\\])/\n  // see https://stackoverflow.com/questions/201323/how-to-validate-an-email-address-using-a-regular-expression\n\n  let permittedRoles = global.get('permittedRoles') || Object.create(null)\n\n  let UserSet = Object.create(null)\n\n  let UserList = msg.payload.trim().split('\\n')\n    for (let i = 0, l = UserList.length; i < l; i++) {\n      let Settings = UserList[i].trim().replace(/\\s+/g,' ').toLowerCase().split(' ')\n      let UserId   = Settings[0].toLowerCase()\n        if (UserId === '') { continue }\n\n      if (! EMailAddressPattern.test(UserId)) {\n        msg.payload    = 'Bad Request (invalid EMail address) ' + UserId\n        msg.statusCode = 400\n        return [null,msg]\n      }\n\n      if (UserId.length > 64) {\n        msg.payload    = 'Bad Request (EMail address too long) ' + UserId\n        msg.statusCode = 400\n        return [null,msg]\n      }\n\n      let Roles = []\n      for (let i = 1, l = Settings.length; i < l; i++) {\n        if (Settings[i] in permittedRoles) {\n          Roles.push(Settings[i])\n        } else {\n          msg.payload    = 'Bad Request (invalid role) ' + Roles[i]\n          msg.statusCode = 400\n          return [null,msg]\n        }\n      }\n\n      UserSet[UserId] = Roles\n    }\n  global.set('permittedUsers',UserSet)\n\n  msg.payload = ''\n  return [msg,null]\n",
+        "outputs": 2,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 3630,
+        "y": 480,
+        "wires": [
+            [
+                "424b9c78cab9174c"
+            ],
+            [
+                "ba69e9a074011469"
+            ]
+        ]
+    },
+    {
+        "id": "9c86f58f4207ca76",
+        "type": "function",
+        "z": "e3b17f2b13778f25",
+        "name": "do it",
+        "func": "  msg._payload = msg.payload                                 // preserve payload\n\n  let permittedUsers = global.get('permittedUsers') || Object.create(null)\n\n  let UserList = []\n  for (let UserId in permittedUsers) {\n    let Roles = permittedUsers[UserId]\n    UserList.push(UserId + (Roles.length === 0 ? '' : ' ' + Roles.join(' ')))\n  }\n  msg.payload = UserList.join('\\n')\n  return msg\n",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 3630,
+        "y": 540,
+        "wires": [
+            [
+                "2ddc2af87e87a02e"
+            ]
+        ]
+    },
+    {
+        "id": "33f78c8ac95d7e64",
+        "type": "reusable-in",
+        "z": "e3b17f2b13778f25",
+        "name": "inscribe permittedRoles",
+        "info": "describe your reusable flow here",
+        "scope": "local",
+        "x": 3430,
+        "y": 620,
+        "wires": [
+            [
+                "e94c5ce4b211b880"
+            ]
+        ]
+    },
+    {
+        "id": "4f0cc49e1a9d57c9",
+        "type": "reusable-in",
+        "z": "e3b17f2b13778f25",
+        "name": "readout permittedRoles",
+        "info": "describe your reusable flow here",
+        "scope": "local",
+        "x": 3430,
+        "y": 680,
+        "wires": [
+            [
+                "73f0587996ac49ba"
+            ]
+        ]
+    },
+    {
+        "id": "9b07510a3e0537e9",
+        "type": "reusable-out",
+        "z": "e3b17f2b13778f25",
+        "name": "return",
+        "position": 1,
+        "x": 3770,
+        "y": 680,
+        "wires": []
+    },
+    {
+        "id": "e94c5ce4b211b880",
+        "type": "function",
+        "z": "e3b17f2b13778f25",
+        "name": "do it",
+        "func": "  let RoleSet = Object.create(null)\n\n  let RoleList = msg.payload.trim().replace(/\\s+/g,' ').split(' ')\n    for (let i = 0, l = RoleList.length; i < l; i++) {\n      let Role = RoleList[i].toLowerCase()\n      if (Role.length > 64) {\n        msg.payload    = 'Bad Request (Role too long) ' + Role\n        msg.statusCode = 400\n        return [null,msg]\n      }\n\n      RoleSet[Role] = true\n    }\n  global.set('permittedRoles',RoleSet)\n\n  msg.payload = ''\n  return [msg,null]\n",
+        "outputs": 2,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 3630,
+        "y": 620,
+        "wires": [
+            [
+                "abae7427ffb4d33d"
+            ],
+            [
+                "b8acf673bd2c7f79"
+            ]
+        ]
+    },
+    {
+        "id": "73f0587996ac49ba",
+        "type": "function",
+        "z": "e3b17f2b13778f25",
+        "name": "do it",
+        "func": "  msg._payload = msg.payload                                 // preserve payload\n\n  let RoleSet = global.get('permittedRoles') || Object.create(null)\n\n  let RoleList = []\n  for (let Role in RoleSet) {\n    RoleList.push(Role)\n  }\n  msg.payload = RoleList.join('\\n')\n  return msg\n",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 3630,
+        "y": 680,
+        "wires": [
+            [
+                "9b07510a3e0537e9"
+            ]
+        ]
+    },
+    {
+        "id": "4ffff61c66297b22",
+        "type": "reusable-out",
+        "z": "e3b17f2b13778f25",
+        "name": "success",
+        "position": 1,
+        "x": 3760,
+        "y": 320,
+        "wires": []
+    },
+    {
+        "id": "a1ac3191bf20b7ab",
+        "type": "reusable-out",
+        "z": "e3b17f2b13778f25",
+        "name": "failure",
+        "position": "2",
+        "x": 3750,
+        "y": 360,
+        "wires": []
+    },
+    {
+        "id": "424b9c78cab9174c",
+        "type": "reusable-out",
+        "z": "e3b17f2b13778f25",
+        "name": "success",
+        "position": 1,
+        "x": 3780,
+        "y": 460,
+        "wires": []
+    },
+    {
+        "id": "ba69e9a074011469",
+        "type": "reusable-out",
+        "z": "e3b17f2b13778f25",
+        "name": "failure",
+        "position": "2",
+        "x": 3770,
+        "y": 500,
+        "wires": []
+    },
+    {
+        "id": "abae7427ffb4d33d",
+        "type": "reusable-out",
+        "z": "e3b17f2b13778f25",
+        "name": "success",
+        "position": 1,
+        "x": 3780,
+        "y": 600,
+        "wires": []
+    },
+    {
+        "id": "b8acf673bd2c7f79",
+        "type": "reusable-out",
+        "z": "e3b17f2b13778f25",
+        "name": "failure",
+        "position": "2",
+        "x": 3770,
+        "y": 640,
+        "wires": []
+    },
+    {
+        "id": "5b368d8d8f06c1ba",
+        "type": "comment",
+        "z": "e3b17f2b13778f25",
+        "name": "if used without \"node-red-within-express\"",
+        "info": "",
+        "x": 4140,
+        "y": 40,
+        "wires": []
+    },
+    {
+        "id": "a476e22a6b89bad9",
+        "type": "inject",
+        "z": "e3b17f2b13778f25",
+        "d": true,
+        "name": "at Startup",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payloadType": "date",
+        "x": 4060,
+        "y": 100,
+        "wires": [
+            [
+                "2403d620dabaf265"
+            ]
+        ]
+    },
+    {
+        "id": "d61ddf49da0f40d5",
+        "type": "file in",
+        "z": "e3b17f2b13778f25",
+        "name": "",
+        "filename": "./registeredUsers.json",
+        "format": "utf8",
+        "chunk": false,
+        "sendError": false,
+        "encoding": "utf8",
+        "allProps": false,
+        "x": 4120,
+        "y": 220,
+        "wires": [
+            [
+                "b4582b294166ff4e"
+            ]
+        ]
+    },
+    {
+        "id": "0b9be08a1579ed5a",
+        "type": "catch",
+        "z": "e3b17f2b13778f25",
+        "name": "",
+        "scope": [
+            "d61ddf49da0f40d5"
+        ],
+        "uncaught": false,
+        "x": 4070,
+        "y": 280,
+        "wires": [
+            [
+                "12c9f52630d81b50"
+            ]
+        ]
+    },
+    {
+        "id": "990458e47bb76474",
+        "type": "debug",
+        "z": "e3b17f2b13778f25",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": true,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "'could not load user registry'",
+        "statusType": "jsonata",
+        "x": 4470,
+        "y": 280,
+        "wires": []
+    },
+    {
+        "id": "67284a28c5a747eb",
+        "type": "debug",
+        "z": "e3b17f2b13778f25",
+        "name": "Status",
+        "active": true,
+        "tosidebar": false,
+        "console": false,
+        "tostatus": true,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "'user registry available'",
+        "statusType": "jsonata",
+        "x": 4490,
+        "y": 100,
+        "wires": []
+    },
+    {
+        "id": "12c9f52630d81b50",
+        "type": "function",
+        "z": "e3b17f2b13778f25",
+        "name": "create in global context",
+        "func": "  let UserRegistry = Object.create(null)\n    UserRegistry['node-red@mail.de'] =  {\n      Roles: ['node-red','user-admin'],\n      Salt: '4486e8d35b8275020b1301226cc77963',\n      Hash: 'ab2b740ea9148aa4f320af3f3ba60ee2e33bb8039c57eea2b29579ff3f3b16bec2401f19e3c6ed8ad36de432b80b6f973a12c41af5d50738e4bb902d0117df53',\n      UUID: '62471a29-4779-4e45-bdb8-f22ce943cf32',\n      agreedToDPS:true,\n      agreedToTOS:true\n    }\n  global.set('UserRegistry',UserRegistry)\n\n  return msg\n",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 4270,
+        "y": 280,
+        "wires": [
+            [
+                "990458e47bb76474",
+                "47c60b976c436ea0"
+            ]
+        ]
+    },
+    {
+        "id": "d9f6ac3b1a4ea6f6",
+        "type": "file",
+        "z": "e3b17f2b13778f25",
+        "name": "",
+        "filename": "./registeredUsers.json",
+        "appendNewline": false,
+        "createDir": false,
+        "overwriteFile": "true",
+        "encoding": "utf8",
+        "x": 4380,
+        "y": 400,
+        "wires": [
+            [
+                "c64c1d647962a8eb"
+            ]
+        ]
+    },
+    {
+        "id": "a3012bd098e818dc",
+        "type": "catch",
+        "z": "e3b17f2b13778f25",
+        "name": "",
+        "scope": [
+            "d9f6ac3b1a4ea6f6"
+        ],
+        "uncaught": false,
+        "x": 4070,
+        "y": 520,
+        "wires": [
+            [
+                "78d53e3d3833d1c8",
+                "4a0c1ff648388e5b"
+            ]
+        ]
+    },
+    {
+        "id": "78d53e3d3833d1c8",
+        "type": "debug",
+        "z": "e3b17f2b13778f25",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": true,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "'could not write user registry'",
+        "statusType": "jsonata",
+        "x": 4210,
+        "y": 560,
+        "wires": []
+    },
+    {
+        "id": "c64c1d647962a8eb",
+        "type": "change",
+        "z": "e3b17f2b13778f25",
+        "name": "restore payload",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "_payload",
+                "tot": "msg"
+            },
+            {
+                "t": "delete",
+                "p": "_payload",
+                "pt": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 4100,
+        "y": 460,
+        "wires": [
+            [
+                "51ccfd2969b294ce"
+            ]
+        ]
+    },
+    {
+        "id": "4a0c1ff648388e5b",
+        "type": "change",
+        "z": "e3b17f2b13778f25",
+        "name": "report in payload",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "'Internal Server Error'",
+                "tot": "jsonata"
+            },
+            {
+                "t": "set",
+                "p": "statusCode",
+                "pt": "msg",
+                "to": "500",
+                "tot": "str"
+            },
+            {
+                "t": "delete",
+                "p": "_payload",
+                "pt": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 4250,
+        "y": 520,
+        "wires": [
+            [
+                "51ccfd2969b294ce"
+            ]
+        ]
+    },
+    {
+        "id": "2d96f081d7b5d0ea",
+        "type": "function",
+        "z": "e3b17f2b13778f25",
+        "name": "→ catch",
+        "func": "// do not pass any msg from here!",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 4320,
+        "y": 160,
+        "wires": [
+            [
+                "12c9f52630d81b50"
+            ]
+        ]
+    },
+    {
+        "id": "12bace94c11505f8",
+        "type": "function",
+        "z": "e3b17f2b13778f25",
+        "name": "→ catch",
+        "func": "// do not pass any msg from here!",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 4260,
+        "y": 340,
+        "wires": [
+            [
+                "4a0c1ff648388e5b"
+            ]
+        ]
+    },
+    {
+        "id": "47c60b976c436ea0",
+        "type": "reusable-out",
+        "z": "e3b17f2b13778f25",
+        "name": "return",
+        "position": 1,
+        "x": 4490,
+        "y": 160,
+        "wires": []
+    },
+    {
+        "id": "51ccfd2969b294ce",
+        "type": "reusable-out",
+        "z": "e3b17f2b13778f25",
+        "name": "return",
+        "position": 1,
+        "x": 4490,
+        "y": 460,
+        "wires": []
+    },
+    {
+        "id": "8b2421fb64922266",
+        "type": "reusable-in",
+        "z": "e3b17f2b13778f25",
+        "name": "load or create UserRegistry",
+        "info": "describe your reusable flow here",
+        "scope": "local",
+        "x": 4100,
+        "y": 160,
+        "wires": [
+            [
+                "2d96f081d7b5d0ea",
+                "d61ddf49da0f40d5"
+            ]
+        ]
+    },
+    {
+        "id": "ae5e96dd47db71e1",
+        "type": "reusable-in",
+        "z": "e3b17f2b13778f25",
+        "name": "write UserRegistry",
+        "info": "describe your reusable flow here",
+        "scope": "local",
+        "x": 4070,
+        "y": 340,
+        "wires": [
+            [
+                "12bace94c11505f8",
+                "1bc3962fc0318103"
+            ]
+        ]
+    },
+    {
+        "id": "2403d620dabaf265",
+        "type": "reusable",
+        "z": "e3b17f2b13778f25",
+        "name": "",
+        "target": "load or create userregistry",
+        "outputs": 1,
+        "x": 4280,
+        "y": 100,
+        "wires": [
+            [
+                "67284a28c5a747eb"
+            ]
+        ]
+    },
+    {
+        "id": "b4582b294166ff4e",
+        "type": "reusable",
+        "z": "e3b17f2b13778f25",
+        "name": "",
+        "target": "inscribe userregistry",
+        "outputs": 2,
+        "x": 4360,
+        "y": 220,
+        "wires": [
+            [
+                "47c60b976c436ea0"
+            ],
+            [
+                "12c9f52630d81b50"
+            ]
+        ],
+        "outputLabels": [
+            "success",
+            "failure"
+        ]
+    },
+    {
+        "id": "1bc3962fc0318103",
+        "type": "reusable",
+        "z": "e3b17f2b13778f25",
+        "name": "",
+        "target": "readout userregistry",
+        "outputs": 1,
+        "x": 4120,
+        "y": 400,
+        "wires": [
+            [
+                "d9f6ac3b1a4ea6f6"
+            ]
+        ]
+    },
+    {
+        "id": "50889e4e5408e229",
+        "type": "comment",
+        "z": "e3b17f2b13778f25",
+        "name": "(see below for Startup)",
+        "info": "",
+        "x": 4420,
+        "y": 40,
+        "wires": []
+    },
+    {
+        "id": "1a1be2f886f04b1d",
+        "type": "comment",
+        "z": "e3b17f2b13778f25",
+        "name": "permittedRoles and permittedUsers",
+        "info": "",
+        "x": 4120,
+        "y": 620,
+        "wires": []
+    },
+    {
+        "id": "cbc3f7ce422a4e39",
+        "type": "inject",
+        "z": "e3b17f2b13778f25",
+        "name": "at Startup",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": true,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payloadType": "date",
+        "x": 4070,
+        "y": 680,
+        "wires": [
+            [
+                "36d3d76e49f512d6"
+            ]
+        ]
+    },
+    {
+        "id": "c0720863bf6c6929",
+        "type": "reusable",
+        "z": "e3b17f2b13778f25",
+        "name": "",
+        "target": "load or create permittedusers",
+        "outputs": 1,
+        "x": 4150,
+        "y": 740,
+        "wires": [
+            [
+                "6b7b96ca4230f35e"
+            ]
+        ],
+        "outputLabels": [
+            "return"
+        ]
+    },
+    {
+        "id": "e5a337facde13c43",
+        "type": "debug",
+        "z": "e3b17f2b13778f25",
+        "name": "Status",
+        "active": true,
+        "tosidebar": false,
+        "console": false,
+        "tostatus": true,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "'internal registries are available'",
+        "statusType": "jsonata",
+        "x": 4490,
+        "y": 740,
+        "wires": []
+    },
+    {
+        "id": "b6e07453a093b666",
+        "type": "file in",
+        "z": "e3b17f2b13778f25",
+        "name": "",
+        "filename": "./permittedRoles.txt",
+        "format": "utf8",
+        "chunk": false,
+        "sendError": false,
+        "encoding": "utf8",
+        "allProps": false,
+        "x": 4120,
+        "y": 940,
+        "wires": [
+            [
+                "cff3808d433efa8e"
+            ]
+        ]
+    },
+    {
+        "id": "fc896e6d68fbb3ac",
+        "type": "catch",
+        "z": "e3b17f2b13778f25",
+        "name": "",
+        "scope": [
+            "b6e07453a093b666"
+        ],
+        "uncaught": false,
+        "x": 4070,
+        "y": 1000,
+        "wires": [
+            [
+                "e93bedd512d978e0"
+            ]
+        ]
+    },
+    {
+        "id": "515fafb3f931d35b",
+        "type": "debug",
+        "z": "e3b17f2b13778f25",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": true,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "'could not load permitted roles'",
+        "statusType": "jsonata",
+        "x": 4470,
+        "y": 1000,
+        "wires": []
+    },
+    {
+        "id": "e93bedd512d978e0",
+        "type": "function",
+        "z": "e3b17f2b13778f25",
+        "name": "create in global context",
+        "func": "  let RoleSet = Object.create(null)\n    RoleSet['node-red']   = true\n    RoleSet['user-admin'] = true\n  global.set('permittedRoles',RoleSet)\n\n  return msg\n",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 4270,
+        "y": 1000,
+        "wires": [
+            [
+                "515fafb3f931d35b",
+                "db467986ef7beb1e"
+            ]
+        ]
+    },
+    {
+        "id": "602f2244a372d106",
+        "type": "file",
+        "z": "e3b17f2b13778f25",
+        "name": "",
+        "filename": "./permittedRoles.txt",
+        "appendNewline": false,
+        "createDir": false,
+        "overwriteFile": "true",
+        "encoding": "utf8",
+        "x": 4380,
+        "y": 1120,
+        "wires": [
+            [
+                "6a26fe20e32e2769"
+            ]
+        ]
+    },
+    {
+        "id": "3439b4868f54653e",
+        "type": "catch",
+        "z": "e3b17f2b13778f25",
+        "name": "",
+        "scope": [
+            "602f2244a372d106"
+        ],
+        "uncaught": false,
+        "x": 4070,
+        "y": 1240,
+        "wires": [
+            [
+                "afedb72a2d22fd38",
+                "be2169a10b396819"
+            ]
+        ]
+    },
+    {
+        "id": "afedb72a2d22fd38",
+        "type": "debug",
+        "z": "e3b17f2b13778f25",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": true,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "'could not write user registry'",
+        "statusType": "jsonata",
+        "x": 4210,
+        "y": 1280,
+        "wires": []
+    },
+    {
+        "id": "6a26fe20e32e2769",
+        "type": "change",
+        "z": "e3b17f2b13778f25",
+        "name": "restore payload",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "_payload",
+                "tot": "msg"
+            },
+            {
+                "t": "delete",
+                "p": "_payload",
+                "pt": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 4100,
+        "y": 1180,
+        "wires": [
+            [
+                "e11e5a7c73975a64"
+            ]
+        ]
+    },
+    {
+        "id": "be2169a10b396819",
+        "type": "change",
+        "z": "e3b17f2b13778f25",
+        "name": "report in payload",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "'Internal Server Error'",
+                "tot": "jsonata"
+            },
+            {
+                "t": "set",
+                "p": "statusCode",
+                "pt": "msg",
+                "to": "500",
+                "tot": "str"
+            },
+            {
+                "t": "delete",
+                "p": "_payload",
+                "pt": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 4250,
+        "y": 1240,
+        "wires": [
+            [
+                "e11e5a7c73975a64"
+            ]
+        ]
+    },
+    {
+        "id": "dc53373b8a76fe4d",
+        "type": "function",
+        "z": "e3b17f2b13778f25",
+        "name": "→ catch",
+        "func": "// do not pass any msg from here!",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 4340,
+        "y": 880,
+        "wires": [
+            [
+                "e93bedd512d978e0"
+            ]
+        ]
+    },
+    {
+        "id": "c650babeeda83cc1",
+        "type": "function",
+        "z": "e3b17f2b13778f25",
+        "name": "→ catch",
+        "func": "// do not pass any msg from here!",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 4280,
+        "y": 1060,
+        "wires": [
+            [
+                "be2169a10b396819"
+            ]
+        ]
+    },
+    {
+        "id": "db467986ef7beb1e",
+        "type": "reusable-out",
+        "z": "e3b17f2b13778f25",
+        "name": "return",
+        "position": 1,
+        "x": 4490,
+        "y": 880,
+        "wires": []
+    },
+    {
+        "id": "e11e5a7c73975a64",
+        "type": "reusable-out",
+        "z": "e3b17f2b13778f25",
+        "name": "return",
+        "position": 1,
+        "x": 4490,
+        "y": 1180,
+        "wires": []
+    },
+    {
+        "id": "b279c010410bb7b6",
+        "type": "reusable-in",
+        "z": "e3b17f2b13778f25",
+        "name": "load or create permittedRoles",
+        "info": "describe your reusable flow here",
+        "scope": "local",
+        "x": 4110,
+        "y": 880,
+        "wires": [
+            [
+                "dc53373b8a76fe4d",
+                "b6e07453a093b666"
+            ]
+        ]
+    },
+    {
+        "id": "1d6f0245f4c3c67f",
+        "type": "reusable-in",
+        "z": "e3b17f2b13778f25",
+        "name": "write permittedRoles",
+        "info": "describe your reusable flow here",
+        "scope": "local",
+        "x": 4080,
+        "y": 1060,
+        "wires": [
+            [
+                "c650babeeda83cc1",
+                "6fe73a899b14e7b7"
+            ]
+        ]
+    },
+    {
+        "id": "36d3d76e49f512d6",
+        "type": "reusable",
+        "z": "e3b17f2b13778f25",
+        "name": "",
+        "target": "load or create permittedroles",
+        "outputs": 1,
+        "x": 4310,
+        "y": 680,
+        "wires": [
+            [
+                "c0720863bf6c6929"
+            ]
+        ],
+        "outputLabels": [
+            "return"
+        ]
+    },
+    {
+        "id": "cff3808d433efa8e",
+        "type": "reusable",
+        "z": "e3b17f2b13778f25",
+        "name": "",
+        "target": "inscribe permittedroles",
+        "outputs": 2,
+        "x": 4370,
+        "y": 940,
+        "wires": [
+            [
+                "db467986ef7beb1e"
+            ],
+            [
+                "e93bedd512d978e0"
+            ]
+        ]
+    },
+    {
+        "id": "6fe73a899b14e7b7",
+        "type": "reusable",
+        "z": "e3b17f2b13778f25",
+        "name": "",
+        "target": "readout permittedroles",
+        "outputs": 1,
+        "x": 4130,
+        "y": 1120,
+        "wires": [
+            [
+                "602f2244a372d106"
+            ]
+        ]
+    },
+    {
+        "id": "6b7b96ca4230f35e",
+        "type": "reusable",
+        "z": "e3b17f2b13778f25",
+        "name": "",
+        "target": "load or create userregistry",
+        "outputs": 1,
+        "x": 4140,
+        "y": 800,
+        "wires": [
+            [
+                "e5a337facde13c43"
+            ]
+        ]
+    },
+    {
+        "id": "45f83a2c4389f054",
+        "type": "comment",
+        "z": "e3b17f2b13778f25",
+        "name": "<<<< remove for \"node-red-within-express\"",
+        "info": "",
+        "x": 4470,
+        "y": 800,
+        "wires": []
+    },
+    {
+        "id": "94503cb9d2fd7609",
+        "type": "file in",
+        "z": "e3b17f2b13778f25",
+        "name": "",
+        "filename": "./permittedUsers.txt",
+        "format": "utf8",
+        "chunk": false,
+        "sendError": false,
+        "encoding": "utf8",
+        "allProps": false,
+        "x": 4120,
+        "y": 1400,
+        "wires": [
+            [
+                "82b4ba3e95b7d6dd"
+            ]
+        ]
+    },
+    {
+        "id": "842466eaf42a234f",
+        "type": "catch",
+        "z": "e3b17f2b13778f25",
+        "name": "",
+        "scope": [
+            "94503cb9d2fd7609",
+            "388ade3b63a590a3"
+        ],
+        "uncaught": false,
+        "x": 4070,
+        "y": 1460,
+        "wires": [
+            [
+                "9cdcf37f87eeae97"
+            ]
+        ]
+    },
+    {
+        "id": "6e1435f186363bc2",
+        "type": "debug",
+        "z": "e3b17f2b13778f25",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": true,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "'could not load permitted users'",
+        "statusType": "jsonata",
+        "x": 4470,
+        "y": 1460,
+        "wires": []
+    },
+    {
+        "id": "9cdcf37f87eeae97",
+        "type": "function",
+        "z": "e3b17f2b13778f25",
+        "name": "create in global context",
+        "func": "  let UserSet = Object.create(null)\n    UserSet['node-red'] = ['node-red','user-admin']\n  global.set('permittedUsers',UserSet)\n\n  return msg\n",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 4270,
+        "y": 1460,
+        "wires": [
+            [
+                "6e1435f186363bc2",
+                "4916b19516413b74"
+            ]
+        ]
+    },
+    {
+        "id": "32c2ea73c95c7945",
+        "type": "file",
+        "z": "e3b17f2b13778f25",
+        "name": "",
+        "filename": "./permittedUsers.txt",
+        "appendNewline": false,
+        "createDir": false,
+        "overwriteFile": "true",
+        "encoding": "utf8",
+        "x": 4380,
+        "y": 1580,
+        "wires": [
+            [
+                "81644e812f5e1b19"
+            ]
+        ]
+    },
+    {
+        "id": "7baebb1405cd1078",
+        "type": "catch",
+        "z": "e3b17f2b13778f25",
+        "name": "",
+        "scope": [
+            "32c2ea73c95c7945"
+        ],
+        "uncaught": false,
+        "x": 4070,
+        "y": 1700,
+        "wires": [
+            [
+                "eec1ca414ba7f6ed",
+                "5ba0daa92c3c48d8"
+            ]
+        ]
+    },
+    {
+        "id": "eec1ca414ba7f6ed",
+        "type": "debug",
+        "z": "e3b17f2b13778f25",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": true,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "'could not write user registry'",
+        "statusType": "jsonata",
+        "x": 4210,
+        "y": 1740,
+        "wires": []
+    },
+    {
+        "id": "81644e812f5e1b19",
+        "type": "change",
+        "z": "e3b17f2b13778f25",
+        "name": "restore payload",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "_payload",
+                "tot": "msg"
+            },
+            {
+                "t": "delete",
+                "p": "_payload",
+                "pt": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 4100,
+        "y": 1640,
+        "wires": [
+            [
+                "1fc43b2d690cc23e"
+            ]
+        ]
+    },
+    {
+        "id": "5ba0daa92c3c48d8",
+        "type": "change",
+        "z": "e3b17f2b13778f25",
+        "name": "report in payload",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "'Internal Server Error'",
+                "tot": "jsonata"
+            },
+            {
+                "t": "set",
+                "p": "statusCode",
+                "pt": "msg",
+                "to": "500",
+                "tot": "str"
+            },
+            {
+                "t": "delete",
+                "p": "_payload",
+                "pt": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 4250,
+        "y": 1700,
+        "wires": [
+            [
+                "1fc43b2d690cc23e"
+            ]
+        ]
+    },
+    {
+        "id": "624b4522c81a4fea",
+        "type": "function",
+        "z": "e3b17f2b13778f25",
+        "name": "→ catch",
+        "func": "// do not pass any msg from here!",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 4340,
+        "y": 1340,
+        "wires": [
+            [
+                "9cdcf37f87eeae97"
+            ]
+        ]
+    },
+    {
+        "id": "db0bc00d5b2aa5ba",
+        "type": "function",
+        "z": "e3b17f2b13778f25",
+        "name": "→ catch",
+        "func": "// do not pass any msg from here!",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 4280,
+        "y": 1520,
+        "wires": [
+            [
+                "5ba0daa92c3c48d8"
+            ]
+        ]
+    },
+    {
+        "id": "4916b19516413b74",
+        "type": "reusable-out",
+        "z": "e3b17f2b13778f25",
+        "name": "return",
+        "position": 1,
+        "x": 4490,
+        "y": 1340,
+        "wires": []
+    },
+    {
+        "id": "1fc43b2d690cc23e",
+        "type": "reusable-out",
+        "z": "e3b17f2b13778f25",
+        "name": "return",
+        "position": 1,
+        "x": 4490,
+        "y": 1640,
+        "wires": []
+    },
+    {
+        "id": "0ee31937d447ce6d",
+        "type": "reusable-in",
+        "z": "e3b17f2b13778f25",
+        "name": "load or create permittedUsers",
+        "info": "describe your reusable flow here",
+        "scope": "local",
+        "x": 4110,
+        "y": 1340,
+        "wires": [
+            [
+                "624b4522c81a4fea",
+                "94503cb9d2fd7609"
+            ]
+        ]
+    },
+    {
+        "id": "731b9d3ab209e36e",
+        "type": "reusable-in",
+        "z": "e3b17f2b13778f25",
+        "name": "write permittedUsers",
+        "info": "describe your reusable flow here",
+        "scope": "local",
+        "x": 4080,
+        "y": 1520,
+        "wires": [
+            [
+                "db0bc00d5b2aa5ba",
+                "bdcf2e80257d769b"
+            ]
+        ]
+    },
+    {
+        "id": "82b4ba3e95b7d6dd",
+        "type": "reusable",
+        "z": "e3b17f2b13778f25",
+        "name": "",
+        "target": "inscribe permittedusers",
+        "outputs": 2,
+        "x": 4370,
+        "y": 1400,
+        "wires": [
+            [
+                "4916b19516413b74"
+            ],
+            [
+                "9cdcf37f87eeae97"
+            ]
+        ]
+    },
+    {
+        "id": "bdcf2e80257d769b",
+        "type": "reusable",
+        "z": "e3b17f2b13778f25",
+        "name": "",
+        "target": "readout permittedusers",
+        "outputs": 1,
+        "x": 4130,
+        "y": 1580,
+        "wires": [
+            [
+                "32c2ea73c95c7945"
+            ]
+        ]
+    }
+]
